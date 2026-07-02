@@ -3,92 +3,111 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ranní brief — středa 20. května 2026</title>
+<meta name="description" content="Babišova vláda zrušila lidskoprávní agendu, experti varují před důsledky · Aktivisté v Brně natřeli soše Beneše ruce načerveno · USA obvinily Raúla Castra z vraždy, napětí kolem Ku">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Ranní brief"><meta property="og:title" content="Ranní brief — středa 20. května 2026"><meta property="og:description" content="Babišova vláda zrušila lidskoprávní agendu, experti varují před důsledky · Aktivisté v Brně natřeli soše Beneše ruce načerveno · USA obvinily Raúla Castra z vraždy, napětí kolem Ku"><meta property="og:url" content="https://morning-brief-web.netlify.app/brief-2026-05-20.html"><meta property="og:image" content="https://morning-brief-web.netlify.app/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png" onerror="">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
-  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  :root {
+    --paper:#faf7f1; --ink:#141210; --card:#f3eee3; --line:#e7e2d8; --muted:#6b655d; --accent:#b3271e;
+    --hover:#fffdf8; --sf:#37322b; --story:#39342c;
+    --factbg:#fff8e6; --factbd:#f2dfa6; --factink:#4a4438; --factk:#a76a00;
+    --pillbg:#efe9dd; --pillbd:#e2dccf; --cardbd:#e3dccd;
+  }
+  html[data-theme="dark"] {
+    --paper:#131110; --ink:#ece5da; --card:#201c17; --line:#332d26; --muted:#a99f90; --accent:#e5554b;
+    --hover:#1b1712; --sf:#cfc7bb; --story:#c9c0b4;
+    --factbg:#2a2213; --factbd:#4a3c1c; --factink:#d8cba6; --factk:#e5ad4f;
+    --pillbg:#2a251e; --pillbd:#3b342b; --cardbd:#332d26;
+  }
   * { box-sizing:border-box; }
   html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
   @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   body { margin:0; background:var(--paper); color:var(--ink);
-    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6;
+    transition:background .2s, color .2s; }
   a { color:inherit; }
   .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
   .art { max-width:760px; margin:0 auto; padding:0 22px; }
 
   #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
 
+  /* Masthead */
   .masthead { border-bottom:3px solid var(--ink); }
-  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
-    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
-  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
-    font-size:clamp(30px,6vw,52px); line-height:.95; }
-  .brand a { text-decoration:none; color:var(--ink); }
-  .masthead .meta { text-align:right; }
-  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
-  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+  .masthead .wrap { display:flex; align-items:center; justify-content:space-between; padding:22px 22px 16px; gap:16px; flex-wrap:wrap; }
+  .brandwrap { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); }
+  .logo { width:52px; height:52px; object-fit:contain; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em; font-size:clamp(28px,5.4vw,46px); line-height:.9; }
+  .slogan { display:flex; align-items:center; gap:9px; margin-top:6px; font-size:9.5px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .slogan .ln { flex:1; height:1px; background:currentColor; opacity:.45; min-width:14px; }
+  .tools { display:flex; align-items:center; gap:6px; }
+  .wx { font-family:Fraunces,serif; font-weight:600; font-size:15px; margin-right:6px; }
+  .ic { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid var(--line);
+    border-radius:9px; background:transparent; color:var(--muted); cursor:pointer; transition:color .12s, border-color .12s, background .12s; }
+  .ic:hover { color:var(--accent); border-color:var(--accent); }
+
+  .searchbar { display:none; border-bottom:1px solid var(--line); background:var(--paper); }
+  .searchbar.open { display:block; }
+  .searchbar input { width:100%; max-width:1080px; margin:0 auto; display:block; border:0; background:transparent; color:var(--ink);
+    font-family:Fraunces,serif; font-size:clamp(18px,3vw,26px); padding:16px 22px; outline:none; }
+  .searchbar input::placeholder { color:var(--muted); }
 
   .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
 
-  /* HERO */
   .hero { padding:34px 0 8px; }
   .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
-  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
-    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em; font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
   .hero h1 a { text-decoration:none; }
-  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
-    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
-  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
-    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
-  .hero .hi:hover { background:#fffdf8; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--story); }
+  .hero .hi:hover { background:var(--hover); }
   .hero .hi:hover .ht { color:var(--accent); }
   .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
   .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
   .hero .cat { font-weight:800; }
   .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
 
-  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
-    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
-  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em; text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
 
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
-    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
-    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card { position:relative; background:var(--card); border:1px solid var(--cardbd); border-radius:10px; padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column; min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
   .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
-  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover { background:var(--hover); border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.16); transform:translateY(-2px); }
   .card:hover::before { opacity:1; }
   .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
-  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:16.5px; line-height:1.28; margin:8px 0 0; }
   .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+  .noresult { color:var(--muted); padding:20px 0; }
 
-  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
-    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
-  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
-  footer a:hover { text-decoration:underline; }
+  /* Footer */
+  footer { margin-top:60px; border-top:3px solid var(--ink); }
+  .f-inner { max-width:1080px; margin:0 auto; padding:34px 22px 46px; text-align:center; }
+  .f-brand { font-family:Fraunces,serif; font-weight:900; font-size:26px; letter-spacing:-0.02em; }
+  .f-slogan { display:flex; align-items:center; justify-content:center; gap:12px; max-width:360px; margin:10px auto 20px;
+    font-size:10px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+  .f-slogan .ln { flex:1; height:1px; background:currentColor; opacity:.45; }
+  .f-meta { font-size:13px; color:var(--muted); }
+  .f-meta a { color:var(--accent); font-weight:800; text-decoration:none; }
+  .f-meta a:hover { text-decoration:underline; }
+  .f-note { font-size:11.5px; color:var(--muted); opacity:.8; margin-top:8px; }
 
-  /* ── Denní článek ── */
-  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
-    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
-  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
-    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
-  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
-    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
-  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
-  .fact .k { color:#a76a00; }
+  /* Denní článek */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em; font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:var(--sf); line-height:1.55; border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:var(--factbg); border:1px solid var(--factbd); border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:var(--factk); }
   .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
-  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+  .fact p { margin:0; color:var(--factink); font-size:14.5px; }
 
-  /* Lepivé záložky sekcí */
-  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
-    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper); margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
   .tabs::-webkit-scrollbar { display:none; }
-  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
-    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
-    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px; white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
   .tabs a:hover { border-color:var(--c); color:var(--c); }
   .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
 
@@ -97,24 +116,34 @@
   .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
   .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
   .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
-  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
-  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
-    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
-  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+  .story p { margin:0 0 10px; color:var(--story); font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:var(--factink); background:var(--pillbg); border:1px solid var(--pillbd); border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { border-color:var(--accent); color:var(--accent); }
 
-  /* Jemné odhalení při scrollu */
+  .daynav { display:flex; justify-content:space-between; gap:14px; margin:40px 0 10px; padding-top:20px; border-top:2px solid var(--ink); }
+  .daynav a { font-family:Fraunces,serif; font-weight:700; font-size:14px; text-decoration:none; color:var(--ink); max-width:46%; }
+  .daynav a:hover { color:var(--accent); }
+  .daynav .lab { display:block; font-family:Inter,sans-serif; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:3px; }
+  .daynav .next { text-align:right; margin-left:auto; }
+
   .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
   .rev.in { opacity:1; transform:none; }
   @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
 
   @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
-  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } }
 </style></head><body>
 <div id="progress"></div>
 <header class="masthead"><div class="wrap">
-  <div class="brand"><a href="index.html">Ranní brief</a></div>
-  <div class="meta"><div class="wx">Brno&nbsp;·&nbsp;☁️&nbsp;23°&nbsp;/&nbsp;9°</div><div class="sub">středa 20. května 2026</div></div>
+  <a class="brandwrap" href="index.html">
+    <img class="logo" src="logo.png" alt="" onerror="this.style.display='none'">
+    <span>
+      <span class="brand">Ranní brief</span>
+      <span class="slogan"><span class="ln"></span>Váš ranní přehled zpráv<span class="ln"></span></span>
+    </span>
+  </a>
+  <div class="tools"><span class="wx">Brno&nbsp;·&nbsp;☁️&nbsp;23°&nbsp;/&nbsp;9°</span><button class="ic" id="themeBtn" aria-label="Přepnout světlý/tmavý režim" title="Světlý/tmavý režim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
 </div></header>
 <main class="art">
 <a class="back" href="index.html">← Přehled</a>
@@ -159,29 +188,31 @@
 <div class="story" style="--c:#65A30D"><h2>Google rozšiřuje Direct Offers o AI balíčky a nativní checkout</h2><p>Nové funkce Direct Offers zahrnují AI generované propagační balíčky, nativní platby přímo ve vyhledávání a integraci cestovních nabídek. Google tím posiluje konverzní cestu bez opuštění platformy.</p><div class="srcs"><a href="https://searchengineland.com/google-expands-direct-offers-with-ai-generated-bundles-native-checkout-and-travel-deals-478109" target="_blank" rel="noopener">Search Engine Land</a></div></div>
 <div class="story" style="--c:#65A30D"><h2>James Murdoch kupuje New York Magazine a podcastovou síť Vox Media</h2><p>James Murdoch, syn mediálního magnáta Ruperta Murdocha, získává za více než 300 milionů dolarů kontrolu nad tradičním magazínem a podcastovou divizí Vox Media. Akvizice posiluje jeho nezávislou mediální pozici po odchodu z rodinného impéria.</p><div class="srcs"><a href="https://www.aljazeera.com/economy/2026/5/20/james-murdoch-to-acquire-new-york-magazine-and-vox-media-podcast-network?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.politico.com/news/2026/05/20/james-murdoch-vox-purchase-00929581?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico Europe</a></div></div>
 </section>
+<nav class="daynav"><a class="prev" href="brief-2026-05-19.html"><span class="lab">← Předchozí</span>úterý 19. května 2026</a><a class="next" href="brief-2026-05-21.html"><span class="lab">Další →</span>čtvrtek 21. května 2026</a></nav>
 </main>
-<footer class="wrap">
-  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
-  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
-</footer>
+<footer><div class="f-inner">
+  <div class="f-brand">Ranní brief</div>
+  <div class="f-slogan"><span class="ln"></span>Váš ranní přehled zpráv<span class="ln"></span></div>
+  <div class="f-meta">© 2026 · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a> · <a href="index.html">Archiv</a></div>
+  <div class="f-note">Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</div></footer>
 <script>
-(function(){
-  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var p = document.getElementById('progress');
-  function onScroll(){ if(!p) return; var h=document.documentElement;
-    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
-  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
-  var secs=document.querySelectorAll('section.rubr');
-  if('IntersectionObserver' in window && secs.length){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
-      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
-      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
-      {rootMargin:'-45% 0px -50% 0px', threshold:0});
-    secs.forEach(function(s){io.observe(s);});
-    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
-    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
-  }
+(function(){var tb=document.getElementById('themeBtn');if(!tb)return;
+function ic(){var d=document.documentElement.getAttribute('data-theme')==='dark';
+tb.innerHTML=d?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+ic();tb.addEventListener('click',function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}ic();});})();
+
+(function(){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var p=document.getElementById('progress');
+function os(){if(!p)return;var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;p.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}
+document.addEventListener('scroll',os,{passive:true});os();
+var tabs={};document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+var secs=document.querySelectorAll('section.rubr');
+if('IntersectionObserver' in window && secs.length){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});if(tabs[e.target.id])tabs[e.target.id].classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+secs.forEach(function(s){io.observe(s);});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.08});
+if(!rm)document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev');ro.observe(s);});}
 })();
-</script>
-</body></html>
+</script></body></html>
