@@ -1,463 +1,165 @@
 <!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
-  <meta name="supported-color-schemes" content="light dark">
-  <title>Ranní brief – 2. července 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing:border-box; }
-    body { margin:0; padding:0; }
-    img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
-    table { border-collapse:collapse; }
-    .b-body {
-      background:#ECF1F8;
-      background:linear-gradient(160deg,#E9EFFB 0%,#F3F6FB 46%,#FBEEF1 100%);
-      font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-      color:#0F172A;
-    }
-    @media (max-width:640px){
-      .email-wrapper{padding:0 !important;}
-      .b-panel{border-radius:0 !important;border-left:0 !important;border-right:0 !important;}
-      .b-topbar,.b-section,.b-footer{padding-left:16px !important;padding-right:16px !important;}
-      .b-info{width:33.33% !important;}
-      .b-h1{font-size:30px !important;}
-    }
-    @media (prefers-color-scheme:dark){
-      .b-body{background:#0F1723 !important;background:radial-gradient(circle at 18% 0%,rgba(45,120,255,.18),transparent 36%),radial-gradient(circle at 92% 8%,rgba(225,29,46,.12),transparent 32%),#0F1723 !important;color:#EEF4FB !important;}
-      .b-panel{background:#131D2B !important;border-color:rgba(255,255,255,.10) !important;}
-      .b-topbar{background:#172232 !important;border-bottom-color:rgba(255,255,255,.10) !important;}
-      .b-kicker{color:#93A3B8 !important;}
-      .b-status{color:#AFC0D4 !important;border-color:rgba(255,255,255,.16) !important;background:rgba(255,255,255,.05) !important;}
-      .b-h1{color:#F4F9FF !important;}
-      .b-date{color:#9DB0C6 !important;}
-      .b-chip{background:rgba(255,255,255,.08) !important;color:#DCE6F2 !important;}
-      .b-chip-purple{background:#EBE3FF !important;color:#6D28D9 !important;}
-      .b-info{background:#1C2A3D !important;border-color:rgba(255,255,255,.08) !important;}
-      .b-info-label{color:#9FB0C4 !important;}
-      .b-info-value{color:#F1F6FC !important;}
-      .b-info-sub{color:#A9B6C6 !important;}
-      .b-section{background:#131D2B !important;}
-      .b-sec-label{color:#E9EFF7 !important;}
-      .b-sec-sub{color:#7E8FA5 !important;}
-      .b-topic-label{color:#EEF4FB !important;}
-      .b-digest{background:linear-gradient(180deg,#223149,#19232F) !important;border-color:rgba(255,255,255,.12) !important;}
-      .b-digest-label{color:#A8B5C6 !important;}
-      .b-digest-text{color:#DCE6F2 !important;}
-      .b-ncard,.b-ncard-top{background:#1A2738 !important;border-top-color:rgba(255,255,255,.10) !important;border-right-color:rgba(255,255,255,.10) !important;border-bottom-color:rgba(255,255,255,.10) !important;border-left-color:rgba(255,255,255,.10) !important;}
-      .b-ntitle{color:#F1F6FC !important;}
-      .b-nsummary{color:#C4D0DE !important;}
-      .b-source{background:rgba(255,255,255,.07) !important;color:#C9D5E3 !important;border-color:rgba(255,255,255,.12) !important;}
-      .b-readtime{color:#7E8FA5 !important;}
-      .b-footer{color:#7F90A6 !important;background:rgba(0,0,0,.18) !important;border-top-color:rgba(255,255,255,.10) !important;}
-      .b-foot-strong{color:#CBD5E1 !important;}
-      .b-foot-sub{color:#8A98AD !important;}
-    }
-    </style>
-</head>
-<body class="b-body">
-  <div class="email-wrapper" style="max-width:640px;margin:0 auto;padding:20px 14px;">
-    <div class="b-panel" style="background:#FFFFFF;border-radius:20px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 20px 60px rgba(15,23,42,0.10);">
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — úterý 30. června 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1;
+    --card:#f3eee3; --accent:#b3271e;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
 
-      <!-- TOPBAR -->
-      <div class="b-topbar" style="padding:22px 22px 18px;background:#FFFFFF;border-bottom:1px solid #EEF1F5;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;"><tr>
-          <td align="left"><span class="b-kicker" style="font-size:11px;font-weight:900;color:#94A3B8;letter-spacing:0.16em;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Ranní brief</span></td>
-          <td align="right"><span class="b-status" style="display:inline-block;padding:5px 11px;border:1px solid #E2E8F0;border-radius:999px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:0.06em;font-family:Inter,-apple-system,sans-serif;">Aktualizováno 18:12</span></td>
-        </tr></table>
+  /* Masthead */
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; color:var(--ink); }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.14em; color:var(--muted); margin-top:3px; }
 
-        <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td valign="middle">
-            <h1 class="b-h1" style="margin:0;font-size:37px;font-weight:900;color:#0F172A;line-height:1.02;letter-spacing:-0.03em;font-family:Inter,-apple-system,sans-serif;">čtvrtek</h1>
-            <div class="b-date" style="margin-top:9px;font-size:15px;font-weight:700;color:#475569;font-family:Inter,-apple-system,sans-serif;">2. července 2026</div>
-          </td>
-          
-        </tr></table>
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.13em; padding-bottom:2px; }
 
-        <div style="text-align:left;margin-top:14px;"><span class="b-chip b-chip-purple" style="display:inline-block;margin:3px;padding:7px 13px;border-radius:999px;font-size:12px;font-weight:700;font-family:Inter,-apple-system,sans-serif;background:#EBE3FF;color:#6D28D9;">Svátek má Šárka</span><span class="b-chip" style="display:inline-block;margin:3px;padding:7px 13px;border-radius:999px;font-size:12px;font-weight:700;font-family:Inter,-apple-system,sans-serif;background:#EAEEF4;color:#334155;">Den 183/365</span></div>
-        
-        
-      </div>
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .lead { font-size:clamp(16px,2.2vw,20px); color:#2c2822; max-width:44ch; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink); }
+  .hero .heads a { display:flex; gap:14px; align-items:baseline; padding:11px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .heads a:hover { background:#fffdf8; }
+  .hero .heads a:hover .ht { color:var(--accent); }
+  .hero .heads .n { font-family:Fraunces,serif; font-weight:900; color:var(--accent);
+    font-size:15px; min-width:26px; }
+  .hero .heads .ht { font-size:15px; font-weight:600; line-height:1.35; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px;
+    color:var(--accent); text-decoration:none; }
 
-      
-      
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:40px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--muted); margin:26px 0 12px; padding-bottom:6px;
+    border-bottom:1px solid var(--line); }
 
-      <!-- ZPRÁVY -->
-      <div class="b-section" style="padding:16px 22px 8px;background:#FFFFFF;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;border-bottom:1px solid #E5E7EB;"><tr><td align="left" style="padding-bottom:8px;"><span class="b-sec-label" style="font-size:12px;font-weight:800;color:#0F172A;letter-spacing:0.06em;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Zprávy</span></td><td align="right" style="padding-bottom:8px;"><span class="b-sec-sub" style="font-size:11px;font-weight:600;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">syntéza místo zahlcení</span></td></tr></table>
-        <div style="margin-bottom:2px;"><a href="#sec-politika" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Politika</a><a href="#sec-spolecnost" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Společnost</a><a href="#sec-svet" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Svět</a><a href="#sec-ekonomika" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Ekonomika</a><a href="#sec-tech" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Tech</a><a href="#sec-marketing" class="b-tab" style="display:inline-block;margin:0 7px 7px 0;padding:8px 13px;background:#F4F7FB;color:#1D2939;font-size:12px;font-weight:800;border-radius:8px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;border:1px solid #E2E8F0;">Marketing</a></div>
-        
-        <div class="b-digest" style="margin:14px 0 16px;padding:18px 18px 17px;border-radius:16px;background:#FFFFFF;border:1px solid #E5E9F0;position:relative;overflow:hidden;">
-          <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#E11D2E,rgba(225,29,46,0.25));"></div>
-          <p class="b-digest-label" style="margin:0 0 7px 8px;font-size:10px;font-weight:800;color:#64748B;letter-spacing:0.12em;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Den v kostce</p>
-          <p class="b-digest-text" style="margin:0 0 0 8px;font-size:14.5px;font-weight:600;color:#1E293B;line-height:1.6;font-family:Inter,-apple-system,sans-serif;">Americký Nejvyšší soud zablokoval Trumpův dekret omezující porodní občanství a zároveň potvrdil zákazy účasti transgender osob ve ženském školním sportu. Počet obětí zemětřesení ve Venezuele přesáhl 1 900 a rozsah zkázy podle satelitních dat může být mnohem větší. V Česku pokračuje spor o zastoupení na summitu NATO v Ankaře, ministr spravedlnosti Tejc podal kárnou žalobu na soudkyni kvůli vydání dívky, kterou posléze zavraždil otec. Rusko čelí prohlubující se palivové krizi způsobené ukrajinskými dronovými útoky na rafinerie.</p>
-        </div>
-        
-        <div id="sec-politika" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #DC2626;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Politika</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">5 zpráv</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#DC2626;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#DC2626;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Spor o summit NATO v Ankaře: Pavel chce jednat s Babišem, situace zůstává nevyřešena</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Prezident Petr Pavel hodlá osobně projednat s premiérem Andrejem Babišem zastoupení České republiky na summitu NATO v Ankaře poté, co ministerstvo zahraničí akreditovalo prezidenta s doprovodem způsobem, který podle Pavla neodpovídá předběžnému opatření Ústavního soudu. Komentátoři situaci kritizují jako zbytečnou eskalaci.</p>
-                <div><a href="https://denikn.cz/2112262/prezident-nevi-kolik-lidi-mu-macinka-do-ankary-akreditoval-ministerstvo-to-nechce-rict/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Deník N</a> <a href="https://www.irozhlas.cz/zpravy-domov/vlada-pusobi-ze-dela-problemy-nejsem-si-jisty-jestli-z-toho-ma-babis-radost_2606301934_elev" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">iRozhlas</a> <a href="https://ct24.ceskatelevize.cz/clanek/domaci/zastoupeni-na-summitu-nato-by-melo-odpovidat-politickemu-systemu-zeme-mini-zuna-375120" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#DC2626;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Průzkum Medianu: ANO by vyhrálo volby s 35,5 %, Motoristé pod hranicí sněmovny</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Podle květnového modelu agentury Median by volby vyhrálo ANO s 35,5 procenta hlasů, následováno STAN se 14,5 procenty a ODS se 12 procenty. Motoristé jsou aktuálně pod pětiprocentní hranicí nutnou pro vstup do sněmovny.</p>
-                <div><a href="https://ct24.ceskatelevize.cz/clanek/domaci/volby-by-v-kvetnu-vyhralo-ano-motoriste-mimo-snemovnu-uvadi-median-375111" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a> <a href="https://www.seznamzpravy.cz/clanek/domaci-politika-motoriste-v-pruzkumech-padaji-uskodit-jim-muze-ankara-i-straznicky-festival-309692" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#DC2626;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Vládní zmocněnkyně pro romské záležitosti rezignovala na protest proti změnám Úřadu vlády</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Lucie Fuková se vzdala funkce vládní zmocněnkyně pro záležitosti romské menšiny poté, co Babiší podporovaná šéfka Úřadu vlády Tünde Bartha přesunula část práce úřadu na ministerstva. Fuková považuje změny za špatné pro romskou komunitu.</p>
-                <div><a href="https://zpravy.aktualne.cz/domaci/babis-ji-videl-jako-soucast-skveleho-tandemu-ona-ale-rezignovala-na-protest-kvuli-jeho-zmenam/r~aaa2963ccf4059c068dda6ff1082ee72/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Aktuálně.cz</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#DC2626;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Česko neplní většinu protikorupčních doporučení Rady Evropy</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Protikorupční skupina Rady Evropy GRECO konstatovala, že Česká republika uspokojivě splnila pouze jedno z doporučení týkajících se prevence korupce ve vrcholných výkonných funkcích a orgánech činných v trestním řízení. Zbývající doporučení plní jen částečně nebo vůbec.</p>
-                <div><a href="https://ct24.ceskatelevize.cz/clanek/domaci/cesko-neplni-vetsinu-protikorupcnich-doporuceni-tvrdi-skupina-rady-evropy-375109" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#DC2626;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Kubovo hnutí Naše Česko roste v průzkumech, spouští talentovou soutěž pro mladé politiky</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Hnutí Naše Česko jihočeského hejtmana Martina Kuby se podle agentury Median blíží ke vstupu do sněmovny, zároveň jako první politický subjekt objednalo specializovaný program na hledání talentovaných mladých lidí do politiky do 35 let.</p>
-                <div><a href="https://domaci.hn.cz/c1-67898830-kubovu-hnuti-rostou-preference-ale-politickou-hvezdu-zatim-neulovil-a-tak-spustil-talentovou-soutez" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Hospodářské noviny</a> <a href="https://www.e15.cz/domaci/politika/v-politice-zavadi-metody-z-byznysu-hejtman-kuba-hleda-mlade-politiky-prekvapivym-zpusobem-1433966" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">E15</a></div>
-              </div>
-            </div>
-        </div>
-        <div id="sec-spolecnost" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #2563EB;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Společnost</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">5 zpráv</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#2563EB;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#2563EB;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Tejc podal kárnou žalobu na soudkyni, která svěřila dívku otci, jenž ji pak zavraždil</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Ministr spravedlnosti Jeroným Tejc podal kárnou žalobu na soudkyni, jež loni v říjnu předala tříletou dívku do péče drogově závislého otce navzdory informacím o jeho závislosti. Otec dívku v březnu tohoto roku zavraždil.</p>
-                <div><a href="https://zpravy.aktualne.cz/domaci/tejc-podal-karnou-zalobu-na-soudkyni-otci-sverila-divku-kterou-pote-zavrazdil/r~aaa29166106f86d1736be554b89b91e6/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Aktuálně.cz</a> <a href="https://www.novinky.cz/clanek/krimi-tejc-podal-karnou-zalobu-na-soudkyni-kvuli-vydani-divky-jiz-pak-zavrazdil-otec-40585973" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Novinky.cz</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#2563EB;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Od července si pacienti mohou vyzvednout přes 1 200 nových léků u praktických lékařů</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Ministr zdravotnictví oznámil, že od 1. července budou praktičtí lékaři moci předepisovat více než 1 200 léků, na něž dosud museli pacienti docházet k ambulantním specialistům. Jde přibližně o osminu veškerých léčiv předepisovaných v ordinacích.</p>
-                <div><a href="https://ct24.ceskatelevize.cz/clanek/domaci/lide-se-od-cervence-dostanou-k-vice-nez-1200-novym-lekum-u-praktiku-375103" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#2563EB;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Sněmovna projednává zvýšení rodičovského příspěvku na 400 tisíc korun</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Dolní komora parlamentu se chystá ve třetím čtení schválit navýšení rodičovského příspěvku od příštího roku o 50 tisíc na 400 tisíc korun, u dvojčat a vícerčat pak ze 700 tisíc na 800 tisíc korun. Opoziční poslanci navrhli i valorizační mechanismus.</p>
-                <div><a href="https://ct24.ceskatelevize.cz/clanek/domaci/snemovna-zacala-opet-jednat-chce-resit-napriklad-rust-rodicovskeho-prispevku-375101" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#2563EB;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Litevská armáda vyšetřuje korupční skandál: stovky lidí platily za vyhnutí se povinné vojně</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">V Litvě probíhá rozsáhlé vyšetřování korupce v armádě, při níž stovky osob podplácely úředníky, aby se vyhnuly povinné vojenské službě. Výše úplatků se pohybovala od 50 do 600 eur.</p>
-                <div><a href="https://www.novinky.cz/clanek/zahranicni-evropa-obri-korupcni-skandal-v-litevske-armade-stovky-lidi-se-za-uplatu-vyhnuly-povinne-vojne-40585933" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Novinky.cz</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#2563EB;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Francouzské Národní shromáždění schválilo zákon o asistované smrti navzdory odmítnutí Senátem</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Dolní komora francouzského parlamentu přijala kontroverzní zákon o asistovaném umírání poté, co jej Senát zamítl. Zákon vyvolává ve francouzské společnosti i katolické církvi značné spory.</p>
-                <div><a href="http://www.euronews.com/health/2026/06/30/frances-national-assembly-approves-assisted-dying-bill-after-senate-rejection" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Euronews</a></div>
-              </div>
-            </div>
-        </div>
-        <div id="sec-svet" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #7C3AED;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Svět</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">10 zpráv</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#7C3AED;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#7C3AED;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Nejvyšší soud USA zablokoval Trumpův dekret o porodním občanství</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Americký Nejvyšší soud zamítl Trumpův výkonný dekret, který měl omezit automatické udělování občanství dětem narozeným v USA rodičům bez trvalého pobytu. Rozhodnutí potvrdilo verdikty nižších soudů a označilo dekret za protiústavní.</p>
-                <div><a href="https://www.seznamzpravy.cz/clanek/zahranicni-nejvyssi-soud-odmitl-trumpovu-snahu-omezit-zisk-obcanstvi-detem-narozenym-v-usa-309748" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a> <a href="https://www.novinky.cz/clanek/zahranicni-amerika-nejvyssi-soud-zatrhnul-trumpovi-snahu-omezit-ziskani-obcanstvi-detem-narozenym-v-usa-40585951" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Novinky.cz</a> <a href="https://ct24.ceskatelevize.cz/clanek/svet/soud-odmitl-trumpovu-snahu-omezit-udelovani-obcanstvi-detem-narozenym-v-usa-375117" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a> <a href="https://www.bbc.co.uk/news/videos/c9w2nprzq5ro?at_medium=RSS&at_campaign=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">BBC World</a> <a href="http://www.euronews.com/2026/06/30/supreme-court-strikes-down-trumps-executive-order-restricting-birthright-citizenship" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Euronews</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Nejvyšší soud USA potvrdil zákaz účasti transgender žen ve ženském školním sportu</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Soud rozhodl, že jednotlivé státy mohou zakazovat transgender osobám účast v dívčích a ženských školních sportovních týmech. Trump verdikt označil za velké vítězství, LGBT organizace jej naopak označily za zdrcující.</p>
-                <div><a href="https://www.bbc.co.uk/news/articles/cj40x888d9go?at_medium=RSS&at_campaign=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">BBC World</a> <a href="https://www.seznamzpravy.cz/clanek/zahranicni-nejvyssi-soud-usa-potvrdil-zakaz-ucasti-transgenderovych-osob-v-zenskych-tymech-309747" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Počet obětí zemětřesení ve Venezuele přesáhl 1 900, satelity odhalují rozsah zkázy</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Počet mrtvých po ničivém zemětřesení ve Venezuele vzrostl na nejméně 1 943, přičemž OSN varuje před kolapsem zdravotní infrastruktury. Satelitní analýzy naznačují, že mohlo být poškozeno nebo zničeno více než 58 000 budov, skutečný počet obětí tak může být výrazně vyšší.</p>
-                <div><a href="https://www.seznamzpravy.cz/clanek/zahranicni-pocet-obeti-zemetreseni-ve-venezuele-vzrostl-na-nejmene-1943-lidi-309757" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a> <a href="https://ct24.ceskatelevize.cz/clanek/svet/v-caracasu-vyprostili-z-trosek-sest-dni-po-zemetreseni-ziveho-chlapce-375122" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a> <a href="https://www.wired.com/story/satellite-images-damage-caused-by-venezuela-earthquakes/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Wired</a> <a href="https://www.theguardian.com/world/2026/jun/30/tonnes-and-tonnes-of-rubble-more-than-58000-buildings-estimated-to-have-been-destroyed-in-venezuela-earthquakes" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">The Guardian</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Rusko prohlubuje palivovou krizi, Kreml poprvé připustil dovoz benzinu</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Ukrajinské dronové útoky na ruské rafinerie způsobují vážný nedostatek pohonných hmot, u čerpacích stanic se čeká až 18 hodin. Průzkum Gallupova ústavu ukázal nejhorší ekonomické nálady Rusů za nejméně dvacet let a Kreml poprvé připustil nutnost dovozu benzinu ze zahraničí.</p>
-                <div><a href="https://www.aljazeera.com/video/newsfeed/2026/6/30/russias-fuel-crisis-deepens-following-ukrainian-drone-strikes?traffic_source=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Al Jazeera</a> <a href="https://www.politico.eu/article/russia-import-gasoline-ukraine-strikes-fuel-shortage/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Politico Europe</a> <a href="https://www.e15.cz/zahranicni/geopolitika/paradox-valky-kreml-poprve-pripustil-dovoz-benzinu-indie-mezitim-bori-rekordy-v-nakupu-ruske-ropy-1433972" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">E15</a> <a href="https://www.e15.cz/zahranicni/geopolitika/spatny-signal-pro-kreml-nejde-jenom-o-nedostatek-benzinu-krize-je-hlubsi-1433970" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">E15</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Protesty proti migrantům v Jižní Africe: bezpečnostní složky zasahovaly v den ultimáta</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Jihoafrické úřady nasadily policii poté, co kampaňové skupiny stanovily 30. června jako ultimátum pro odchod nezdokumentovaných migrantů ze země. Tisíce demonstrantů pochodovaly Durbanem, vláda se obávala opakování násilností z roku 2008, při nichž zahynulo 62 lidí.</p>
-                <div><a href="https://www.aljazeera.com/video/newsfeed/2026/6/30/what-happened-on-south-africas-anti-migrant-deadline?traffic_source=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Al Jazeera</a> <a href="https://www.theguardian.com/world/2026/jun/30/south-africa-police-anti-immigrant-protests" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">The Guardian</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Bombový útok v Monaku zranil tři lidi včetně dítěte, pachatel uprchl</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">V Monaku explodoval zásilkový balíček obsahující výbušninu se šrouby a broky, při výbuchu byli vážně zraněni tři lidé. Médii je útok spojován s ukrajinským oligarchou, policie zahájila pátrání po pachateli.</p>
-                <div><a href="https://www.bbc.co.uk/news/articles/cpv37wx03v7o?at_medium=RSS&at_campaign=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">BBC World</a> <a href="https://www.nytimes.com/2026/06/30/world/europe/monaco-parcel-bomb-explosion.html" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">NY Times World</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Razie v zemích EU kvůli zneužití 105 milionů eur frakcí ID v Evropském parlamentu</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Evropský úřad veřejného žalobce koordinoval policejní prohlídky ve Francii, Španělsku, Itálii a Belgii v souvislosti s podezřením ze zpronevěry fondů EU členy zaniklé frakce Identita a demokracie. Do frakce patřila i česká SPD.</p>
-                <div><a href="https://www.irozhlas.cz/zpravy-svet/policie-podnika-razie-v-zemich-eu-cleny-frakce-k-niz-patrila-i-ceska-spd_2606302152_dns" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">iRozhlas</a> <a href="https://www.seznamzpravy.cz/clanek/zahranicni-policie-podnika-razie-kvuli-udajnemu-zneuziti-penez-eu-parlamentni-frakci-id-309759" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a> <a href="http://www.euronews.com/my-europe/2026/06/30/prosecutors-conduct-europe-wide-raids-over-alleged-misuse-of-funds-by-defunct-far-right-eu" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Euronews</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Británie vydá dalších 15 miliard liber na obranu, Starmer krátí ostatní rozpočty</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Britský premiér Keir Starmer zveřejnil plán obranných investic, podle nějž bude na vybavení ozbrojených sil v nadcházejících letech vynaloženo 15 miliard liber. Peníze mají pocházet ze škrtů v jiných vládních oblastech.</p>
-                <div><a href="https://www.bbc.co.uk/news/articles/cwy0rw5dx1ko?at_medium=RSS&at_campaign=rss" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">BBC Top News</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Maďarský premiér Magyar obvinil Orbána ze zatajování výše rozpočtového schodku</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Nový maďarský premiér Péter Magyar prohlásil, že Orbánova vláda zatajovala skutečnou výši deficitu státního rozpočtu, který by letos mohl přesáhnout osm procent HDP. Orbánem deklarovaný cíl přitom byl méně než čtyři procenta.</p>
-                <div><a href="https://ct24.ceskatelevize.cz/clanek/svet/orban-zatajil-realnou-vysi-deficitu-rozpoctu-prohlasil-magyar-375108" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">ČT24</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#7C3AED;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Polsko a Ukrajina se hádají o stíhačky: Varšava tvrdí, že Kyjev odstoupil od dohody MiGy za drony</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Polský ministr obrany prohlásil, že Ukrajina couvla od dohody, podle níž mělo Polsko dodat stíhačky MiG výměnou za drony. Vztahy obou zemí jsou podle médií v nejhorším stavu za poslední léta, Polsko navíc pohrozilo vetem ukrajinského vstupu do EU.</p>
-                <div><a href="http://www.euronews.com/my-europe/2026/06/30/no-migs-for-ukraine-polish-defence-minister-claims-kyiv-backed-out-of-deal-with-warsaw" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Euronews</a></div>
-              </div>
-            </div>
-        </div>
-        <div id="sec-ekonomika" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #EA580C;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Ekonomika</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">6 zpráv</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#EA580C;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#EA580C;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Prezident Pavel jednal se šéfem ČEZ o rozdělení firmy a budoucnosti energetiky</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Prezident Petr Pavel přijal generálního ředitele ČEZ Daniela Beneše a diskutovali o možných změnách vlastnické struktury energetického giganta i o dalších aktuálních tématech české energetiky. Beneš po schůzce uvedl, že diskuze neměla žádnou kontroverzi.</p>
-                <div><a href="https://www.seznamzpravy.cz/clanek/ekonomika-pavel-jednal-se-sefem-cez-benesem-o-deni-v-energetice-mluvili-i-o-rozdeleni-cez-309750" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a> <a href="https://www.e15.cz/byznys/prumysl-a-energetika/prezident-se-sesel-se-sefem-cez-na-stole-bylo-jadro-i-zestatneni-energetickeho-gigantu-1433976" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">E15</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#EA580C;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">ČNB zvýšila sazby navzdory Babišovým výzvám k jejich snížení</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Česká národní banka přistoupila ke zvýšení úrokových sazeb, čímž překvapila premiéra Andreje Babiše, který opakovaně volal po jejich snížení. Ekonomové upozorňují, že veřejné volání premiéra po levnějším financování mohlo paradoxně přispět k opačnému rozhodnutí bankovní rady.</p>
-                <div><a href="https://cc.cz/premier-mohl-svym-volanim-po-nizsich-sazbach-paradoxne-prispet-k-jejich-zvyseni-jak-je-to-mozne/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">CzechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#EA580C;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">V EU začíná platit nové paušální clo tři eura na zásilky z Číny</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Od 30. června musí obchodníci ze třetích zemí platit za každou zásilku doručenou do EU paušální clo ve výši tří eur, což se již projevilo zdražením zboží na čínských online tržištích. Opatření má ochránit evropské prodejce před neférovými cenovými podmínkami.</p>
-                <div><a href="https://archiv.hn.cz/c1-67898930-zacina-platit-nove-clo-na-balicky-z-ciny-proc-ho-evropa-zavadi-a-jak-na-vas-dopadne" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Hospodářské noviny</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#EA580C;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Tesla v Česku loni prodala o 47 % méně aut, Škoda ji předběhla na trhu elektromobilů</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Tržby Tesly v Česku klesly z pěti miliard na 2,3 miliardy korun, přičemž podíl na trhu elektromobilů se propadl na 14 procent. Na pozici lídra ji v segmentu elektromobilů nahradila Škoda.</p>
-                <div><a href="https://cc.cz/tesla-v-cesku-narazila-trzby-ji-z-peti-miliard-spadly-na-pulku-a-mezi-elektromobily-ji-predbehla-skoda/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">CzechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#EA580C;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Slovensko spouští čtvrtý blok Mochovců, do reaktoru míří ruské palivo</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Na Slovensku bylo zahájeno zavážení paliva do čtvrtého bloku jaderné elektrárny Mochovce, celkové náklady na dostavbu obou nových reaktorů dosáhly sedmi miliard eur. Po spuštění se Slovensko stane významným vývozcem elektřiny.</p>
-                <div><a href="https://vtm.zive.cz/clanky/na-slovensku-chystaji-spusteni-ctvrteho-bloku-jaderne-elektrarny-mochovce-zacalo-zavazeni-ruskeho-paliva/sc-870-a-241992/default.aspx" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Živě</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#EA580C;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Euforie kolem evropských zbrojovek opadá po zrušení německého programu fregat</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Německá vláda zrušila objednávku fregat F126, což vyvolalo propad akcií zbrojovky Rheinmetall a obnovilo pochybnosti investorů o tom, zda zvyšující se obranné výdaje skutečně přinesou skokový růst zisků zbrojního průmyslu.</p>
-                <div><a href="https://www.e15.cz/byznys/obrana-a-zbrojni-prumysl/euforie-kolem-zbrojovek-konci-stacilo-jedno-rozhodnuti-nemecke-vlady-1433957" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">E15</a></div>
-              </div>
-            </div>
-        </div>
-        <div id="sec-tech" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #0D9488;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Tech</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">6 zpráv</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#0D9488;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#0D9488;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Realta Fusion jako první firma přímo vyrobila elektřinu z jaderné fúze</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Americký startup Realta Fusion dosáhl přelomového milníku a jako zřejmě první na světě přímo vyrobil elektřinu z fúzní reakce plazmatu. Spoluzakladatel firmy Kieran Furlong označil úspěch za důkaz toho, co je v oblasti komerční fúze možné.</p>
-                <div><a href="https://techcrunch.com/2026/06/30/realta-fusion-generates-electricity-directly-from-a-fusion-reaction-an-apparent-first/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">TechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#0D9488;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Anthropic vydal Claude Sonnet 5 jako levnější model pro AI agenty</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Nový model Claude Sonnet 5 od Anthropicu přináší silnější agentní schopnosti a nižší cenu oproti předchozím verzím, čímž míří jako levná alternativa ke GPT-5.5 a Gemini Pro. Anthropic zároveň spustil platformu Claude Science pro vědecké pracovní postupy.</p>
-                <div><a href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">TechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#0D9488;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Tesla začala v Austinu testovat Cybercab bez volantu a pedálů</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Tesla zahájila veřejné testování autonomního vozidla Cybercab bez volantu ani pedálů na silnicích v Austinu v Texasu. Jde o první konkrétní krok k naplnění Muskova dlouholetého slibu o spuštění vlastní sítě robotaxi.</p>
-                <div><a href="https://techcrunch.com/2026/06/30/tesla-starts-testing-cybercab-without-pedals-or-a-steering-wheel-in-austin/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">TechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#0D9488;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Konkurent Nvidie Etched dosáhl ocenění 5 miliard dolarů a miliardových tržeb z AI čipů</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Startup Etched, vyvíjející AI čipy pro inferenci jako alternativu k Nvidii, oznámil, že má pod smlouvou zakázky v hodnotě jedné miliardy dolarů a dosáhl ocenění pět miliard dolarů. Firma se soustředí na zákazníky, kteří potřebují provozovat velké jazykové modely.</p>
-                <div><a href="https://techcrunch.com/2026/06/30/nvidia-competitor-etched-hits-5b-valuation-1b-in-sales-for-ai-chip/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">TechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#0D9488;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Microsoft zvažuje zrušení hry Blade a uzavření studia Arkane</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Podle zdrojů blízkých Microsoftu chystá Xbox příští týden vlnu propouštění, která povede k uzavření nebo prodeji několika studií a zrušení her, mimo jiné hry Blade a možnému uzavření Arkane Studios. Chystají se také fúze některých vývojářských týmů.</p>
-                <div><a href="https://www.theverge.com/report/959467/microsoft-xbox-cancel-blade-game-arkane-studios-closure" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">The Verge</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#0D9488;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">USA nabízí 10 milionů dolarů za informace o ruských hackerech útočících na Signal a WhatsApp</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Americká vláda vypsala odměnu deset milionů dolarů za informace vedoucí k identifikaci skupin napojených na ruský stát, které od března 2026 provádějí hackování aplikací Signal a WhatsApp. Operace zasáhla řadu cílů na Západě.</p>
-                <div><a href="https://arstechnica.com/information-technology/2026/06/us-offers-10-million-for-info-on-group-behind-signal-and-whatsapp-hacking-spree/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Ars Technica</a></div>
-              </div>
-            </div>
-        </div>
-        <div id="sec-marketing" style="margin-bottom:22px;scroll-margin-top:16px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
-            <tr>
-              <td style="padding-bottom:7px;border-bottom:2px solid #65A30D;">
-                <span class="b-topic-label" style="font-size:13px;font-weight:800;color:#0F172A;font-family:Inter,-apple-system,sans-serif;">Marketing</span>
-                <span style="margin-left:8px;font-size:11px;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">3 zprávy</span>
-              </td>
-            </tr>
-          </table>
-          
-            <div class="b-ncard b-ncard-top" style="margin-bottom:12px;background:#FFFFFF;border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 6px 18px rgba(15,23,42,0.05);">
-              <div style="height:3px;background:#65A30D;"></div>
-              <div style="padding:18px 20px 16px;">
-                <p class="b-eyebrow" style="margin:0 0 5px 0;font-size:10px;font-weight:800;color:#65A30D;letter-spacing:1px;text-transform:uppercase;font-family:Inter,-apple-system,sans-serif;">Hlavní zpráva</p>
-                <p class="b-ntitle" style="margin:0 0 9px 0;font-size:18px;font-weight:800;color:#0F172A;line-height:1.25;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Do Česka letos vstoupilo 16 nových gastronomických značek, téměř všechny volí Prahu</p>
-                <p class="b-nsummary" style="margin:0 0 14px 0;font-size:14px;color:#475569;line-height:1.65;font-family:Inter,-apple-system,sans-serif;">Zahraniční restaurační řetězce a gastronomické značky pokračují v expanzi na český trh, přičemž Praha je pro drtivou většinu z nich první zastávkou. Mezi novinkami jsou i značky z Rumunska, Polska a Ukrajiny.</p>
-                <div><a href="https://byznys.hn.cz/c1-67898780-expanze-gastronomickych-retezcu-pokracuje-do-ceska-letos-prislo-16-novych-znacek-az-na-dve-vyjimky-voli-prahu" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Hospodářské noviny</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#65A30D;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Fortuna vozí fanoušky MS po Praze v newyorském taxíku a natáčí obsah na YouTube</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Sázková společnost Fortuna spustila v době fotbalového šampionátu marketingovou kampaň s legendárním žlutým newyorským taxíkem v pražských ulicích, ve kterém s celebri­tami natáčí videa pro YouTube. Firma letos očekává rekordní objem sázek.</p>
-                <div><a href="https://cc.cz/fanousky-fotbalu-vozi-po-praze-legendarni-newyorsky-taxik-zname-osobnosti-v-nem-nataceji-videa-na-youtube/" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">CzechCrunch</a></div>
-              </div>
-            </div>
-            <div class="b-ncard" style="margin-bottom:8px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EEF1F5;">
-              <div style="height:2px;background:#65A30D;"></div>
-              <div style="padding:12px 16px 11px;">
-                <p class="b-ntitle" style="margin:0 0 5px 0;font-size:14px;font-weight:700;color:#1E293B;line-height:1.35;font-family:Inter,-apple-system,sans-serif;">Český masný průmysl dosáhl v Bruselu dílčího vítězství: rostlinné produkty ztratí masová jména</p>
-                <p class="b-nsummary" style="margin:0 0 9px 0;font-size:12.5px;color:#64748B;line-height:1.55;font-family:Inter,-apple-system,sans-serif;">Evropská unie schválila méně striktní variantu nařízení zakazujícího rostlinným potravinám používat názvy odkazující na maso, jako jsou veganský burger či sójový řízek. Zákaz v EU prosazoval český ministr zemědělství Marek Výborný.</p>
-                <div><a href="https://www.seznamzpravy.cz/clanek/ekonomika-byznys-trendy-analyzy-cesky-masny-prumysl-uspel-jen-napul-vegansky-kureci-burger-zmizi-309744" class="b-source" style="display:inline-block;margin:2px 6px 2px 0;padding:5px 10px;background:#F1F5F9;color:#334155;font-size:11px;border-radius:6px;text-decoration:none;font-family:Inter,-apple-system,sans-serif;font-weight:600;border:1px solid #E2E8F0;">Seznam Zprávy</a></div>
-              </div>
-            </div>
-        </div>
-      </div>
+  /* Archiv grid – barevné karty se zvýrazněným obvodem */
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px;
+    background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink);
+    box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; color:var(--ink); }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
 
-      <!-- FOOTER -->
-      <div class="b-footer" style="padding:20px 22px 24px;border-top:1px solid #EEF1F5;text-align:center;background:#FBFCFE;">
-        <p class="b-foot-strong" style="margin:0 0 5px 0;font-size:13px;font-weight:800;color:#334155;letter-spacing:-0.01em;font-family:Inter,-apple-system,sans-serif;">Osobní ranní brief</p>
-        <p class="b-foot-sub" style="margin:0 0 12px 0;font-size:11px;font-weight:600;color:#94A3B8;line-height:1.5;font-family:Inter,-apple-system,sans-serif;">Krátký přehled, denní kontext a jen zprávy, které mají smysl řešit.</p>
-        <p class="b-foot-sub" style="margin:0;font-size:11px;font-weight:600;color:#94A3B8;font-family:Inter,-apple-system,sans-serif;">Vygenerováno 18:12 &middot; 214 zdrojů &middot; <a href="https://zichmichal.cz" target="_blank" style="color:#2563EB;text-decoration:none;font-weight:800;">zichmichal.cz</a></p>
-      </div>
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
 
-    </div>
-  </div>
-</body>
-</html>
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800;
+    text-transform:uppercase; letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(17px,2.4vw,21px); color:#2c2822; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:18px 0 6px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:16px 18px; margin:26px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:19px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  .rubr { margin:34px 0 0; }
+  .rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:16px; }
+  .story { padding:16px 0; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,28px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="wx">Brno&nbsp;·&nbsp;🌦️&nbsp;35°&nbsp;/&nbsp;21°</div><div class="sub">úterý 30. června 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">úterý 30. června 2026</h1>
+<p class="standfirst">Americký Nejvyšší soud zablokoval Trumpův dekret omezující porodní občanství a zároveň potvrdil zákazy účasti transgender osob ve ženském školním sportu. Počet obětí zemětřesení ve Venezuele přesáhl 1 900 a rozsah zkázy podle satelitních dat může být mnohem větší. V Česku pokračuje spor o zastoupení na summitu NATO v Ankaře, ministr spravedlnosti Tejc podal kárnou žalobu na soudkyni kvůli vydání dívky, kterou posléze zavraždil otec. Rusko čelí prohlubující se palivové krizi způsobené ukrajinskými dronovými útoky na rafinerie.</p>
+<section class="rubr"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead"><h2>Spor o summit NATO v Ankaře: Pavel chce jednat s Babišem, situace zůstává nevyřešena</h2><p>Prezident Petr Pavel hodlá osobně projednat s premiérem Andrejem Babišem zastoupení České republiky na summitu NATO v Ankaře poté, co ministerstvo zahraničí akreditovalo prezidenta s doprovodem způsobem, který podle Pavla neodpovídá předběžnému opatření Ústavního soudu. Komentátoři situaci kritizují jako zbytečnou eskalaci.</p><div class="srcs"><a href="https://denikn.cz/2112262/prezident-nevi-kolik-lidi-mu-macinka-do-ankary-akreditoval-ministerstvo-to-nechce-rict/" target="_blank" rel="noopener">Deník N</a><a href="https://www.irozhlas.cz/zpravy-domov/vlada-pusobi-ze-dela-problemy-nejsem-si-jisty-jestli-z-toho-ma-babis-radost_2606301934_elev" target="_blank" rel="noopener">iRozhlas</a><a href="https://ct24.ceskatelevize.cz/clanek/domaci/zastoupeni-na-summitu-nato-by-melo-odpovidat-politickemu-systemu-zeme-mini-zuna-375120" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story"><h2>Průzkum Medianu: ANO by vyhrálo volby s 35,5 %, Motoristé pod hranicí sněmovny</h2><p>Podle květnového modelu agentury Median by volby vyhrálo ANO s 35,5 procenta hlasů, následováno STAN se 14,5 procenty a ODS se 12 procenty. Motoristé jsou aktuálně pod pětiprocentní hranicí nutnou pro vstup do sněmovny.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/volby-by-v-kvetnu-vyhralo-ano-motoriste-mimo-snemovnu-uvadi-median-375111" target="_blank" rel="noopener">ČT24</a><a href="https://www.seznamzpravy.cz/clanek/domaci-politika-motoriste-v-pruzkumech-padaji-uskodit-jim-muze-ankara-i-straznicky-festival-309692" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story"><h2>Vládní zmocněnkyně pro romské záležitosti rezignovala na protest proti změnám Úřadu vlády</h2><p>Lucie Fuková se vzdala funkce vládní zmocněnkyně pro záležitosti romské menšiny poté, co Babiší podporovaná šéfka Úřadu vlády Tünde Bartha přesunula část práce úřadu na ministerstva. Fuková považuje změny za špatné pro romskou komunitu.</p><div class="srcs"><a href="https://zpravy.aktualne.cz/domaci/babis-ji-videl-jako-soucast-skveleho-tandemu-ona-ale-rezignovala-na-protest-kvuli-jeho-zmenam/r~aaa2963ccf4059c068dda6ff1082ee72/" target="_blank" rel="noopener">Aktuálně.cz</a></div></div>
+<div class="story"><h2>Česko neplní většinu protikorupčních doporučení Rady Evropy</h2><p>Protikorupční skupina Rady Evropy GRECO konstatovala, že Česká republika uspokojivě splnila pouze jedno z doporučení týkajících se prevence korupce ve vrcholných výkonných funkcích a orgánech činných v trestním řízení. Zbývající doporučení plní jen částečně nebo vůbec.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/cesko-neplni-vetsinu-protikorupcnich-doporuceni-tvrdi-skupina-rady-evropy-375109" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story"><h2>Kubovo hnutí Naše Česko roste v průzkumech, spouští talentovou soutěž pro mladé politiky</h2><p>Hnutí Naše Česko jihočeského hejtmana Martina Kuby se podle agentury Median blíží ke vstupu do sněmovny, zároveň jako první politický subjekt objednalo specializovaný program na hledání talentovaných mladých lidí do politiky do 35 let.</p><div class="srcs"><a href="https://domaci.hn.cz/c1-67898830-kubovu-hnuti-rostou-preference-ale-politickou-hvezdu-zatim-neulovil-a-tak-spustil-talentovou-soutez" target="_blank" rel="noopener">Hospodářské noviny</a><a href="https://www.e15.cz/domaci/politika/v-politice-zavadi-metody-z-byznysu-hejtman-kuba-hleda-mlade-politiky-prekvapivym-zpusobem-1433966" target="_blank" rel="noopener">E15</a></div></div>
+</section>
+<section class="rubr"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead"><h2>Tejc podal kárnou žalobu na soudkyni, která svěřila dívku otci, jenž ji pak zavraždil</h2><p>Ministr spravedlnosti Jeroným Tejc podal kárnou žalobu na soudkyni, jež loni v říjnu předala tříletou dívku do péče drogově závislého otce navzdory informacím o jeho závislosti. Otec dívku v březnu tohoto roku zavraždil.</p><div class="srcs"><a href="https://zpravy.aktualne.cz/domaci/tejc-podal-karnou-zalobu-na-soudkyni-otci-sverila-divku-kterou-pote-zavrazdil/r~aaa29166106f86d1736be554b89b91e6/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://www.novinky.cz/clanek/krimi-tejc-podal-karnou-zalobu-na-soudkyni-kvuli-vydani-divky-jiz-pak-zavrazdil-otec-40585973" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+<div class="story"><h2>Od července si pacienti mohou vyzvednout přes 1 200 nových léků u praktických lékařů</h2><p>Ministr zdravotnictví oznámil, že od 1. července budou praktičtí lékaři moci předepisovat více než 1 200 léků, na něž dosud museli pacienti docházet k ambulantním specialistům. Jde přibližně o osminu veškerých léčiv předepisovaných v ordinacích.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/lide-se-od-cervence-dostanou-k-vice-nez-1200-novym-lekum-u-praktiku-375103" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story"><h2>Sněmovna projednává zvýšení rodičovského příspěvku na 400 tisíc korun</h2><p>Dolní komora parlamentu se chystá ve třetím čtení schválit navýšení rodičovského příspěvku od příštího roku o 50 tisíc na 400 tisíc korun, u dvojčat a vícerčat pak ze 700 tisíc na 800 tisíc korun. Opoziční poslanci navrhli i valorizační mechanismus.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/snemovna-zacala-opet-jednat-chce-resit-napriklad-rust-rodicovskeho-prispevku-375101" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story"><h2>Litevská armáda vyšetřuje korupční skandál: stovky lidí platily za vyhnutí se povinné vojně</h2><p>V Litvě probíhá rozsáhlé vyšetřování korupce v armádě, při níž stovky osob podplácely úředníky, aby se vyhnuly povinné vojenské službě. Výše úplatků se pohybovala od 50 do 600 eur.</p><div class="srcs"><a href="https://www.novinky.cz/clanek/zahranicni-evropa-obri-korupcni-skandal-v-litevske-armade-stovky-lidi-se-za-uplatu-vyhnuly-povinne-vojne-40585933" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+<div class="story"><h2>Francouzské Národní shromáždění schválilo zákon o asistované smrti navzdory odmítnutí Senátem</h2><p>Dolní komora francouzského parlamentu přijala kontroverzní zákon o asistovaném umírání poté, co jej Senát zamítl. Zákon vyvolává ve francouzské společnosti i katolické církvi značné spory.</p><div class="srcs"><a href="http://www.euronews.com/health/2026/06/30/frances-national-assembly-approves-assisted-dying-bill-after-senate-rejection" target="_blank" rel="noopener">Euronews</a></div></div>
+</section>
+<section class="rubr"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead"><h2>Nejvyšší soud USA zablokoval Trumpův dekret o porodním občanství</h2><p>Americký Nejvyšší soud zamítl Trumpův výkonný dekret, který měl omezit automatické udělování občanství dětem narozeným v USA rodičům bez trvalého pobytu. Rozhodnutí potvrdilo verdikty nižších soudů a označilo dekret za protiústavní.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-nejvyssi-soud-odmitl-trumpovu-snahu-omezit-zisk-obcanstvi-detem-narozenym-v-usa-309748" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.novinky.cz/clanek/zahranicni-amerika-nejvyssi-soud-zatrhnul-trumpovi-snahu-omezit-ziskani-obcanstvi-detem-narozenym-v-usa-40585951" target="_blank" rel="noopener">Novinky.cz</a><a href="https://ct24.ceskatelevize.cz/clanek/svet/soud-odmitl-trumpovu-snahu-omezit-udelovani-obcanstvi-detem-narozenym-v-usa-375117" target="_blank" rel="noopener">ČT24</a><a href="https://www.bbc.co.uk/news/videos/c9w2nprzq5ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="http://www.euronews.com/2026/06/30/supreme-court-strikes-down-trumps-executive-order-restricting-birthright-citizenship" target="_blank" rel="noopener">Euronews</a></div></div>
+<div class="story"><h2>Nejvyšší soud USA potvrdil zákaz účasti transgender žen ve ženském školním sportu</h2><p>Soud rozhodl, že jednotlivé státy mohou zakazovat transgender osobám účast v dívčích a ženských školních sportovních týmech. Trump verdikt označil za velké vítězství, LGBT organizace jej naopak označily za zdrcující.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cj40x888d9go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.seznamzpravy.cz/clanek/zahranicni-nejvyssi-soud-usa-potvrdil-zakaz-ucasti-transgenderovych-osob-v-zenskych-tymech-309747" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story"><h2>Počet obětí zemětřesení ve Venezuele přesáhl 1 900, satelity odhalují rozsah zkázy</h2><p>Počet mrtvých po ničivém zemětřesení ve Venezuele vzrostl na nejméně 1 943, přičemž OSN varuje před kolapsem zdravotní infrastruktury. Satelitní analýzy naznačují, že mohlo být poškozeno nebo zničeno více než 58 000 budov, skutečný počet obětí tak může být výrazně vyšší.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-pocet-obeti-zemetreseni-ve-venezuele-vzrostl-na-nejmene-1943-lidi-309757" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://ct24.ceskatelevize.cz/clanek/svet/v-caracasu-vyprostili-z-trosek-sest-dni-po-zemetreseni-ziveho-chlapce-375122" target="_blank" rel="noopener">ČT24</a><a href="https://www.wired.com/story/satellite-images-damage-caused-by-venezuela-earthquakes/" target="_blank" rel="noopener">Wired</a><a href="https://www.theguardian.com/world/2026/jun/30/tonnes-and-tonnes-of-rubble-more-than-58000-buildings-estimated-to-have-been-destroyed-in-venezuela-earthquakes" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story"><h2>Rusko prohlubuje palivovou krizi, Kreml poprvé připustil dovoz benzinu</h2><p>Ukrajinské dronové útoky na ruské rafinerie způsobují vážný nedostatek pohonných hmot, u čerpacích stanic se čeká až 18 hodin. Průzkum Gallupova ústavu ukázal nejhorší ekonomické nálady Rusů za nejméně dvacet let a Kreml poprvé připustil nutnost dovozu benzinu ze zahraničí.</p><div class="srcs"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/30/russias-fuel-crisis-deepens-following-ukrainian-drone-strikes?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.politico.eu/article/russia-import-gasoline-ukraine-strikes-fuel-shortage/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico Europe</a><a href="https://www.e15.cz/zahranicni/geopolitika/paradox-valky-kreml-poprve-pripustil-dovoz-benzinu-indie-mezitim-bori-rekordy-v-nakupu-ruske-ropy-1433972" target="_blank" rel="noopener">E15</a><a href="https://www.e15.cz/zahranicni/geopolitika/spatny-signal-pro-kreml-nejde-jenom-o-nedostatek-benzinu-krize-je-hlubsi-1433970" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story"><h2>Protesty proti migrantům v Jižní Africe: bezpečnostní složky zasahovaly v den ultimáta</h2><p>Jihoafrické úřady nasadily policii poté, co kampaňové skupiny stanovily 30. června jako ultimátum pro odchod nezdokumentovaných migrantů ze země. Tisíce demonstrantů pochodovaly Durbanem, vláda se obávala opakování násilností z roku 2008, při nichž zahynulo 62 lidí.</p><div class="srcs"><a href="https://www.aljazeera.com/video/newsfeed/2026/6/30/what-happened-on-south-africas-anti-migrant-deadline?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.theguardian.com/world/2026/jun/30/south-africa-police-anti-immigrant-protests" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story"><h2>Bombový útok v Monaku zranil tři lidi včetně dítěte, pachatel uprchl</h2><p>V Monaku explodoval zásilkový balíček obsahující výbušninu se šrouby a broky, při výbuchu byli vážně zraněni tři lidé. Médii je útok spojován s ukrajinským oligarchou, policie zahájila pátrání po pachateli.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cpv37wx03v7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.nytimes.com/2026/06/30/world/europe/monaco-parcel-bomb-explosion.html" target="_blank" rel="noopener">NY Times World</a></div></div>
+<div class="story"><h2>Razie v zemích EU kvůli zneužití 105 milionů eur frakcí ID v Evropském parlamentu</h2><p>Evropský úřad veřejného žalobce koordinoval policejní prohlídky ve Francii, Španělsku, Itálii a Belgii v souvislosti s podezřením ze zpronevěry fondů EU členy zaniklé frakce Identita a demokracie. Do frakce patřila i česká SPD.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-svet/policie-podnika-razie-v-zemich-eu-cleny-frakce-k-niz-patrila-i-ceska-spd_2606302152_dns" target="_blank" rel="noopener">iRozhlas</a><a href="https://www.seznamzpravy.cz/clanek/zahranicni-policie-podnika-razie-kvuli-udajnemu-zneuziti-penez-eu-parlamentni-frakci-id-309759" target="_blank" rel="noopener">Seznam Zprávy</a><a href="http://www.euronews.com/my-europe/2026/06/30/prosecutors-conduct-europe-wide-raids-over-alleged-misuse-of-funds-by-defunct-far-right-eu" target="_blank" rel="noopener">Euronews</a></div></div>
+<div class="story"><h2>Británie vydá dalších 15 miliard liber na obranu, Starmer krátí ostatní rozpočty</h2><p>Britský premiér Keir Starmer zveřejnil plán obranných investic, podle nějž bude na vybavení ozbrojených sil v nadcházejících letech vynaloženo 15 miliard liber. Peníze mají pocházet ze škrtů v jiných vládních oblastech.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cwy0rw5dx1ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a></div></div>
+<div class="story"><h2>Maďarský premiér Magyar obvinil Orbána ze zatajování výše rozpočtového schodku</h2><p>Nový maďarský premiér Péter Magyar prohlásil, že Orbánova vláda zatajovala skutečnou výši deficitu státního rozpočtu, který by letos mohl přesáhnout osm procent HDP. Orbánem deklarovaný cíl přitom byl méně než čtyři procenta.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/svet/orban-zatajil-realnou-vysi-deficitu-rozpoctu-prohlasil-magyar-375108" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story"><h2>Polsko a Ukrajina se hádají o stíhačky: Varšava tvrdí, že Kyjev odstoupil od dohody MiGy za drony</h2><p>Polský ministr obrany prohlásil, že Ukrajina couvla od dohody, podle níž mělo Polsko dodat stíhačky MiG výměnou za drony. Vztahy obou zemí jsou podle médií v nejhorším stavu za poslední léta, Polsko navíc pohrozilo vetem ukrajinského vstupu do EU.</p><div class="srcs"><a href="http://www.euronews.com/my-europe/2026/06/30/no-migs-for-ukraine-polish-defence-minister-claims-kyiv-backed-out-of-deal-with-warsaw" target="_blank" rel="noopener">Euronews</a></div></div>
+</section>
+<section class="rubr"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead"><h2>Prezident Pavel jednal se šéfem ČEZ o rozdělení firmy a budoucnosti energetiky</h2><p>Prezident Petr Pavel přijal generálního ředitele ČEZ Daniela Beneše a diskutovali o možných změnách vlastnické struktury energetického giganta i o dalších aktuálních tématech české energetiky. Beneš po schůzce uvedl, že diskuze neměla žádnou kontroverzi.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-pavel-jednal-se-sefem-cez-benesem-o-deni-v-energetice-mluvili-i-o-rozdeleni-cez-309750" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.e15.cz/byznys/prumysl-a-energetika/prezident-se-sesel-se-sefem-cez-na-stole-bylo-jadro-i-zestatneni-energetickeho-gigantu-1433976" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story"><h2>ČNB zvýšila sazby navzdory Babišovým výzvám k jejich snížení</h2><p>Česká národní banka přistoupila ke zvýšení úrokových sazeb, čímž překvapila premiéra Andreje Babiše, který opakovaně volal po jejich snížení. Ekonomové upozorňují, že veřejné volání premiéra po levnějším financování mohlo paradoxně přispět k opačnému rozhodnutí bankovní rady.</p><div class="srcs"><a href="https://cc.cz/premier-mohl-svym-volanim-po-nizsich-sazbach-paradoxne-prispet-k-jejich-zvyseni-jak-je-to-mozne/" target="_blank" rel="noopener">CzechCrunch</a></div></div>
+<div class="story"><h2>V EU začíná platit nové paušální clo tři eura na zásilky z Číny</h2><p>Od 30. června musí obchodníci ze třetích zemí platit za každou zásilku doručenou do EU paušální clo ve výši tří eur, což se již projevilo zdražením zboží na čínských online tržištích. Opatření má ochránit evropské prodejce před neférovými cenovými podmínkami.</p><div class="srcs"><a href="https://archiv.hn.cz/c1-67898930-zacina-platit-nove-clo-na-balicky-z-ciny-proc-ho-evropa-zavadi-a-jak-na-vas-dopadne" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story"><h2>Tesla v Česku loni prodala o 47 % méně aut, Škoda ji předběhla na trhu elektromobilů</h2><p>Tržby Tesly v Česku klesly z pěti miliard na 2,3 miliardy korun, přičemž podíl na trhu elektromobilů se propadl na 14 procent. Na pozici lídra ji v segmentu elektromobilů nahradila Škoda.</p><div class="srcs"><a href="https://cc.cz/tesla-v-cesku-narazila-trzby-ji-z-peti-miliard-spadly-na-pulku-a-mezi-elektromobily-ji-predbehla-skoda/" target="_blank" rel="noopener">CzechCrunch</a></div></div>
+<div class="story"><h2>Slovensko spouští čtvrtý blok Mochovců, do reaktoru míří ruské palivo</h2><p>Na Slovensku bylo zahájeno zavážení paliva do čtvrtého bloku jaderné elektrárny Mochovce, celkové náklady na dostavbu obou nových reaktorů dosáhly sedmi miliard eur. Po spuštění se Slovensko stane významným vývozcem elektřiny.</p><div class="srcs"><a href="https://vtm.zive.cz/clanky/na-slovensku-chystaji-spusteni-ctvrteho-bloku-jaderne-elektrarny-mochovce-zacalo-zavazeni-ruskeho-paliva/sc-870-a-241992/default.aspx" target="_blank" rel="noopener">Živě</a></div></div>
+<div class="story"><h2>Euforie kolem evropských zbrojovek opadá po zrušení německého programu fregat</h2><p>Německá vláda zrušila objednávku fregat F126, což vyvolalo propad akcií zbrojovky Rheinmetall a obnovilo pochybnosti investorů o tom, zda zvyšující se obranné výdaje skutečně přinesou skokový růst zisků zbrojního průmyslu.</p><div class="srcs"><a href="https://www.e15.cz/byznys/obrana-a-zbrojni-prumysl/euforie-kolem-zbrojovek-konci-stacilo-jedno-rozhodnuti-nemecke-vlady-1433957" target="_blank" rel="noopener">E15</a></div></div>
+</section>
+<section class="rubr"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead"><h2>Realta Fusion jako první firma přímo vyrobila elektřinu z jaderné fúze</h2><p>Americký startup Realta Fusion dosáhl přelomového milníku a jako zřejmě první na světě přímo vyrobil elektřinu z fúzní reakce plazmatu. Spoluzakladatel firmy Kieran Furlong označil úspěch za důkaz toho, co je v oblasti komerční fúze možné.</p><div class="srcs"><a href="https://techcrunch.com/2026/06/30/realta-fusion-generates-electricity-directly-from-a-fusion-reaction-an-apparent-first/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story"><h2>Anthropic vydal Claude Sonnet 5 jako levnější model pro AI agenty</h2><p>Nový model Claude Sonnet 5 od Anthropicu přináší silnější agentní schopnosti a nižší cenu oproti předchozím verzím, čímž míří jako levná alternativa ke GPT-5.5 a Gemini Pro. Anthropic zároveň spustil platformu Claude Science pro vědecké pracovní postupy.</p><div class="srcs"><a href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story"><h2>Tesla začala v Austinu testovat Cybercab bez volantu a pedálů</h2><p>Tesla zahájila veřejné testování autonomního vozidla Cybercab bez volantu ani pedálů na silnicích v Austinu v Texasu. Jde o první konkrétní krok k naplnění Muskova dlouholetého slibu o spuštění vlastní sítě robotaxi.</p><div class="srcs"><a href="https://techcrunch.com/2026/06/30/tesla-starts-testing-cybercab-without-pedals-or-a-steering-wheel-in-austin/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story"><h2>Konkurent Nvidie Etched dosáhl ocenění 5 miliard dolarů a miliardových tržeb z AI čipů</h2><p>Startup Etched, vyvíjející AI čipy pro inferenci jako alternativu k Nvidii, oznámil, že má pod smlouvou zakázky v hodnotě jedné miliardy dolarů a dosáhl ocenění pět miliard dolarů. Firma se soustředí na zákazníky, kteří potřebují provozovat velké jazykové modely.</p><div class="srcs"><a href="https://techcrunch.com/2026/06/30/nvidia-competitor-etched-hits-5b-valuation-1b-in-sales-for-ai-chip/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story"><h2>Microsoft zvažuje zrušení hry Blade a uzavření studia Arkane</h2><p>Podle zdrojů blízkých Microsoftu chystá Xbox příští týden vlnu propouštění, která povede k uzavření nebo prodeji několika studií a zrušení her, mimo jiné hry Blade a možnému uzavření Arkane Studios. Chystají se také fúze některých vývojářských týmů.</p><div class="srcs"><a href="https://www.theverge.com/report/959467/microsoft-xbox-cancel-blade-game-arkane-studios-closure" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story"><h2>USA nabízí 10 milionů dolarů za informace o ruských hackerech útočících na Signal a WhatsApp</h2><p>Americká vláda vypsala odměnu deset milionů dolarů za informace vedoucí k identifikaci skupin napojených na ruský stát, které od března 2026 provádějí hackování aplikací Signal a WhatsApp. Operace zasáhla řadu cílů na Západě.</p><div class="srcs"><a href="https://arstechnica.com/information-technology/2026/06/us-offers-10-million-for-info-on-group-behind-signal-and-whatsapp-hacking-spree/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+</section>
+<section class="rubr"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead"><h2>Do Česka letos vstoupilo 16 nových gastronomických značek, téměř všechny volí Prahu</h2><p>Zahraniční restaurační řetězce a gastronomické značky pokračují v expanzi na český trh, přičemž Praha je pro drtivou většinu z nich první zastávkou. Mezi novinkami jsou i značky z Rumunska, Polska a Ukrajiny.</p><div class="srcs"><a href="https://byznys.hn.cz/c1-67898780-expanze-gastronomickych-retezcu-pokracuje-do-ceska-letos-prislo-16-novych-znacek-az-na-dve-vyjimky-voli-prahu" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story"><h2>Fortuna vozí fanoušky MS po Praze v newyorském taxíku a natáčí obsah na YouTube</h2><p>Sázková společnost Fortuna spustila v době fotbalového šampionátu marketingovou kampaň s legendárním žlutým newyorským taxíkem v pražských ulicích, ve kterém s celebri­tami natáčí videa pro YouTube. Firma letos očekává rekordní objem sázek.</p><div class="srcs"><a href="https://cc.cz/fanousky-fotbalu-vozi-po-praze-legendarni-newyorsky-taxik-zname-osobnosti-v-nem-nataceji-videa-na-youtube/" target="_blank" rel="noopener">CzechCrunch</a></div></div>
+<div class="story"><h2>Český masný průmysl dosáhl v Bruselu dílčího vítězství: rostlinné produkty ztratí masová jména</h2><p>Evropská unie schválila méně striktní variantu nařízení zakazujícího rostlinným potravinám používat názvy odkazující na maso, jako jsou veganský burger či sójový řízek. Zákaz v EU prosazoval český ministr zemědělství Marek Výborný.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-byznys-trendy-analyzy-cesky-masny-prumysl-uspel-jen-napul-vegansky-kureci-burger-zmizi-309744" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer></body></html>
