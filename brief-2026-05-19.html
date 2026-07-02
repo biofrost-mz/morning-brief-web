@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — úterý 19. května 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="wx">Brno&nbsp;·&nbsp;⛈️&nbsp;20°&nbsp;/&nbsp;7°</div><div class="sub">úterý 19. května 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">úterý 19. května 2026</h1>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Babiš zrušil agendu zmocněnkyně pro lidská práva, zaskočil i vlastní lidi</h2><p>Vláda v pondělí nečekaně schválila zrušení veškeré agendy zmocněnkyně pro lidská práva. Krok kritizuje i bývalá zmocněnkyně za ANO Helena Válková, která ho označila za přelomový a nebezpečný. Rozhodnutí ukazuje, jak snadno může kabinet oslabit kontrolní mechanismy státu. Opozice chystá ostrou reakci v Poslanecké sněmovně.</p><div class="srcs"><a href="https://denikn.cz/2067297/zmocnenkyne-pro-lidska-prava-ztraci-smysl-babis-nahle-zrusil-zasadni-agendu-zaskocil-i-sve-lidi/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Mrázová zatajila půlmilionový dar, po dotazech změnila vysvětlení</h2><p>Ministryně Zuzana Mrázová neuvedla v majetkovém přiznání půlmilionový dar, čímž podle expertů porušila zákon. Další půlmilion, který vydávala za dar od manžela, nyní označuje za pouhý „deponovaný“ obnos.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-mrazova-neuvedla-penize-v-majetkovem-priznani-po-dotazech-zmenila-vysvetleni-306211" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Vyšší rodičovská nepomůže, Babiš řeší porodnost špatně</h2><p>Kabinet zvolil nejjednodušší cestu ke zvýšení porodnosti, která ale nepřináší výsledky. Vyšší rodičovský příspěvek problém nízké porodnosti sám o sobě nevyřeší, protože chybí systémové změny v dostupnosti bydlení a péče o děti.</p><div class="srcs"><a href="https://denikn.cz/2066711/pointa-n-babis-hleda-recept-na-zvyseni-porodnosti-proc-s-vyssi-rodicovskou-slapl-vedle/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Nový šéf armády bude Hlaváč, ministr Zůna hlasoval proti vlastnímu návrhu</h2><p>Kabinet schválil Miroslava Hlaváče novým náčelníkem generálního štábu. Kuriózní bylo, že ministr obrany Zůna hlasoval jako jediný proti svému vlastnímu návrhu. Hlaváč dosud působil jako první zástupce Karla Řehky.</p><div class="srcs"><a href="https://www.e15.cz/domaci/novy-sefem-armady-bude-dosavadni-zastupce-hlavac-ministr-zuna-hlasoval-proti-svemu-navrhu-1432898" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>ODS v kampani zapomíná, že v Praze čtyři roky vládla</h2><p>Pražská kampaň před komunálními volbami nabírá na obrátkách. Lídr ODS Portlík upozaďuje fakt, že jeho strana poslední čtyři roky spoluřídila metropoli. Terčem útoků jsou zejména Piráti.</p><div class="srcs"><a href="https://www.novinky.cz/clanek/volby-komunalni-ods-zapomina-ze-v-praze-ctyri-roky-vladla-otloukanky-kampane-jsou-pirati-40578613" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Čeští hokejisté porazili Švédy a vrátili se do hry o čtvrtfinále</h2><p>Národní tým na mistrovství světa zvítězil nad Švédskem 4:3 po suverénním úvodu, kdy vedl 3:0 po třinácti minutách. Výhru tým věnoval spoluhráči Ščotkovi a klíčovou roli sehrál debutant Marek Alscher. Triumf odčinil sobotní kolaps proti Slovinsku a výrazně zlepšuje české vyhlídky na čtvrtfinále. Švédská média reagovala úžasem nad českým náskokem.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/sport-hokej-ms-v-hokeji-cesko-na-ms-objevuje-tvrdaka-alscher-je-jiny-a-klicovy-306467" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://sport.aktualne.cz/hokej/co-to-sakra-je-neverili-ve-svedsku-cechum-ted-zavidi-matematiku-pro-ctvrtfinale/r~aaa29d547a3ede798c54270222729320/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://www.irozhlas.cz/sport/hokej/proste-jsme-natahli-monterky-a-farali-hokejisty-tesi-dulezita-vyhra-nad-svedy_2605190643_mim" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Eurovizi ovládla Bulharka Dara, soutěž poznamenal bojkot kvůli Izraeli</h2><p>Písňovou soutěž Eurovision vyhrála bulharská zpěvačka Dara. Několik evropských zemí sáhlo k bojkotu kvůli účasti Izraele, což opět zpochybnilo sjednocující roli celé akce.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/audio-podcast-5-59-politika-na-eurovizi-bojkot-i-triky-izraele-ruske-konexe-vitezne-bulharky-306384" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Léky na obezitu by mohly být zdarma pro mladé do 25 let</h2><p>Pracovní skupina jedná o tom, že dospívající od 12 do 18 let a mladí dospělí do 25 s těžkou obezitou by mohli dostávat moderní léky na hubnutí hrazené pojišťovnou. Jde o zásadní posun v přístupu k prevenci obezity.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-zivot-v-cesku-vidime-to-jako-sanci-leky-na-obezitu-by-mohly-mit-zdarma-dve-skupiny-lidi-306448" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Deník střelce z filozofické fakulty byl veřejný dvanáct dní, nikdo ho nezaznamenal</h2><p>Dvanáct dní před masakrem na Filozofické fakultě UK byl na Telegramu dostupný účet popisující plán útoku. Policie data dodnes nemá, protože Telegram českou žádost odmítl.</p><div class="srcs"><a href="https://zpravy.aktualne.cz/domaci/denik-vraha-byl-verejny-dvanact-dni-nikdo-si-ho-nevsiml/r~aaa295f377eb9ca23768b8ce7e997771/" target="_blank" rel="noopener">Aktuálně.cz</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Přijímací zkoušky ničí budoucnost tisíců dětí, hlavně v Praze</h2><p>Systém přijímacích zkoušek a nedostatečná kapacita středních škol, zejména v Praze a středních Čechách, připravuje tisíce dětí o odpovídající vzdělání. Letošní výsledky problém opět potvrdily.</p><div class="srcs"><a href="https://podcasty.hn.cz/c1-67877760-nejvetsi-prusvih-ceska-za-ktery-bdquo-nikdo-nemuze-ldquo-nicime-budoucnost-tisicu-deti-a-mrhame-jejich-schopnostmi" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Trump na žádost Zálivu odložil úder na Írán, napětí trvá</h2><p>Americký prezident oznámil, že na žádost spojenců z Perského zálivu odložil plánovaný vojenský úder na Írán. Teherán ale odmítá ustoupit americkým požadavkům na svůj jaderný program a slibuje odvetný postup. Hormuzský průliv zůstává fakticky uzavřený, což žene nahoru ceny ropy. Diplomatická jednání pokračují, ale čas na dohodu se krátí.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/c7079e55zjro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a><a href="https://www.aljazeera.com/news/liveblog/2026/5/19/iran-war-live-trump-says-iran-attack-postponed-at-request-of-gulf-allies?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.nytimes.com/2026/05/18/world/middleeast/trump-iran-war-talks.html" target="_blank" rel="noopener">NY Times</a><a href="https://www.politico.com/news/2026/05/18/trump-delays-major-strikes-iran-00926589?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Putin míří do Pekingu, Čína posiluje roli globálního hráče</h2><p>Ruský prezident dorazí v úterý do Pekingu na setkání s Si Ťin-pchingem, jen pár dní po Trumpově návštěvě. Schůzka podtrhuje rostoucí vliv Číny v rozštěpené geopolitice.</p><div class="srcs"><a href="https://www.aljazeera.com/news/2026/5/19/russia-china-ties-stabilising-force-in-world-putin-says-before-xi-talks?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.dw.com/en/china-s-moment-putin-heads-to-beijing-after-trump-courts-xi/a-77200122?maca=en-rss-en-world-4025-xml-mrss" target="_blank" rel="noopener">Deutsche Welle</a><a href="https://www.novinky.cz/clanek/zahranicni-evropa-putin-jede-do-ciny-jeho-poradce-odhalil-plan-cesty-40578753" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>WHO vyhlásila stav nouze kvůli epidemii eboly v Kongu</h2><p>V Demokratické republice Kongo zemřelo na ebolu nejméně 118 lidí, skutečný počet nakažených je zřejmě vyšší. USA zavedly cestovní omezení, nakažen byl i americký lékař.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/cq6pz60p996o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a><a href="https://www.aljazeera.com/video/newsfeed/2026/5/19/aje-onl-nf_clip-who-responds-to-ebola-outbreak-in-drc-180526?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.theguardian.com/world/2026/may/18/ituri-eastern-drc-ebola-outbreak-panic-fear" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Dva teenageři zastřelili tři lidi v mešitě v San Diegu</h2><p>Při podezření z nenávistného útoku na mešitu v Kalifornii zahynuli tři lidé, oba náctiletí útočníci jsou mrtví. Jeden z nich zanechal dopis plný nenávistné rétoriky.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/c5y7q66gq56o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a><a href="https://www.aljazeera.com/video/newsfeed/2026/5/19/two-teen-gunmen-kill-three-at-san-diego-mosque-in-suspected-hate-crime?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://zpravy.aktualne.cz/zahranici/strelba-na-islamske-centrum-v-san-diegu-si-vyzadala-pet-mrtvych-vcetne-dvou-utocniku/r~aaa299e66395f5cc48fceabdb7c2d0fc/" target="_blank" rel="noopener">Aktuálně.cz</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>EU chystá půjčku 90 miliard eur pro Ukrajinu</h2><p>Dlouho připravovaná půjčka pro Ukrajinu brzy dostane v Bruselu poslední razítka. Komentátoři ji označují za nejlepší investici do vlastní bezpečnosti, přesto v Česku vyvolává obavy.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-politika-nejlepsi-investice-ktere-se-ale-cesi-boji-306397" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Trump obchodoval na burze 59krát denně, analytici jsou v šoku</h2><p>Americký prezident v prvním čtvrtletí roku obchodoval s cennými papíry za minimálně 220 milionů dolarů, celková hodnota mohla dosáhnout 750 milionů. Příslušný úřad neuvádí přesné částky, jen širší pásma. Obchody vyvolávají podezření ze zneužívání privilegovaných informací. Analytici volají po nezávislém vyšetřování.</p><div class="srcs"><a href="https://www.novinky.cz/clanek/ekonomika-trump-obchodoval-na-burze-prumerne-59krat-denne-analytici-jsou-v-soku-40578533" target="_blank" rel="noopener">Novinky.cz</a><a href="https://archiv.hn.cz/c1-67878040-bdquo-prezidentska-rodina-ldquo-na-burze-obchoduje-jako-o-zivot-cim-muze-trump-podezreni-ze-zneuzivani-informaci-snadno-vyvratit" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Washington prodloužil výjimku na nákup ruské ropy kvůli Hormuzu</h2><p>USA o 30 dní prodloužily možnost nákupu sankcionované ruské ropy z tankerů, aby stabilizovaly trh po zablokování Hormuzského průlivu. Ukrajina i Německo krok ostře kritizují.</p><div class="srcs"><a href="https://www.e15.cz/byznys/prumysl-a-energetika/washington-prodlouzil-vyjimku-na-ruskou-ropu-kvuli-krizi-v-hormuzskem-prulivu-1432904" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Mléko zlevnilo o tři koruny, zemědělci tlačí na Brusel</h2><p>Litr mléka za půl roku zlevnil o tři koruny a farmáři z východní Evropy žádají Evropskou komisi o krizovou pomoc. Jedním z důvodů poklesu cen je přebytek na trhu způsobený i čínskou politikou.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-firmy-mleko-je-levne-zemedelci-chteji-ulevy-muze-za-to-i-cina-306429" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>Musk prohrál soud s Altmanem, porota jednomyslně zamítla žalobu</h2><p>Devět porotců jednomyslně rozhodlo, že Elon Musk podal žalobu proti OpenAI a Samu Altmanovi příliš pozdě. Musk tvrdil, že Altman ukradl charitativní organizaci a zradil původní poslání OpenAI. Verdikt je další v řadě Muskových soudních porážek a potvrzuje, že spor o kontrolu nad AI průmyslem se nerozhodne v soudní síni. Musk ohlásil odvolání.</p><div class="srcs"><a href="https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/" target="_blank" rel="noopener">TechCrunch</a><a href="https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit" target="_blank" rel="noopener">The Verge</a><a href="https://www.bbc.com/news/articles/cewpyv79pw1o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a><a href="https://arstechnica.com/tech-policy/2026/05/elon-musk-loses-trial-accusing-sam-altman-openai-of-stealing-a-charity/" target="_blank" rel="noopener">Ars Technica</a><a href="https://www.politico.com/news/2026/05/18/jury-rejects-musks-claims-sam-altman-00926319?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Anthropic koupil startup Stainless, který používal i OpenAI a Google</h2><p>Tvůrce asistenta Claude převzal newyorský startup Stainless, který automatizoval tvorbu vývojářských SDK. Mezi jeho klienty patřily OpenAI, Google i Cloudflare.</p><div class="srcs"><a href="https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Zdanění AI se nevyhneme, politici zaspali, říká rektor ČVUT</h2><p>Michal Pěchouček varuje, že umělá inteligence překope pracovní trh do tří let. Je levnější nahradit algoritmem intelektuální práci než dělnickou robotikou, proto čeká rekvalifikace hlavně elity.</p><div class="srcs"><a href="https://www.e15.cz/videoporady/flow/zdaneni-umele-inteligence-se-nevyhneme-politici-zaspali-rika-rektor-cvut-pechoucek-1432886" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Hackeři ukradli data a otisky prstů 1,8 milionu pacientů v New Yorku</h2><p>Newyorský veřejný zdravotnický systém přiznal masivní únik osobních a biometrických dat. Jde o jeden z největších útoků roku 2026.</p><div class="srcs"><a href="https://techcrunch.com/2026/05/18/nyc-health-and-hospitals-says-hackers-stole-medical-data-and-fingerprints-during-breach-affecting-at-least-1-8-million-people/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Standard Chartered propustí tisíce lidí kvůli nasazení AI</h2><p>Britská banka plánuje zrušit tisíce pracovních pozic, protože je nahrazuje umělou inteligencí. Část zaměstnanců chce přesunout na jiné role.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/crep3v8vzglo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>SandboxAQ zpřístupnil modely pro vývoj léčiv skrze Claude</h2><p>Firma vsadila na to, že hlavní překážkou ve výzkumu léčiv není kvalita modelů, ale přístup k nim. Propojení s Claude umožňuje pracovat s modely bez znalosti programování.</p><div class="srcs"><a href="https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>Google Ads dál zdražuje, konverze se ale v roce 2025 zlepšily</h2><p>Cena za proklik v Google Ads pokračuje v růstu, inzerenti ale dosahují lepších konverzních poměrů. Klíčem k úspěchu je optimalizace celé cesty zákazníka, ne jen samotných kampaní. Firmy, které investují do zlepšení efektivity konverzí, stále nacházejí prostor pro růst.</p><div class="srcs"><a href="https://searchengineland.com/google-ads-costs-keep-rising-but-conversion-rates-improved-in-2025-477927" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Od videokazet po AI: jak se za dvě dekády změnilo placené vyhledávání</h2><p>Frederick Vallaeys popisuje proměnu PPC od ruční arbitráže po automatizaci řízenou umělou inteligencí. Marketéři dnes riskují, že ztratí kontrolu nad tím, co za ně algoritmy rozhodují.</p><div class="srcs"><a href="https://searchengineland.com/from-video-tapes-to-ai-frederick-vallaeys-on-the-evolution-of-paid-search-477880" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>SEO a GEO audity s AI selhávají bez tří zásadních podmínek</h2><p>Umělá inteligence dokáže škálovat SEO audity, ale výsledky jsou nespolehlivé bez správných dat, metodiky a lidského dohledu. Automatizace bez kontroly přináší falešný pocit jistoty.</p><div class="srcs"><a href="https://searchengineland.com/seo-geo-audit-essentials-477720" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer>
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var p = document.getElementById('progress');
+  function onScroll(){ if(!p) return; var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+  var secs=document.querySelectorAll('section.rubr');
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
+      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
+      {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
+    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
+  }
+})();
+</script>
+</body></html>

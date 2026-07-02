@@ -7,19 +7,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1;
-    --card:#f3eee3; --accent:#b3271e;
-  }
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
   * { box-sizing:border-box; }
-  html { -webkit-text-size-adjust:100%; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   body { margin:0; background:var(--paper); color:var(--ink);
     font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
   a { color:inherit; }
   .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
   .art { max-width:760px; margin:0 auto; padding:0 22px; }
 
-  /* Masthead */
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
   .masthead { border-bottom:3px solid var(--ink); }
   .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
     padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
@@ -27,50 +26,42 @@
     font-size:clamp(30px,6vw,52px); line-height:.95; }
   .brand a { text-decoration:none; color:var(--ink); }
   .masthead .meta { text-align:right; }
-  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; color:var(--ink); }
-  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase;
-    letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
 
-  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase;
-    letter-spacing:.13em; padding-bottom:2px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
 
   /* HERO */
   .hero { padding:34px 0 8px; }
-  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase;
-    letter-spacing:.16em; color:var(--accent); }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
   .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
     font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
   .hero h1 a { text-decoration:none; }
-  .hero .lead { font-size:clamp(16px,2.2vw,20px); color:#2c2822; max-width:44ch; }
-  .hero .heads { margin-top:20px; border-top:2px solid var(--ink); }
-  .hero .heads a { display:flex; gap:14px; align-items:baseline; padding:11px 2px;
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
     border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
-  .hero .heads a:hover { background:#fffdf8; }
-  .hero .heads a:hover .ht { color:var(--accent); }
-  .hero .heads .n { font-family:Fraunces,serif; font-weight:900; color:var(--accent);
-    font-size:15px; min-width:26px; }
-  .hero .heads .ht { font-size:15px; font-weight:600; line-height:1.35; }
-  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px;
-    color:var(--accent); text-decoration:none; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
 
   .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
-    text-transform:uppercase; margin:40px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
-  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase;
-    letter-spacing:.08em; color:var(--muted); margin:26px 0 12px; padding-bottom:6px;
-    border-bottom:1px solid var(--line); }
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
 
-  /* Archiv grid – barevné karty se zvýrazněným obvodem */
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
     padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
     min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
-  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px;
-    background:var(--accent); opacity:.5; transition:opacity .12s; }
-  .card:hover { background:#fffdf8; border-color:var(--ink);
-    box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
   .card:hover::before { opacity:1; }
   .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
-  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; color:var(--ink); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
   .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
 
   footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
@@ -79,36 +70,54 @@
   footer a:hover { text-decoration:underline; }
 
   /* ── Denní článek ── */
-  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800;
-    text-transform:uppercase; letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
   .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
     font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
-  .standfirst { font-size:clamp(17px,2.4vw,21px); color:#2c2822; line-height:1.55;
-    border-left:3px solid var(--accent); padding-left:16px; margin:18px 0 6px; }
-  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:16px 18px; margin:26px 0; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
   .fact .k { color:#a76a00; }
-  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:19px; margin:6px 0 6px; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
   .fact p { margin:0; color:#4a4438; font-size:14.5px; }
 
-  .rubr { margin:34px 0 0; }
-  .rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:16px; }
-  .story { padding:16px 0; border-bottom:1px solid var(--line); }
-  .story.lead h2 { font-size:clamp(21px,3.4vw,28px); }
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
   .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
   .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
   .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
     background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
   .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
 
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
   @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
   @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
 </style></head><body>
+<div id="progress"></div>
 <header class="masthead"><div class="wrap">
   <div class="brand"><a href="index.html">Ranní brief</a></div>
   <div class="meta"><div class="wx">Brno&nbsp;·&nbsp;☁️&nbsp;28°&nbsp;/&nbsp;18°</div><div class="sub">přehled zpráv · čtvrtek 2. července 2026</div></div>
 </div></header>
 <div class="wrap">
-<section class="hero"><div class="eyebrow">Nejnovější · čtvrtek 2. července 2026</div><h1><a href="brief-2026-07-02.html">Česká republika se dohodla na účasti prezidenta Pavla na summitu NATO v Ankaře, přičemž premiér Babiš ho nadále veřejně kritizuje. Německá prokuratura</a></h1><div class="heads"><a href="brief-2026-07-02.html"><span class="n">01</span><span class="ht">Pavel dostane mandát a více míst na summitu NATO, Babiš ho přesto nadále kritizuje</span></a><a href="brief-2026-07-02.html"><span class="n">02</span><span class="ht">Primář z děčínské nemocnice podezřelý z vraždy více pacientů</span></a><a href="brief-2026-07-02.html"><span class="n">03</span><span class="ht">Německá prokuratura obžalovala Ukrajince ze sabotáže plynovodů Nord Stream</span></a><a href="brief-2026-07-02.html"><span class="n">04</span><span class="ht">Google definitivně prohrál: EU mu potvrdila rekordní pokutu přes 100 miliard korun za zneužití Androidu</span></a><a href="brief-2026-07-02.html"><span class="n">05</span><span class="ht">OpenAI nabídla americké vládě pětiprocentní podíl ve firmě</span></a></div><a class="cta" href="brief-2026-07-02.html">Číst celý den →</a></section>
+<section class="hero"><div class="eyebrow">Nejnovější · čtvrtek 2. července 2026</div><h1><a href="brief-2026-07-02.html">Česká republika se dohodla na účasti prezidenta Pavla na summitu NATO v Ankaře, přičemž premiér Babiš ho nadále veřejně kritizuje. Německá prokuratura</a></h1><div class="heads"><a class="hi" href="brief-2026-07-02.html" style="--c:#DC2626"><span class="n">01</span><span class="ht"><span class="cat" style="color:#DC2626">Politika</span> — Pavel dostane mandát a více míst na summitu NATO, Babiš ho přesto nadále kritizuje</span></a><a class="hi" href="brief-2026-07-02.html" style="--c:#2563EB"><span class="n">02</span><span class="ht"><span class="cat" style="color:#2563EB">Společnost</span> — Primář z děčínské nemocnice podezřelý z vraždy více pacientů</span></a><a class="hi" href="brief-2026-07-02.html" style="--c:#7C3AED"><span class="n">03</span><span class="ht"><span class="cat" style="color:#7C3AED">Svět</span> — Německá prokuratura obžalovala Ukrajince ze sabotáže plynovodů Nord Stream</span></a><a class="hi" href="brief-2026-07-02.html" style="--c:#EA580C"><span class="n">04</span><span class="ht"><span class="cat" style="color:#EA580C">Ekonomika</span> — Google definitivně prohrál: EU mu potvrdila rekordní pokutu přes 100 miliard korun za zneužití Androidu</span></a><a class="hi" href="brief-2026-07-02.html" style="--c:#0D9488"><span class="n">05</span><span class="ht"><span class="cat" style="color:#0D9488">Tech</span> — OpenAI nabídla americké vládě pětiprocentní podíl ve firmě</span></a><a class="hi" href="brief-2026-07-02.html" style="--c:#65A30D"><span class="n">06</span><span class="ht"><span class="cat" style="color:#65A30D">Marketing</span> — Meta zavedla předplatné za pokročilé funkce chytrých brýlí</span></a></div><a class="cta" href="brief-2026-07-02.html">Číst celý den →</a></section>
 <div class="sec-title">Archiv</div>
 <div class="month">Červenec 2026</div>
 <div class="grid">
@@ -117,9 +126,52 @@
 <div class="month">Červen 2026</div>
 <div class="grid">
 <a class="card" href="brief-2026-06-30.html"><div class="d">úterý 30. června 2026</div><div class="t">Americký Nejvyšší soud zablokoval Trumpův dekret omezující porodní občanství a zároveň potvrdil zákazy účasti transgende</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-29.html"><div class="d">pondělí 29. června 2026</div><div class="t">Spojené státy a Írán si vyměnily další údery a obviňují se z porušení příměří; Teherán tvrdí, že zasáhl cíle v Kuvajtu a</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-27.html"><div class="d">sobota 27. června 2026</div><div class="t">Spojené státy znovu udeřily na Írán a křehké příměří visí na vlásku poté, co Teherán napadl plavidlo v Hormuzském průliv</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-26.html"><div class="d">pátek 26. června 2026</div><div class="t">Venezuelu po dvou zemětřeseních sčítá oběti – potvrzeno je 235 mrtvých a do zasažených oblastí dorazily mezinárodní zách</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-25.html"><div class="d">čtvrtek 25. června 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-16.html"><div class="d">úterý 16. června 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-06-11.html"><div class="d">čtvrtek 11. června 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+</div>
+<div class="month">Květen 2026</div>
+<div class="grid">
+<a class="card" href="brief-2026-05-21.html"><div class="d">čtvrtek 21. května 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-05-20.html"><div class="d">středa 20. května 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-05-19.html"><div class="d">úterý 19. května 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-05-04.html"><div class="d">pondělí 4. května 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-05-01.html"><div class="d">pátek 1. května 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+</div>
+<div class="month">Duben 2026</div>
+<div class="grid">
+<a class="card" href="brief-2026-04-30.html"><div class="d">čtvrtek 30. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-29.html"><div class="d">středa 29. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-28.html"><div class="d">úterý 28. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-27.html"><div class="d">pondělí 27. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-25.html"><div class="d">sobota 25. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-24.html"><div class="d">pátek 24. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-23.html"><div class="d">čtvrtek 23. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-22.html"><div class="d">středa 22. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-21.html"><div class="d">úterý 21. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-20.html"><div class="d">pondělí 20. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-13.html"><div class="d">pondělí 13. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-11.html"><div class="d">sobota 11. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-10.html"><div class="d">pátek 10. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-09.html"><div class="d">čtvrtek 9. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-08.html"><div class="d">středa 8. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-07.html"><div class="d">úterý 7. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-06.html"><div class="d">pondělí 6. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-04.html"><div class="d">sobota 4. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-03.html"><div class="d">pátek 3. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-02.html"><div class="d">čtvrtek 2. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+<a class="card" href="brief-2026-04-01.html"><div class="d">středa 1. dubna 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
+</div>
+<div class="month">Březen 2026</div>
+<div class="grid">
+<a class="card" href="brief-2026-03-30.html"><div class="d">pondělí 30. března 2026</div><div class="t">—</div><div class="more">Otevřít →</div></a>
 </div>
 </div>
 <footer class="wrap">
   <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
   <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
-</footer></body></html>
+</footer>
+</body></html>

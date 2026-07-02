@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — čtvrtek 25. června 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="sub">čtvrtek 25. června 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">čtvrtek 25. června 2026</h1>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Ústavní soud Babišovi nepomohl: Pavel pojede do Ankary</h2><p>Ústavní soud vydal předběžné opatření a přikázal vládě zajistit prezidentovu účast na summitu NATO – Babiš nejprve prohlásil, že rozhodnutí respektuje, záhy ho ale označil za absurdní a ministr Macinka ho přirovnal k pokusu o puč. Vládní Motoristé dokonce zpochybnili samotnou existenci Ústavního soudu, čímž spor eskaloval na novou úroveň. Deník N odhaluje, že plán vlády odložit rozhodnutí na poslední chvíli selhal – prezident vyhrál klíčový institucionální souboj.</p><div class="srcs"><a href="https://denikn.cz/2106414/je-to-puc-ustavni-soud-by-nemel-existovat-reaguji-vladni-motoriste-na-rozhodnuti-o-pavlove-ucasti-na-summitu-nato/" target="_blank" rel="noopener">Deník N</a><a href="https://www.e15.cz/domaci/politika/ustavni-soud-naridil-vlade-aby-zajistila-pavlovu-ucast-na-summitu-v-ankare-1433829" target="_blank" rel="noopener">E15</a><a href="https://ct24.ceskatelevize.cz/clanek/domaci/babis-opatreni-us-ohledne-summitu-a-ucasti-pavla-respektuje-okamura-kritizuje-374928" target="_blank" rel="noopener">ČT24</a><a href="https://zpravy.aktualne.cz/domaci/tahle-sabotaz-na-pavla-nevysla-jak-babisova-vlada-planovala-zablokovat-prezidenta/r~aaa291d4d230c287d6daf64343775a6c/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://denikn.cz/2105850/pointa-n-jak-macinka-prohral-svuj-souboj-s-prezidentem-a-co-bude-dal/" target="_blank" rel="noopener">Deník N</a><a href="https://www.politico.eu/article/czech-constitutional-court-petr-pavel-nato-summit/" target="_blank" rel="noopener">Politico Europe</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Pavel: Macinka se mstí, já budu obhajovat funkci</h2><p>Prezident v podcastu poprvé otevřeně propojil konflikt s vládou se svým rozhodnutím kandidovat znovu – a podrobně popsal, jak spor eskaloval.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/audio-podcast-vlevo-dole-prezident-macinka-se-msti-a-babis-chce-klid-309254" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Hrad a Černínský palác: válka o OSN v emailech</h2><p>Korespondence mezi prezidentskou kanceláří a ministerstvem zahraničí ukazuje, jak vláda blokovala Pavlovu účast na zářijovém summitu OSN – podobný scénář jako u NATO.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/zadam-abyste-prezidenta-registrovali-jako-recnika-jak-si-hrad-a-cerninsky-palac_2606250620_hrk" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Tlak na veřejnoprávní média: celoevropský problém, varují šéfky z Litvy a Švédska</h2><p>Pokračuje kauza zestátnění ČT a ČRo – šéfky litevské LRT a švédského rozhlasu varovaly, že útlak veřejnoprávních médií v jedné zemi podrývá důvěru v médiích celého kontinentu.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/tlak-na-media-verejne-sluzby-je-celoevropsky-mini-jejich-sefky-z-litvy-a-svedska-374927" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Prokop primátorem? ANO hledá v Praze tvář, ale výběr je mizerný</h2><p>Bytová kauza zastupitele Ondřeje Prokopa komplikuje Babišovy plány obsadit pražské primátorské křeslo – komentátoři říkají, že ANO jiného kandidáta nemá.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/prokop-primatorem-je-smesny-ale-babis-nikoho-jineho-nema-nacher-delat-nechce_2606250600_cen" target="_blank" rel="noopener">iRozhlas</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Po smrti Viktorky: ministr chce žalovat soudkyni, která dítě svěřila vrahovi</h2><p>Ministr spravedlnosti Jeroným Tejc připravuje kárnou žalobu na soudkyni, která svěřila malou Viktorku otci, jenž ji krátce poté zavraždil. Tragédie podle Tejce odhalila systémové selhání, nikoli jen individuální pochybení jednoho soudu. Případ přinesl nebývalý politický tlak na justici a otevřel debatu o odpovědnosti soudců za důsledky jejich rozhodnutí.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/porady-ve-stinu-po-smrti-viktorky-prichazi-zvrat-ministr-spravedlnosti-chce-zalovat-soudkyni-309263" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>V neděli může padnout absolutní český teplotní rekord</h2><p>Český hydrometeorologický ústav upozornil, že v neděli teploty mohou překonat dosavadní historické maximum 40,4 °C. Vedra potrvají až do pondělní studené fronty, o víkendu maxima stoupají ke 40 stupňům. Policie proto o prázdninách posílí dohled na silnicích a ŘSD omezí víkendové stavební práce.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/veda/absolutni-cesky-teplotni-rekord-muze-padnout-v-nedeli-374909" target="_blank" rel="noopener">ČT24</a><a href="https://www.novinky.cz/clanek/pocasi-historicka-vedra-ukonci-pondelni-studena-fronta-40584699" target="_blank" rel="noopener">Novinky.cz</a><a href="https://ct24.ceskatelevize.cz/clanek/domaci/policie-o-prazdninach-posili-dohled-na-silnicich-rsd-omezi-vikendove-prace-374908" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Femicidy v Česku: data nesbíráme, vraždy žen partneři páchají stále</h2><p>Analýza iROZHLAS.cz přes sto soudních rozhodnutí ukázala, že většinu vražd žen páchají partneři – přesto stát motivy v statistikách oficiálně neeviduje.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/prisel-jsem-udelat-co-jsem-slibil-pocet-zavrazdenych-zen-po-svete-roste-u-nas_2606250500_fil" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Praha 3 vypověděla nájem šéfce Úřadu vlády kvůli porušení podmínek</h2><p>Radní Prahy 3 schválili výpověď smlouvy na obecní byt pro Tünde Bartha poté, co rodina porušila nájemní podmínky.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/regiony/praha-3-vypovi-smlouvu-na-mestsky-byt-sefce-uradu-vlady-374919" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Ozbrojený muž z Čelákovic čelí obvinění z vyhrožování, v autech měl zbraně</h2><p>Pětapadesátiletý muž, který se pohyboval se střelnou zbraní u učiliště v Čelákovicích, byl obviněn – policie u něj našla další zbraně.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/regiony/hlavni-mesto-praha/policie-obvinila-ozbrojence-z-celakovic-z-nebezpecneho-vyhrozovani-374910" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Venezuela pohřbena pod sutinami: dvě zemětřesení, tisíce obětí</h2><p>Dvě silná zemětřesení o magnitudech 7,2 a 7,5 zasáhla Venezuelu krátce po sobě – budovy v Caracasu se zhroutily a úřady vyhlásily stav nouze. Podle amerických seizmologů může počet obětí dosáhnout desítek tisíc, záchranáři se teprve dostávají do postižených oblastí. Svět sleduje jednu z nejhorších přírodních katastrof jihoamerického kontinentu v posledních dekádách.</p><div class="srcs"><a href="https://www.theguardian.com/world/live/2026/jun/25/venezuela-earthquake-live-updates-quake-aftershocks-terremoto-caracas-latest" target="_blank" rel="noopener">The Guardian</a><a href="https://www.aljazeera.com/video/newsfeed/2026/6/25/thousands-feared-dead-as-twin-earthquakes-cause-devastation-across-venezuel?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.seznamzpravy.cz/clanek/zahranicni-venezuelu-zasahla-dve-silna-zemetreseni-obeti-muze-byt-podle-vedcu-z-usa-mnoho-309298" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://zpravy.aktualne.cz/zahranici/venezuelu-zasahla-dve-silna-zemetreseni-podle-vedcu-z-usa-mohou-byt-desitky-tisic-obeti/r~aaa290cdbf45e7e0db4a9092c7589e88/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://zahranicni.hn.cz/c1-67896610-venezuelu-postihla-dve-silna-zemetreseni-vedci-se-obavaji-velkeho-mnozstvi-obeti" target="_blank" rel="noopener">Hospodářské noviny</a><a href="http://www.euronews.com/2026/06/25/71-and-75-magnitude-quakes-strike-venezuela-causing-what-officials-described-as-severe-dam" target="_blank" rel="noopener">Euronews</a><a href="https://www.bbc.co.uk/news/videos/cvgl42lm8dwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Francie hlásí první případ eboly v Evropě</h2><p>Francouzský lékař, který pracoval v Demokratické republice Kongo, se vrátil nakažený ebolou – jde o první případ na evropské půdě v tomto roce. V Kongu na nemoc dosud zemřelo více než 260 lidí a francouzské úřady spustily trasování kontaktů. Případ znovu otvírá otázky o připravenosti evropských zdravotních systémů na importované epidemie.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cj9gzr9rdjlo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.nytimes.com/2026/06/24/world/europe/ebola-france.html" target="_blank" rel="noopener">NY Times World</a><a href="https://www.theguardian.com/world/2026/jun/24/france-ebola-first-case-doctor-drc" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Bílý dům chce 88 miliard dolarů navíc, hlavně na válku s Íránem</h2><p>Trump požádal Kongres o mimořádné výdaje den poté, co zákonodárci schválili rezoluci kritizující jeho vojenský postup – žádost zahrnuje i pomoc zemědělcům a boj s ebolou.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-bily-dum-zada-kongres-o-dodatecnych-88-mld-dolaru-hlavne-na-valku-s-iranem-309300" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.bbc.co.uk/news/articles/ce8j6g3v3r4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.bbc.co.uk/news/articles/c1eydwldzdjo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Hormuz: Írán a USA se hádají, kdo průliv skutečně ovládá</h2><p>Den po podpisu memoranda Írán a Omán oznámily společný systém povolení v Hormuzském průlivu, čímž si nárokují kontrolu – Trump to odmítl a Rubio odletěl uklidňovat arabské spojence.</p><div class="srcs"><a href="http://www.euronews.com/2026/06/25/hormuz-confusion-deepens-as-iran-and-us-clash-over-who-controls-it" target="_blank" rel="noopener">Euronews</a><a href="https://www.bbc.co.uk/news/articles/cpd395zv81vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Rekordní vedra sužují Evropu, Británie měří 36 stupňů</h2><p>Vlna veder láme červnové rekordy od Španělska po Británii, desítky milionů lidí čelí červeným výstrahám a migranti v Paříži jsou bez přístřeší a pomoci.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/c78y4102n1zo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.bbc.co.uk/news/articles/c30y619glveo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://www.nytimes.com/2026/06/24/world/europe/heat-wave-schools-open-closed-france-uk.html" target="_blank" rel="noopener">NY Times World</a><a href="http://www.euronews.com/my-europe/2026/06/24/uk-records-hottest-june-day-ever-as-europe-swelters-in-heatwave" target="_blank" rel="noopener">Euronews</a><a href="https://www.aljazeera.com/video/newsfeed/2026/6/25/migrants-left-to-endure-deadly-paris-heat-with-little-shelter-or-aid?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Koruna posílila, zlato kleslo pod 4 000 dolarů. Kam se přesouvá kapitál?</h2><p>Koruna posílila proti většině světových měn a dává Čechům výhodu na letošní dovolené, i když místní inflace v cílových zemích její vliv snižuje. Souběžně cena zlata poprvé od listopadu loňského roku propadla pod psychologickou mez 4 000 dolarů – za propadem stojí silnější dolar a očekávání vyšších úrokových sazeb Fedu. Kapitál proudí z bezpečných přístavů do rizikovějších aktiv, podobně jako po íránské dohodě posilovaly technologické tituly.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-finance-byznys-meny-kryptomeny-koruna-posilila-proti-vetsine-men-kde-to-dovolenkari-pociti-nejvice-309250" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.e15.cz/byznys/burzy-a-trhy/zlato-ztraci-lesk-pod-tlakem-silneho-dolaru-a-fedu-unce-sestoupila-pod-psychologickou-mez-1433825" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Záměr zestátnit ČEZ: otevřený dopis premiérovi, odpůrci varují před ztrátami</h2><p>Deset signatářů včetně bývalého předsedy vlády vyzvalo Babiše dopisem, aby od záměru upustil – zestátnění výroby ČEZ považují za nevýhodné pro občany.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/ekonomika/zamer-zestatnit-cez-je-pro-obcany-nevyhodny-tvrdi-skupina-odpurcu-374924" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Dluhopisy Republiky: stát vybral 70 miliard za šest týdnů, rekord je na dosah</h2><p>Mimořádný zájem retailových investorů sníží nabídku institucionálním hráčům o více než pětinu – letos může stát z Dluhopisů Republiky vybrat přes 100 miliard korun.</p><div class="srcs"><a href="https://www.e15.cz/nazory-a-analyzy/dluhopisy-republiky-slavi-uspech-rekordni-zajem-snizi-nabidku-pro-instituce-o-vice-nez-petinu-1433811" target="_blank" rel="noopener">E15</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>OpenAI a Broadcom spouštějí vlastní čip pro velké jazykové modely</h2><p>OpenAI a Broadcom oznámily společný čip navržený přímo pro inferenci velkých jazykových modelů ve velkém měřítku – jde o přímou odpověď na závody ve výpočetním výkonu. Zveřejnění přichází v době, kdy výzkumníci opouštějí Google pro konkurenty včetně Anthropicu, a kdy vědecký časopis Nature zpochybnil průlomové kvantové nároky Microsoftu. Bitva o AI infrastrukturu se přesunula ze softwarové vrstvy rovnou do křemíku.</p><div class="srcs"><a href="https://arstechnica.com/gadgets/2026/06/openai-and-broadcom-announce-chip-designed-for-llm-inference-at-scale/" target="_blank" rel="noopener">Ars Technica</a><a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank" rel="noopener">TechCrunch</a><a href="https://www.theverge.com/tech/956450/nature-microsoft-quantum-computing-majorana-1-claims" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Anthropic žaluje čínský Alibaba: ukradl schopnosti modelu Claude</h2><p>Anthropic tvrdí, že Alibaba použil podvodné účty k extrakci dat z modelu Claude – případ přichází den po tom, co Bílý dům zablokoval nejsilnější verze Claudu pro zahraniční uživatele.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cwyklykn5dwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Business</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>GTA VI vyjde za 80 dolarů a fyzická kopie nebude obsahovat disk</h2><p>Rockstar potvrdil cenu a datum vydání – krabicová verze obsahuje jen kód ke stažení, což varuje před koncem fyzických her.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cjrg52egw1ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://www.theverge.com/games/956389/grand-theft-auto-6-gta-digital-code-in-box-physical-games" target="_blank" rel="noopener">The Verge</a><a href="https://arstechnica.com/gaming/2026/06/grand-theft-auto-vi-will-cost-80-without-a-physical-disc/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Google otevírá Play Store platbám třetích stran po prohraném sporu</h2><p>Google spouští alternativní platby v obchodě Play ještě před soudním schválením dohody s Epicem – konec monopolu na Android transakce se blíží.</p><div class="srcs"><a href="https://www.theverge.com/policy/956296/google-play-app-store-alternative-billing-fee-antitrust" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Microsoft přidává levnější Surface Pro a Laptop s poloviční pamětí</h2><p>Nové modely Surface za 849 dolarů přicházejí s 8 GB RAM místo standardních 16 GB – úsporná řada míří na citlivější kupce.</p><div class="srcs"><a href="https://www.theverge.com/tech/956504/microsoft-surface-pro-laptop-ram" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Akcie AI čipové firmy Cerebras propadly po prvních výsledcích od IPO</h2><p>Šéf Cerebrasu tvrdí, že investoři špatně pochopili výhled marží – kurz se po zveřejnění výsledků propadl, přestože tržby rostly.</p><div class="srcs"><a href="https://techcrunch.com/2026/06/24/cerebras-stock-plunges-after-earnings-as-ceo-says-margin-outlook-was-misunderstood/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>ChatGPT přivádí na weby zákazníky, kteří čtou dvakrát více stránek</h2><p>Návštěvníci webu přicházející z doporučení ChatGPT prohlíží průměrně 12 stránek a stráví na webu skoro 12 minut – oproti 6,5 stránkám u ostatních zdrojů. Studie SimilarWeb ukazuje, že AI-generovaná doporučení přitahují výrazně angažovanější publikum, a přepisují tím logiku obsahové strategie. Firmy, které optimalizují obsah pro ChatGPT, tak de facto lovily v jiném rybníce, než tušily.</p><div class="srcs"><a href="https://searchengineland.com/chatgpt-recommendations-brand-website-visits-study-480989" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>EU zve influencery na summity, ale jen ty, kteří ji milují</h2><p>Tvůrci obsahu dostanou přístup na vrcholná jednání EU pod podmínkou, že respektují hodnoty bloku a nemíří do politiky – kritici mluví o selektivní propagandě.</p><div class="srcs"><a href="https://www.politico.eu/article/eu-wants-influencers-to-cover-its-summits-but-only-if-they-love-the-bloc/" target="_blank" rel="noopener">Politico Europe</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>B2B značky jsou na Googlu vidět, ale v AI přehledech téměř chybí</h2><p>AI Overviews se zobrazují v polovině relevantních B2B dotazů, přesto se v jejich odpovědích objevuje jen 3 % firem, které v běžném vyhledávání figurují na předních místech.</p><div class="srcs"><a href="https://searchengineland.com/b2b-brands-rank-google-appear-ai-overviews-480954" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer>
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var p = document.getElementById('progress');
+  function onScroll(){ if(!p) return; var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+  var secs=document.querySelectorAll('section.rubr');
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
+      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
+      {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
+    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
+  }
+})();
+</script>
+</body></html>

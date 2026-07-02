@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — sobota 11. dubna 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="sub">sobota 11. dubna 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">sobota 11. dubna 2026</h1>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Střet zájmů, ropa i veřejnoprávní média. Mimořádnou schůzí chceme vládu donutit k odpovědím</h2><p>Opoziční strany žádají svolání mimořádné schůze Poslanecké sněmovny s cílem donutit vládu k vysvětlení chaotické situace v oblasti médií, energetiky a střetu zájmů. Schůze má být nástroj k získání odpovědí na klíčové otázky týkající se řízení státu. Demokraické subjekty signalizují vážné obavy z vládního směřování.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/mimoradna-schuze-snemovny_2604110010_elev" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Praha zakázala feministickou demonstraci kvůli právu na akce Hnutí Pro život</h2><p>Soud zasáhl do sporu o právo uspořádat protichůdné akce v Praze mezi feministickou manifestací a protipotratovým Hnutím Pro život.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/praha-zakazala-feministickou-demonstraci-pry-by-popirala-pravo-na-akce-hnuti-pro_2604110600_hrk" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Spor o dotaci pro benešovskou školu pokračuje. Ředitelka podala kasační stížnost</h2><p>Benešovská zemědělská škola se brání rozhodnutí soudu o neproplacení dotace, kterou ministr Bartoš neproplatil kvůli Babišovu střetu zájmů.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/stret-zajmu-andrej-babis-dotace-neproplacena-agrofert-zemedelska-soud-skola_2604110500_tec" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Klempíř naštval další skupinu lidí v kultuře svými kroky úspor</h2><p>Ministr kultury Oto Klempíř (Motoristé) pokračuje v řezech v rozpočtu, které vyvolávají odpor v kulturní oblasti.</p><div class="srcs"><a href="https://www.novinky.cz/clanek/kultura-klempir-se-dotkl-dalsi-skupiny-lidi-z-kultury-pisi-kvuli-tomu-schillerove-40572682" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Turek chce nadále jezdit na unijní rady místo šéfa ministerstva životního prostředí</h2><p>Vládní zmocněnec Filip Turek (Motoristé) plánuje pokračovat v cestách na jednání Rady ministrů namísto ministra Červeného.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/turek-chce-i-nadale-jezdit-na-unijni-rady-chysta-se-i-hlasovat-372261" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Evropský žalobce zajistil dům exnáměstkovi ministra průmyslu v dotační kauze</h2><p>Evropský státní žalobce pokračuje v boji proti korupci a nechal zajistit rodinný dům bývalého náměstka ministra průmyslu Mariana Piechy. Plomba na nemovitosti naznačuje, že jde o jednoho z hlavních aktérů dotační kauzy. Vyšetřování se tak rozšiřuje na další osobnosti z vládních struktur.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-dotacni-kauza-evropsky-zalobce-zajistil-dum-i-exnamestkovi-ministra-prumyslu-303782" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Soud v Brně vzal v dotační kauze do vazby podnikatele Štefla, dva lidi propustil</h2><p>Viceprezident Hospodářské komory Michal Štefl skončil ve vazbě kvůli obavám z ovlivňování svědků, dva další obviněné soud propustil.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-soud-pustil-na-svobodu-dva-aktery-kauzy-inovacniho-centra-v-brne-303772" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://zpravy.aktualne.cz/domaci/dotacni-kauza-v-brne-soud-vzal-do-vazby-viceprezidenta-hospodarske-komory/r~aaa294329f3d2700b34426f8724fd2e7/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://domaci.hn.cz/c1-67865470-soud-v-brne-vzal-v-dotacni-kauze-do-vazby-podnikatele-a-viceprezidenta-hospodarske-komory-cr-stefla" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Ministerstvo školství roky platilo dotace na neexistující sportovce a trenéry</h2><p>Tisícovky &quot;černých duší&quot; - smyšlených osob - získávaly milionové dotace na sportování dětí po dobu šesti let bez kontroly.</p><div class="srcs"><a href="https://domaci.hn.cz/c1-67865070-tisice-cernych-dusi-ministerstvo-skolstvi-roky-platilo-milionove-dotace-na-neexistujici-sportovce-a-trenery" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Německý neonacista zatčený u Aše nesouhlasí s vydáním do Německa</h2><p>Plzeňský krajský soud poslal do vazby německého neonacistu dopadnutého na Chebsku na základě evropského zatykače.</p><div class="srcs"><a href="https://www.novinky.cz/clanek/krimi-nemecky-neonacista-zatceny-u-ase-nesouhlasi-s-vydanim-muz-ktery-zmenil-pohlavi-je-ve-vazbe-40572667" target="_blank" rel="noopener">Novinky.cz</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Historické mírové rozhovory USA a Íránu začínají v Islámábádu. Představují rozhodující moment</h2><p>V sobotu začínají v Pakistánu přímé rozhovory mezi USA a Íránem, které by měly být nejintenzivnější diplomacií od islámské revoluce v roce 1979. Podle pákistánského premiéra jde o kritické jednání, které však komplikují spory o Libanon a účast Izraele. Výsledek bude zásadní pro stabilitu Blízkého východu.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-sobotni-rozhovory-mezi-iranem-a-usa-budou-pro-mir-rozhodujici-rekl-sarif-303779" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.aljazeera.com/video/newsfeed/2026/4/11/pakistans-prime-minister-calls-us-iran-talks-make-or?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Počet obětí izraelských úderů na Libanon vzrostl na 357</h2><p>Izraelská armáda v úterý provedla &quot;největší koordinovaný útok&quot; na Hizballáh od začátku konfliktu s velkým počtem mrtvých.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-pocet-obeti-stredecnich-izraelskych-uderu-na-libanon-vzrostl-na-357-pise-afp-303778" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Trump varuje Írán a chystá vojenské údery, pokud se mírová jednání nezaří</h2><p>Americký prezident oznámil, že armáda USA je připravena znovu útočit na Írán, pokud se Hormuzský průliv neotevře.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-trump-armada-usa-se-chysta-na-udery-na-iran-pro-pripad-neuzavreni-mirove-dohody-303774" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Xi Jinping se poprvé za dekádu setkal s taiwanským opoziční lídrem</h2><p>Čínský vůdce se sešel s tajwanským oponentem Cheng Li-wunem, který navrhl možnost budoucí návštěvy Xiho na Taiwanu.</p><div class="srcs"><a href="https://www.nytimes.com/2026/04/10/world/asia/taiwan-china-xi-cheng.html" target="_blank" rel="noopener">New York Times</a><a href="https://www.theguardian.com/world/2026/apr/10/xi-jinping-cheng-li-wu-china-taiwan-meeting-bejing" target="_blank" rel="noopener">The Guardian</a><a href="https://www.dw.com/en/xi-sells-peace-message-to-taiwan-opposition-ahead-of-trump-visit/a-76738826?maca=en-rss-en-world-4025-xml-mrss" target="_blank" rel="noopener">Deutsche Welle</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Po optimismu na trzích opět zavládla skepse. Akciové indexy stále ztrácejí</h2><p>Investory znervózňují boje na Blízkém východě, které pokračují navzdory příměří mezi USA a Íránem. Hormuzský průliv zůstává prakticky uzavřený, což brání poklesu cen ropy a plynu. Trhy se vrátily k opatrnosti kvůli nejistotě ohledně dlouhodobé stability regionu.</p><div class="srcs"><a href="https://denikn.cz/2029278/pointa-n-jak-si-motoriste-posvitili-na-penize-pro-knihovny-a-film-o-queer-lidech/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Inflace v USA dosáhla nejvyšší úrovně za téměř dva roky. Paliva zdražila kvůli válce s Íránem</h2><p>Meziroční růst cen ve Spojených státech v březnu zrychlil na 3,3 procenta, nejvíce za téměř dva roky, zejména kvůli zdražení pohonných hmot.</p><div class="srcs"><a href="https://byznys.hn.cz/c1-67865390-inflace-v-usa-je-nejvyssi-za-temer-dva-roky-kvuli-valce-v-iranu-zdrazily-pohonne-hmoty" target="_blank" rel="noopener">Hospodářské noviny</a><a href="https://www.bbc.com/news/articles/cde56g80xp5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Business</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Akcie českého zbrojaře CSG strmě padají. Investoři se obávají utichnutí konfliktu na Ukrajině</h2><p>Kvůli zprávám o možném příměří na Ukrajině padá cena akcií CSG na burzách a obchodování muselo být zastaveno.</p><div class="srcs"><a href="https://www.e15.cz/byznys/burzy-a-trhy/kyrylo-budanov-sundal-akcie-csg-deal-s-ruskem-je-pry-na-spadnuti-investori-opousteji-zbrojare-1432046" target="_blank" rel="noopener">E15</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>Mise Artemis II se úspěšně vrátila na Zem. Astronauti obletěli Měsíc</h2><p>Kosmická loď Orion s čtveřicí astronautů hladce přistála u kalifornského pobřeží po více než milionu kilometrů dlouhé cestě. Jde o první lidskou lunární misi za více než 50 let od posledního Apollo letu. Astronauti budou podrobeni zdravotním kontrolám a sjednoceni s rodinami.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/cpwjvgv2d4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://www.aljazeera.com/video/newsfeed/2026/4/11/artemis-ii-astronauts-journey-back-to-earth-after-moon-mission?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.theverge.com/news/910397/how-to-watch-the-artemis-ii-astronauts-return-to-earth" target="_blank" rel="noopener">The Verge</a><a href="https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Muž zatčen za pokus zapálit dům šéfa OpenAI Sama Altmana</h2><p>Dvacetiletý muž, který hodil zápalnou lahev na dům ředitele OpenAI a hrozil dalšími útoky, byl zatčen v San Francisku.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-policie-v-usa-zatkla-muze-podezreleho-z-pokusu-o-zapaleni-domu-sefa-openai-303780" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.theverge.com/ai-artificial-intelligence/910393/openai-sam-altman-house-molotov-cocktail" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>YouTube Premium a YouTube Music zdražují, základní plán zůstane s reklamou</h2><p>YouTube zvyšuje cenu Premium na 15,99 dolarů měsíčně a Family plan na 26,99 dolarů měsíčně kvůli rostoucím nákladům.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/10/youtube-premium-youtube-music-subscription-price-increase/" target="_blank" rel="noopener">TechCrunch</a><a href="https://arstechnica.com/gadgets/2026/04/youtube-increases-premium-price-again-says-90-second-unskippable-ads-are-a-bug/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Anthropic dočasně zablokoval tvůrce OpenClaw přístup do Claude</h2><p>Společnost Anthropic zakázala přístup uživateli po změně cen pro OpenClaw uživatele minulý týden.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Oběť pronásledování žaluje OpenAI, tvrdí že ChatGPT živil iluze jejího útočníka</h2><p>Žena podala žalobu na OpenAI, která údajně ignorovala tři varování o nebezpečném uživateli, který ji pronásledoval.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>Google Ads zavádí zjednodušení Enhanced Conversions do jediného přepínače</h2><p>Google upravuje nástroje pro sledování konverzí, aby bylo nastavení jednodušší a přesnější pro inzerenty. Nový přístup s jedním přepínačem a vícezdrojovým sběrem dat má snížit složitost implementace. Zjednodušení sledování konverzí usnadní inzerentům optimalizaci jejich kampaní.</p><div class="srcs"><a href="https://searchengineland.com/google-ads-simplifies-enhanced-conversions-into-a-single-switch-474101" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Merchant API se dostává do Google Ads Scripts před vyřazením Content API</h2><p>Nový Merchant API poskytuje inzerentům lepší nástroje pro správu dat o produktech s přípravou na vypnutí Content API.</p><div class="srcs"><a href="https://searchengineland.com/merchant-api-lands-in-google-ads-scripts-ahead-of-content-api-sunset-474126" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Healthcare reviews: Jak zůstat compliance a vyhrát v local SEO</h2><p>Článek vysvětluje, jak vytvořit udržitelný systém recenzí v zdravotnictví bez porušování pravidel.</p><div class="srcs"><a href="https://searchengineland.com/healthcare-reviews-stay-compliant-local-seo-474011" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer>
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var p = document.getElementById('progress');
+  function onScroll(){ if(!p) return; var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+  var secs=document.querySelectorAll('section.rubr');
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
+      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
+      {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
+    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
+  }
+})();
+</script>
+</body></html>

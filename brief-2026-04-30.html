@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — čtvrtek 30. dubna 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="sub">čtvrtek 30. dubna 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">čtvrtek 30. dubna 2026</h1>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Babiš je ve správný čas na správném místě. A nahněval Rusko</h2><p>Zahraniční cesta premiéra Andreje Babiše po Střední Asii představuje nejen byznysový, ale i politický úspěch v době, kdy bývalé sovětské republiky znovu hledají své místo ve světě. Návštěva se odehrává v strategicky důležitém období, kdy region hledá alternativy k ruské dominanci. Česko prostřednictvím premiéra posiluje své pozice v geopolitickém středoevropském prostoru.</p><div class="srcs"><a href="https://denikn.cz/2050518/pointa-n-babis-je-ve-spravny-cas-na-spravnem-miste-a-nahneval-rusko/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Kyjev dostal finanční injekci 90 miliard eur od EU</h2><p>Evropská unie schválila klíčovou bezúročnou půjčku pro Ukrajinu ve výši devadesáti miliard eur.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-svet/evropska-unie-eu-ukrajina-pujcka_2604300600_ula" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Komise žaluje Česko a Maďarsko kvůli evropskému zatýkacímu rozkazu</h2><p>Evropská komise zahájila soudní řízení proti Česku a Maďarsku za nedodržování pravidel o evropském zatýkacím rozkazu.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/svet/komise-zaluje-cesko-a-madarsko-kvuli-evropskemu-zatykacimu-rozkazu-372934" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Ministryně Mrázová má na pozemku černé stavby a chce měnit pravidla</h2><p>Ministryně Zuzana Mrázová se snaží usnadnit legalizaci černých staveb v době, kdy sama řeší objekty na svém pozemku.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-ministryne-mrazova-ma-na-pozemku-cerne-stavby-a-ted-chce-menit-pravidla-305091" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Vojtěch a Síla se střetli kvůli očkovací strategii</h2><p>Na jednání sněmovního zdravotního výboru se objevilo politizované téma národní očkovací strategie.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/vojtech-a-sila-se-opet-stretli-kvuli-ockovaci-strategii-tentokrat-za-dozoru_2604300500_jgr" target="_blank" rel="noopener">iRozhlas</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Extrémní sucho může brzy zasáhnout více než polovinu Česka</h2><p>Letošní duben je v Česku druhý nejsušší od roku 1961, přičemž zima nebyla na sníh tak bohatá, jak se často tvrdilo. Klimatolog Pavel Zahradníček z Českého hydrometeorologického ústavu varuje před závažnými dopady na zemědělství. Situace se bez srážek jen tak nezlepší, problémy hrozí i na Slovensku.</p><div class="srcs"><a href="https://denikn.cz/2050431/extremni-sucho-muze-brzy-zasahnout-vice-nez-polovinu-ceska-rika-zahradnicek/" target="_blank" rel="noopener">Deník N</a><a href="https://ct24.ceskatelevize.cz/clanek/pocasi/cesko-zasahlo-sucho-situace-se-jen-tak-nezlepsi-na-slovensku-je-jeste-hur-372891" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Češi odpracují o devět let více než Němci do důchodu v 67</h2><p>Předseda odborové centrály Středula tvrdí, že věk 67 let je nepřijatelný.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/stredula-cesky-zamestnanec-odpracuje-o-devet-let-vice-nez-nemecky-do-duchodu-v_2604300010_cen" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Žirovnice možná letos upálí čarodějnice naposledy</h2><p>Vedení radnice rozhoduje o konci tradičního pálení čarodějnic kvůli likvidaci biologického odpadu.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/zirovnice-mozna-letos-upali-carodejnice-naposledy-vedeni-vadi-ze-pri-nem-lide_2604300600_kch" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Pobodání dvou Židů v Londýně považuje policie za teroristický čin</h2><p>Britská policie zadržela 45letého muže po útoku před synagogou v severozápadním Londýně.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/svet/pobodani-dvou-zidu-v-londyne-povazuje-policie-za-teroristicky-cin-372946" target="_blank" rel="noopener">ČT24</a><a href="https://www.bbc.com/news/articles/clypz81pg9go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://www.nytimes.com/2026/04/29/world/europe/london-stabbing-golders-green.html" target="_blank" rel="noopener">NY Times World</a><a href="http://www.euronews.com/video/2026/04/29/video-shows-suspect-approaching-police-after-stabbing-in-north-london" target="_blank" rel="noopener">Euronews</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Putin s Trumpem si telefonovali o Ukrajině a Íránu</h2><p>Vladimir Putin v telefonátu se vrátil k myšlence příměří na Ukrajině u příležitosti oslav 9. května, kterou Trump podpořil. Státníci řešili také situaci v Íránu, kde Putin odmítl pozemní operace. Telefonát signalizuje pokračující diplomatické kontakty mezi lídry dvou mocností.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-putin-s-trumpem-si-podle-kremlu-telefonovali-o-ukrajine-a-iranu-305168" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://zahranicni.hn.cz/c1-67872370-je-to-blizko-putin-s-trumpem-si-podle-kremlu-telefonovali-o-ukrajine-americky-prezident-pry-veri-v-brzky-konec-valky" target="_blank" rel="noopener">Hospodářské noviny</a><a href="https://www.nytimes.com/2026/04/29/world/europe/ukraine-russia-ceasefire-trump-putin.html" target="_blank" rel="noopener">NY Times World</a><a href="https://www.e15.cz/valka-na-ukrajine/putin-navrhl-trumpovi-kvetnove-primeri-na-ukrajine-mluvili-spolu-hodinu-a-pul-1432492" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>USA viní mexické představitele z obchodu s drogami</h2><p>Americké ministerstvo obvinilo guvernéra mexického státu Sinaloa a devět dalších úředníků z obchodu s drogami.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/cpqpzlrd3wwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.nytimes.com/2026/04/29/world/americas/ruben-rocha-moya-indictment-mexico.html" target="_blank" rel="noopener">NY Times World</a><a href="https://www.theguardian.com/world/2026/apr/30/us-charges-sinaloa-governor-and-other-mexican-officials-with-drug-trafficking-offences" target="_blank" rel="noopener">The Guardian</a><a href="https://www.aljazeera.com/news/2026/4/30/us-charges-sinaloa-state-governor-9-others-over-mexican-drug-cartel-links?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Trump hrozí snížením počtu amerických vojáků v Německu</h2><p>Americký prezident zvažuje možnou redukci sil v Německu krátce po sporu s německým kancléřem.</p><div class="srcs"><a href="https://www.dw.com/en/trump-threatens-us-troop-cuts-in-germany/a-76987910?maca=en-rss-en-world-4025-xml-mrss" target="_blank" rel="noopener">Deutsche Welle</a><a href="https://www.politico.com/news/2026/04/29/trump-us-reducing-troops-germany-00899352?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico Europe</a><a href="http://www.euronews.com/2026/04/30/trump-says-he-is-weighing-reducing-us-troop-presence-in-germany-after-iran-feud-with-merz" target="_blank" rel="noopener">Euronews</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Paměť pod palbou. Ruská armáda ničí ukrajinské kulturní dědictví</h2><p>Ruská agrese zanechala stopu v kulturní sféře s bezprecedentní mírou fyzické destrukce.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/svet/pamet-pod-palbou-ruska-armada-nici-ukrajinske-kulturni-dedictvi-372937" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Meta zvýšila zisk o 61 procent, Microsoft o 23 procent</h2><p>Meta a Microsoft překonaly v prvním čtvrtletí 2026 očekávání analytiků v zisku i tržbách. Meta dosáhla zisku 27 miliard dolarů, Microsoft navýšil čistý zisk meziročně o 23 procent. Obe firmy těží z vysoké poptávky po AI infrastruktuře a cloudových službách.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-firmy-meta-zvysila-zisk-o-61-procent-na-27-miliard-dolaru-a-prekonala-ocekavani-305175" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.seznamzpravy.cz/clanek/ekonomika-firmy-microsoft-zvysil-zisk-o-23-procent-trzby-prekonaly-ocekavani-analytiku-305174" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://www.bbc.com/news/articles/cg7p89mp2rjo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Business</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Alphabet zvýšil zisk o 81 procent, dařilo se cloudové divizi</h2><p>Google zaznamenala vysoký růst tržeb v cloudové divizi díky investicím do AI infrastruktury.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-firmy-zisk-alphabetu-ve-ctvrtleti-stoupl-o-81-procent-darilo-se-cloudove-divizi-305173" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Ropa dosáhla nejvyšší ceny od roku 2022</h2><p>Cena severomořské ropy Brent se zvýšila na více než 119 dolarů za barel.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/svet/ropa-kvuli-blizkemu-vychodu-dal-zdrazuje-brent-je-nejvys-od-roku-2022-372954" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>Musk v soudě proti OpenAI: Svým chováním sám si škodí</h2><p>Elon Musk byl třetí den soudit za své tvrzení, že OpenAI se nezákonně transformovalo ze neziskové organizace na profit-seeking firmu. Během křížového výslechu byl opakovaně konfrontován se svými vlastními tweety a vyjádřeními, která oslabila jeho argumenty. Proces o budoucnosti OpenAI a jeho největšího produktu ChatGPT pokračuje s výrazným mediálním zájmem.</p><div class="srcs"><a href="https://www.theverge.com/tech/921022/elon-musk-cross-openai-altman" target="_blank" rel="noopener">The Verge</a><a href="https://techcrunch.com/2026/04/29/on-the-stand-elon-musk-cant-escape-his-own-tweets/" target="_blank" rel="noopener">TechCrunch</a><a href="https://www.bbc.com/news/articles/czj29yygyzgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Business</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Google Search dosáhl &#x27;všeho času vysokého&#x27; počtu dotazů</h2><p>Google zaznamenala všedobý rekord v počtu vyhledávacích dotazů díky AI investicím.</p><div class="srcs"><a href="https://www.theverge.com/tech/920815/google-alphabet-q1-2026-earnings-sundar-pichai" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Anthropic by mohl získat 50 miliard dolarů při valuaci 900 miliard</h2><p>Claude výrobce Anthropic obdržel více nabídek na financování v řádu desítek miliard dolarů.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Microsoft má přes 20 milionů placených uživatelů Copilotu</h2><p>Společnost hlásí rostoucí počet uživatelů a engagement s AI asistenty.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Google Cloud překročila poprvé hranici 20 miliard dolarů</h2><p>Google Cloud dosáhla kvartálních příjmů přes 20 miliard dolarů pohnaných poptávkou po AI.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/29/google-cloud-surpasses-20b-but-says-growth-was-capacity-constrained/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>Signály, které teď určují viditelnost v AI vyhledávání</h2><p>Rankings negarantují viditelnost v AI search - čtyři specifické signály nyní určují, které značky se objeví a jak budou prezentovány. AI vyhledávání zvyšuje laťku, ale nezmění základní cíl - poskytnout užitečné informace. Stratégové musí přizpůsobit obsah tomu, jak AI systémy zpracovávají a zobrazují informace.</p><div class="srcs"><a href="https://searchengineland.com/visibility-ai-search-signals-475863" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Může falešná značka vyhrát v AI vyhledávání? Test říká ano</h2><p>Měsíční experiment ukazuje, že viditelnost AI se řídí opakovatelnými signály.</p><div class="srcs"><a href="https://searchengineland.com/fake-brand-ai-search-experiment-475947" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Existuje ještě dlouhodobá budoucnost pro SEO v AI vyhledávání?</h2><p>SEO nezmizí, ale pravidla se mění - poznej jak kombinovat základní taktiky s chováním AI.</p><div class="srcs"><a href="https://searchengineland.com/long-term-game-seo-ai-search-475913" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer>
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var p = document.getElementById('progress');
+  function onScroll(){ if(!p) return; var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+  var secs=document.querySelectorAll('section.rubr');
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
+      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
+      {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
+    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
+  }
+})();
+</script>
+</body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — úterý 28. dubna 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#141210; --muted:#6b655d; --line:#e7e2d8; --paper:#faf7f1; --card:#f3eee3; --accent:#b3271e; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  .masthead { border-bottom:3px solid var(--ink); }
+  .masthead .wrap { display:flex; align-items:flex-end; justify-content:space-between;
+    padding-top:26px; padding-bottom:14px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em;
+    font-size:clamp(30px,6vw,52px); line-height:.95; }
+  .brand a { text-decoration:none; color:var(--ink); }
+  .masthead .meta { text-align:right; }
+  .masthead .wx { font-family:Fraunces,serif; font-weight:600; font-size:16px; }
+  .masthead .sub { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:3px; }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  /* HERO */
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink);
+    display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px;
+    border-bottom:1px solid var(--line); text-decoration:none; color:#2c2822; }
+  .hero .hi:hover { background:#fffdf8; }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+    text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { position:relative; background:var(--card); border:1px solid #e3dccd; border-radius:10px;
+    padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column;
+    min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:#fffdf8; border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.12); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:17px; line-height:1.25; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+
+  footer { margin:56px 0 40px; padding-top:18px; border-top:3px solid var(--ink);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+
+  /* ── Denní článek ── */
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase;
+    letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em;
+    font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:#37322b; line-height:1.55;
+    border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:#fff8e6; border:1px solid #f2dfa6; border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:#a76a00; }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:#4a4438; font-size:14.5px; }
+
+  /* Lepivé záložky sekcí */
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper);
+    margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px;
+    white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:#39342c; font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:#4a4438;
+    background:#efe9dd; border:1px solid #e2dccf; border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { background:#e6dfd0; border-color:#cfc7b6; }
+
+  /* Jemné odhalení při scrollu */
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } .masthead .meta { text-align:left; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <div class="brand"><a href="index.html">Ranní brief</a></div>
+  <div class="meta"><div class="sub">úterý 28. dubna 2026</div></div>
+</div></header>
+<main class="art">
+<a class="back" href="index.html">← Přehled</a>
+<h1 class="headline">úterý 28. dubna 2026</h1>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Babiš mění plán supernemocnice: S Letňany je problém, do hry vstupují Vinohrady</h2><p>Premiér Andrej Babiš změnil svůj plán na novou pražskou vojenskou nemocnici – místo Letňan zvažuje nyní lokalitu v areálu Fakultní nemocnice Královské Vinohrady. Projekt s podzemními úkryty, který měl reagovat na bezpečnostní hrozby v kontextu ruské agrese na Ukrajině, nyní čeká na nové evaluace obou variant. Babiš chce srovnat oba scénáře a rozhodnout o optimálním umístění.</p><div class="srcs"><a href="https://denikn.cz/2047531/babis-meni-plan-supernemocnice-s-letnany-je-problem-do-hry-vstupuji-vinohrady/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Nový šéf KDU-ČSL Jan Grolich chce stranu vzkřísit s mladým týmem</h2><p>Lidovci si zvolili nového předsedu Jana Grolicha a mladý tým s cílem zachránit tradiční konzervativní stranu před dalším úpadkem.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/spasitel-grolich-lidovci-mu-lezi-u-nohou-meli-ale-naopak-povstat-radi-komentator_2604280600_med" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Česko neplní závazky k obraně NATO, varuje prezident Pavel</h2><p>Prezident České republiky Pavel kritizoval nezplnění výdajů na obranu a vojenských kapacit, které Česko slíbilo v Severoatlantické alianci.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/cesko-neplni-zavazky-ke-kolektivni-obrane-nato-rekl-pavel-372836" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Havlíček: Česko chce brát z Ázerbájdžánu dvě miliardy metrů krychlových plynu ročně</h2><p>Ministr průmyslu Karel Havlíček oznámil plán na roční dovoz dvou miliard metrů krychlových plynu z Ázerbájdžánu, přičemž dodávky mohly začít mezi lety 2028 a 2029.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/havlicek-cesko-chce-brat-z-azerbajdzanu-dve-miliardy-metru-krychlovych-plynu-rocne-372848" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Ministr zdravotnictví chce vyšší odměny za preventivní prohlídky</h2><p>Ministr Adam Vojtěch navrhuje zvýšit odměny pro občany, kteří pravidelně navštěvují preventivní zdravotnické prohlídky, počínaje rokem 2028.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/ministerstvo-chce-vyssi-odmeny-pro-lidi-kteri-chodi-na-preventivni-prohlidky-372860" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Podezřelé sbírky na děti s rakovinou: adresa v USA, stopy vedou do Izraele</h2><p>Radiožurnál vypátral sofistikovanou podvodnou operaci, kdy se prostřednictvím facebookových sbírek vybraly miliony korun na onkologicky nemocné děti, které se však nikdy nedostaly potřebným. Za čtyřmi podezřelými sbírkami stojí netransparentní charitativní organizace s fiktivními adresami v USA a stopami vedoucími do Izraele. Podvodníci následně zneužívali získané kontakty na rodiče nemocných dětí k opakování scénáře.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-svet/podezrele-sbirky-na-deti-s-rakovinou-adresa-v-usa-stopy-vedou-do-izraele_2604280500_gav" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Kladenská městská policie má novou speciální jednotku pro zásahy při útoku</h2><p>Mestské policie v Česku zřizují speciální jednotky reagující mimo jiné na nedostatek státních policistů a zvýšená bezpečnostní hrozby.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/kladenska-mestska-policie-ma-novou-specialni-jednotku-muze-zasahovat-napriklad_2604280541_kvr" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Pitná voda v Chyšce a Petrovicích bude po roce opět kvalitní</h2><p>Lidé v obcích Havlíčkobrodska se po roce vrací k bezpečné pitné vodě z kohoutků, kterou postihoval vyšší obsah dusičnanů.</p><div class="srcs"><a href="https://www.irozhlas.cz/zpravy-domov/pitna-voda-v-chysce-a-petrovicich-bude-po-roce-opet-kvalitni-dosud-obsahovala_2604280600_aru" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Lidé zaplatili za mobilní domy, nedostali nic. Firmy dluží skoro tři sta milionů</h2><p>Klienti brněnských společností Lavaro House a Corrida si objednali mobilheimy, které se nikdy nedozvtály; zaplacené zálohy jim nebyly vráceny.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/regiony/lide-zaplatili-za-mobilni-domy-nedostali-nic-firmy-dluzi-skoro-tri-sta-milionu-372855" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>V chudém městě tíží lidi exekuce. Ministryně bydlí levně v obecním</h2><p>Ministryně pro místní rozvoj Zuzana Mrázová obývala jako starostka Bíliny obecní byt za pár tisíc korun měsíčně v městě s jedním z nejvyšších počtů exekucí.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-v-chudem-meste-tizi-lidi-exekuce-ministryne-bydli-levne-v-obecnim-304846" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Střelba na galavečeři s Trumpem: Útočník byl u soudu obviněn z pokusu o atentát</h2><p>Muž, který střílel při sobotní galavečeři za účasti amerického prezidenta Donalda Trumpa, si u soudu vyslechl obvinění z pokusu o atentát na prezidenta a dalších zločinů. Třicetiletý kalifornský učitel měl záměr zabít co nejvíc vysokých státních činovníků. Incident potvrzuje pokračující bezpečnostní hrozby vůči americkým představitelům a vzorec politického násilí v USA.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/zahranicni-strelba-na-galaveceri-s-trumpem-utocnik-byl-u-soudu-obvinen-z-pokusu-o-atentat-304983" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://zpravy.aktualne.cz/zahranici/strelec-z-galavecere-s-trumpem-celi-obvineni-z-pokusu-o-atentat-na-prezidenta/r~aaa2910c2491e834c5e900283d3bea50/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://ct24.ceskatelevize.cz/clanek/svet/strelce-z-galavecere-s-trumpem-obvinili-z-pokusu-o-atentat-na-prezidenta-372861" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Britský král Karel III. je v USA, Trump ho přivítal v Bílém domě</h2><p>Americký prezident Donald Trump s první dámou přivítali britského krále Karla III. s chotí Camillou na státní návštěvě během oslav 250 let americké nezávislosti.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/obrazem-foto-britsky-kral-karel-iii-je-v-usa-trump-ho-privital-v-bilem-dome-304991" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://zpravy.aktualne.cz/zahranici/trump-s-manzelkou-privitali-v-bilem-dome-krale-karla-iii-s-choti-camillou/r~aaa2915e81c58c42c7ad8fc4f8937868/" target="_blank" rel="noopener">Aktuálně.cz</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Záchranáři se snaží osvobodit přeživší z trosek vlaku po srážce v Indonésii</h2><p>Dvě osobní vlaky se srazily na okraji indonéské metropole Jakarta, při nehodě zemřelo nejméně 14 lidí a dva cestující zůstali uvězněni v troskovišti.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/ckgegg8r0v1o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://www.theguardian.com/world/2026/apr/28/indonesian-train-crash-fatal" target="_blank" rel="noopener">The Guardian</a><a href="https://www.dw.com/en/indonesia-many-killed-in-train-collision-near-jakarta/a-76959000?maca=en-rss-en-world-4025-xml-mrss" target="_blank" rel="noopener">Deutsche Welle</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Mali se zmítá v chaosu. Vzbouřenci zabili ministra obrany a dobyly města</h2><p>Mali čelí koordinovaným útokům islamistických skupin a tuaregských separatistů; zemřel generál Sadio Camara a vojenská intelligence.</p><div class="srcs"><a href="https://denikn.cz/2047522/babis-meni-plan-supernemocnice-s-letnany-je-problem-do-hry-vstupuji-vinohrady/" target="_blank" rel="noopener">Deník N</a><a href="https://www.theguardian.com/world/2026/apr/27/mali-attacks-insurgents-seize-towns-kill-defence-minister" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Ukrajina protestuje proti ruským lodím s ukradeným obilím v Izraeli</h2><p>Ukrajina si předvolala izraelského velvyslance kvůli ruské lodi plné zřejmě ukradeného obilí, která doplula do haifského přístavu.</p><div class="srcs"><a href="https://zpravy.aktualne.cz/zahranici/ukrajina-protestuje-proti-ruskym-lodim-s-ukradenym-obilim-v-izraeli/r~aaa29fe8198cfb0054e2bb0a42930bc2/" target="_blank" rel="noopener">Aktuálně.cz</a><a href="https://ct24.ceskatelevize.cz/clanek/svet/ukrajina-protestuje-proti-ruskym-lodim-s-ukradenym-obilim-v-izraeli-372864" target="_blank" rel="noopener">ČT24</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Válka v Íránu zvýšila ceny pistácií na nejvyšší úroveň za osm let</h2><p>Ceny pistácií dosáhly nejvyšší hodnoty od roku 2018 díky válce v Íránu, která zkomplikovala dopravu a omezila vývoz jednoho z největších světových producentů. Sucho a celosvětová poptávka dále situaci zhoršují. Ceny pravděpodobně zůstanou vysoké, dokud se bezpečnostní situace ve Středním východě neupraví.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-finance-byznys-komodity-dluhopisy-valka-v-iranu-zvysila-ceny-pistacii-na-nejvyssi-hodnotu-za-osm-let-304985" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Hodně peněz za hnojiva, málo peněz za obilí. Zemědělci jsou v kleštích</h2><p>Hnojiva zdražila až o polovinu, ale zemědělci je nemohou ušetřit; současně klesá cena pšenice, která tvoří jejich hlavní příjem.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/ekonomika-byznys-trendy-analyzy-hodne-penez-za-hnojiva-malo-penez-za-obili-zemedelci-jsou-v-klestich-304936" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Ceny ropy rostou, US-írán mírové rozhovory ztroskotaly</h2><p>Druhé kolo mírových rozhovorů mezi USA a Íránem se neuskutečnilo; Trump zrušil plánovaný tým pro negociace, čímž ceny ropy vzrostly o více než 2 procenta.</p><div class="srcs"><a href="https://www.bbc.com/news/articles/c15d57pv925o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Business</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>Čína blokuje Metaovu akvizici AI startupu Manus za 2 miliardy dolarů</h2><p>Čínské úřady zablokovaly nákup startup Manus společností Meta, která měla revolucionizovat agentní umělou inteligenci. Meta bude nucena své vlastnictví vrátit v rámci geopolitické soutěže mezi USA a Čínou o dominanci v AI. Rozhodnutí signalizuje nový precedent pro čínskou regulaci zahraničních IT akvizic.</p><div class="srcs"><a href="https://www.dw.com/en/china-blocks-meta-s-2b-acquisition-of-ai-startup-manus/a-76957480?maca=en-rss-en-world-4025-xml-mrss" target="_blank" rel="noopener">Deutsche Welle</a><a href="https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/" target="_blank" rel="noopener">TechCrunch</a><a href="https://arstechnica.com/ai/2026/04/china-kills-metas-acquisition-of-manus-as-us-china-ai-rivalry-deepens/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>OpenAI končí exkluzivní partnerství s Microsoftem a rozšiřuje se na AWS</h2><p>OpenAI dosáhla nové dohody s Microsoftem, která jí umožňuje nabízet produkty na Amazon Web Services; Microsoft nyní dostane vyšší procento příjmů.</p><div class="srcs"><a href="https://arstechnica.com/ai/2026/04/no-longer-exclusive-microsoft-agrees-to-let-openai-see-other-cloud-providers/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Musk a Altman se soudí o budoucnost OpenAI a její nonprofit mise</h2><p>Elon Musk podal žalobu na Sama Altmanna, obvine ho z porušení původní nonprofit mise OpenAI.</p><div class="srcs"><a href="https://arstechnica.com/tech-policy/2026/04/musk-and-altman-face-off-in-trial-that-will-determine-openais-future/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>EU nařizuje Googlu otevřít AI na Androidu. Google odmítá jako neoprávněné zasahování</h2><p>Evropská unie požaduje, aby Google umožnil ostatním AI asistentům stejný přístup na Androidu; Gemini nyní dostává přednostní postavení.</p><div class="srcs"><a href="https://arstechnica.com/ai/2026/04/europe-could-force-google-to-open-android-to-other-ai-assistants/" target="_blank" rel="noopener">Ars Technica</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Google testuje AI chatbot pro YouTube s konverzačním vyhledáváním</h2><p>Google zavádí conversační vyhledávání na YouTube, kde AI chatbot pomáhá uživatelům najít obsah podobně jako běžné rozhovory.</p><div class="srcs"><a href="https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>David Silver z DeepMind získal 1,1 miliardy dolarů na AI bez lidských dat</h2><p>Bývalý výzkumný pracovník DeepMind založil startup Ineffable Intelligence, který získal 1,1 miliardy dolarů na vývoj umělé inteligence schopné se učit bez lidských trénovacích dat.</p><div class="srcs"><a href="https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>Konzumenti si chtějí personalizovaný marketing, ale značky to neumějí poskytnout</h2><p>Zákazníci si stále více žádají personalizované marketingové zprávy odpovídající jejich potřebám, ale podle výzkumu Adobe si je umí uskutečnit pouze malé procento značek. Absence správných nástrojů a strategie zůstává hlavní překážkou. Rozvoj AI by mohl situaci změnit, ale pouze pokud se značky naučí správně jej využívat.</p><div class="srcs"><a href="https://searchengineland.com/customers-want-personalized-marketing-why-cant-most-brands-deliver-475111" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Správa Google Ads se posouvá od kliknutí k aktuálním konverzím a výsledkům</h2><p>Platformy pro vyhledávání se stále méně spoléhají na klíčová slova; nyní řídí signály, kvalita dat a mapování záměrů uživatelů.</p><div class="srcs"><a href="https://searchengineland.com/what-are-you-optimizing-for-in-paid-search-when-keywords-matter-less-475565" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Adthena spouští nástroj pro konverzi kampaní z Google Ads do ChatGPT</h2><p>Nový nástroj umožňuje zadavatelům reklamy přenosit existující vyhledávací kampaně do ChatGPT a snáze měnit rozpočty a nastavení.</p><div class="srcs"><a href="https://searchengineland.com/adthena-launches-google-ads-to-chatgpt-conversion-tool-475672" target="_blank" rel="noopener">Search Engine Land</a></div></div>
+</section>
+</main>
+<footer class="wrap">
+  <div>© 2026 Ranní brief · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+  <div>Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+</footer>
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var p = document.getElementById('progress');
+  function onScroll(){ if(!p) return; var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight; p.style.width=(max>0?(h.scrollTop/max*100):0)+'%'; }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  var tabs={}; document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+  var secs=document.querySelectorAll('section.rubr');
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){
+      Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});
+      if(tabs[e.target.id]) tabs[e.target.id].classList.add('active'); }});},
+      {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });},{threshold:0.08});
+    if(!rm) document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev'); ro.observe(s);});
+  }
+})();
+</script>
+</body></html>
