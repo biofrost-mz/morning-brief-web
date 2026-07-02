@@ -31,6 +31,8 @@
     font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6;
     transition:background .2s, color .2s; }
   a { color:inherit; }
+  @view-transition { navigation: auto; }
+  @media (prefers-reduced-motion:reduce) { ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*) { animation:none !important; } }
   .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
   .art { max-width:760px; margin:0 auto; padding:0 22px; }
 
@@ -97,6 +99,11 @@
   .f-note { font-size:11.5px; color:var(--muted); opacity:.8; margin-top:8px; }
 
   /* Denní článek */
+  .daymeta { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:4px 0 0; }
+  .toolsrow { display:flex; align-items:center; gap:10px; margin:22px 0 2px; }
+  .toolsrow .back { margin:0; }
+  .toast { position:fixed; left:50%; bottom:26px; transform:translateX(-50%); background:var(--ink); color:var(--paper); font-size:13px; font-weight:700; padding:9px 16px; border-radius:999px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:40; }
+  .toast.show { opacity:1; }
   .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); text-decoration:none; }
   .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em; font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
   .standfirst { font-size:clamp(15.5px,2vw,18px); color:var(--sf); line-height:1.55; border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
@@ -138,16 +145,14 @@
 <header class="masthead"><div class="wrap">
   <a class="brandwrap" href="index.html">
     <img class="logo" src="logo.png" alt="" onerror="this.style.display='none'">
-    <span>
-      <span class="brand">Ranní brief</span>
-      <span class="slogan"><span class="ln"></span>Váš ranní přehled zpráv<span class="ln"></span></span>
-    </span>
+    <span class="brand">Ranní brief</span>
   </a>
   <div class="tools"><button class="ic" id="themeBtn" aria-label="Přepnout světlý/tmavý režim" title="Světlý/tmavý režim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
 </div></header>
 <main class="art">
-<a class="back" href="index.html">← Přehled</a>
+<div class="toolsrow"><a class="back" href="index.html">← Přehled</a><button class="ic" id="shareBtn" title="Sdílet / zkopírovat odkaz" aria-label="Sdílet"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></button></div>
 <h1 class="headline">čtvrtek 9. dubna 2026</h1>
+<div class="daymeta">24 zpráv · 5 rubrik</div>
 <nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a></nav>
 <section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
 <div class="story lead" style="--c:#DC2626"><h2>Prezident Pavel chce vést českou delegaci na summitu NATO v Ankaře</h2><p>Prezident Petr Pavel poslal dopis premiéru Babišovi, v němž sdělil, že chce v souladu se svým ústavním postavením vést českou delegaci na summitu NATO v Turecku v červenci. Jde o eskalaci dlouhotrvajícího sporu o vedoucí roli českého představitele v zahraničních vztazích. Konflikt odráží hlubší napětí mezi prezidentem a vládou Hnutí ANO.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/pavel-hodla-stat-v-cele-ceske-delegace-na-summit-nato-sdelil-hrad-babisovi-372174" target="_blank" rel="noopener">ČT24</a></div></div>
@@ -209,5 +214,23 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 secs.forEach(function(s){io.observe(s);});
 var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.08});
 if(!rm)document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev');ro.observe(s);});}
+})();
+
+(function(){
+  function go(sel){var a=document.querySelector(sel);if(a&&a.href)location.href=a.href;}
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.key==='ArrowLeft')go('.daynav .prev');
+    else if(e.key==='ArrowRight')go('.daynav .next');
+    else if(e.key==='g'||e.key==='Escape')location.href='index.html';
+  });
+  function toast(m){var t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);
+    requestAnimationFrame(function(){t.classList.add('show');});
+    setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},260);},1400);}
+  var sb=document.getElementById('shareBtn');
+  if(sb)sb.addEventListener('click',function(){var u=location.href;
+    if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){});}
+    else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){toast('Odkaz zkopírován');},function(){toast(u);});}
+    else toast(u);});
 })();
 </script></body></html>
