@@ -102,6 +102,30 @@
   .fsep { margin:0 10px; color:var(--muted); opacity:.5; }
   .f-note { font-size:11.5px; color:var(--muted); opacity:.8; margin-top:8px; }
 
+  /* Přihlášení k odběru */
+  .subx { border:1px solid var(--cardbd); background:var(--card); border-radius:14px;
+    padding:22px; margin:26px auto; max-width:560px; text-align:center; }
+  .subx.hero { max-width:640px; padding:30px 26px; }
+  .subx.foot { margin:26px auto 0; padding:18px; }
+  .subx h3 { margin:0 0 6px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:22px; color:var(--ink); letter-spacing:-.01em; }
+  .subx.foot h3 { font-size:16px; }
+  .subx p.lead { margin:0 0 14px; font-size:14px; color:var(--muted); line-height:1.5; }
+  .subx form { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:0; }
+  .subx input[type=email] { flex:1 1 240px; min-width:0; max-width:340px; padding:11px 14px;
+    font-size:15px; font-family:inherit; color:var(--ink); background:var(--paper);
+    border:1px solid var(--line); border-radius:9px; }
+  .subx input[type=email]:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .subx button { padding:11px 18px; font-size:14px; font-weight:800; font-family:inherit;
+    color:#fff; background:var(--accent); border:0; border-radius:9px; cursor:pointer; }
+  .subx .hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .subx .fine { margin:12px 0 0; font-size:11.5px; color:var(--muted); opacity:.85; }
+  .subx .fine a { color:var(--muted); }
+  .subx .msg { margin:12px 0 0; font-size:13.5px; font-weight:700; color:var(--accent); min-height:1px; }
+  .subbanner { max-width:1080px; margin:14px auto 0; padding:12px 18px; border-radius:10px;
+    background:var(--factbg); border:1px solid var(--factbd); color:var(--factink);
+    font-size:14px; font-weight:700; text-align:center; }
+
   /* Denní článek */
   .daymeta { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:4px 0 0; }
   .toolsrow { display:flex; align-items:center; gap:10px; margin:22px 0 2px; }
@@ -156,6 +180,7 @@
 <div class="searchbar" id="searchbar"><input id="searchBox" type="search" placeholder="Hledat v archivu…" autocomplete="off"></div>
 <div class="wrap">
 <section class="hero"><div class="eyebrow">Nejnovější · čtvrtek 16. července 2026</div><h1><a href="brief-2026-07-16.html">USA a Írán si již šestý den po sobě vyměňují letecké údery – americké síly napadly ropný tanker v Hormuzském průlivu a zasáhly cíle v okolí Teheránu,</a></h1><div class="heads"><a class="hi" href="brief-2026-07-16.html" style="--c:#DC2626"><span class="n">01</span><span class="ht"><span class="cat" style="color:#DC2626">Politika</span> — Babišovy výpady proti Pavlovi: analytici vidí start prezidentské kampaně</span></a><a class="hi" href="brief-2026-07-16.html" style="--c:#2563EB"><span class="n">02</span><span class="ht"><span class="cat" style="color:#2563EB">Společnost</span> — Čína zadržela českého podnikatele spojeného se Strnadovým holdingem, patrně chce výměnu za špiona</span></a><a class="hi" href="brief-2026-07-16.html" style="--c:#7C3AED"><span class="n">03</span><span class="ht"><span class="cat" style="color:#7C3AED">Svět</span> — USA útočí na Írán šestý den po sobě, zasáhly tanker v Hormuzském průlivu</span></a><a class="hi" href="brief-2026-07-16.html" style="--c:#EA580C"><span class="n">04</span><span class="ht"><span class="cat" style="color:#EA580C">Ekonomika</span> — Americká inflace v červnu klesla víc, než se čekalo, Fed přesto může zvýšit sazby</span></a><a class="hi" href="brief-2026-07-16.html" style="--c:#0D9488"><span class="n">05</span><span class="ht"><span class="cat" style="color:#0D9488">Tech</span> — Thinking Machines vydaly první open-weights model Inkling s 975 miliardami parametrů</span></a><a class="hi" href="brief-2026-07-16.html" style="--c:#65A30D"><span class="n">06</span><span class="ht"><span class="cat" style="color:#65A30D">Marketing</span> — Volání přes ChatGPT se mění na leady častěji než jiné kanály, ukazuje zpráva Invoca</span></a></div><a class="cta" href="brief-2026-07-16.html">Číst celý den →</a></section>
+
 <div class="sec-title">Archiv</div>
 <div id="noresult" class="noresult" style="display:none">Nic nenalezeno.</div>
 <div class="monthblock">
@@ -254,4 +279,27 @@ var nr=document.getElementById('noresult');if(nr){var any=document.querySelector
 document.addEventListener('keydown',function(e){
  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
  if(e.key==='/'){e.preventDefault();if(bar){bar.classList.add('open');window.scrollTo({top:0,behavior:'smooth'});si.focus();}}});})();
+
+(function(){
+ var t0=Date.now();
+ document.querySelectorAll('.subform').forEach(function(f){
+  var box=f.closest('.subx'),msg=box.querySelector('.msg'),ep=box.getAttribute('data-endpoint');
+  f.addEventListener('submit',function(e){
+   e.preventDefault();
+   if(f.website.value){return;}                         // honeypot
+   if(Date.now()-t0<2000){msg.textContent='Chvilku počkej a zkus to znovu.';return;}
+   var email=(f.email.value||'').trim();
+   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent='Zadej platnou e-mailovou adresu.';return;}
+   f.querySelector('button').disabled=true;
+   fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:email}).catch(function(){});
+   msg.textContent='Požadavek jsme přijali. Pokud je vše v pořádku, do pár minut dorazí potvrzovací e-mail (mrkni i do spamu).';
+   f.reset();
+  });
+ });
+ var m=(location.search.match(/[?&]subscription=([a-z]+)/)||[])[1];
+ if(m){var tx={confirmed:'Odběr potvrzen. Od zítřejšího rána ti chodí ranní brief.',
+   unsubscribed:'Odběr byl odhlášen.',expired:'Potvrzovací odkaz vypršel. Přihlas se prosím znovu.'}[m];
+  if(tx){var b=document.createElement('div');b.className='subbanner';b.textContent=tx;
+   var w=document.querySelector('.wrap')||document.body;w.insertBefore(b,w.firstChild);}}
+})();
 </script></body></html>
