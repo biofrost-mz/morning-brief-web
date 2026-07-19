@@ -159,6 +159,34 @@
     text-underline-offset:3px; cursor:pointer; }
   .subok .okmore:hover { color:var(--ok); }
 
+  /* Vysunovací lišta na stránce briefu. Vyjede až po dočtení, aby nepřerušovala
+     čtení; kdo ji zavře, už ji nikdy neuvidí (localStorage). */
+  .subx.slide { position:fixed; right:20px; bottom:20px; z-index:40; width:344px;
+    max-width:calc(100vw - 32px); margin:0; padding:18px 18px 15px; text-align:left;
+    box-shadow:0 12px 38px rgba(0,0,0,.20); visibility:hidden; opacity:0;
+    transform:translateY(130%);
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease, visibility .45s; }
+  html[data-theme="dark"] .subx.slide { box-shadow:0 12px 38px rgba(0,0,0,.55); }
+  .subx.slide.show { visibility:visible; opacity:1; transform:none; }
+  .subx.slide h3 { font-size:17px; padding-right:24px; }
+  .subx.slide p.lead { margin-bottom:12px; font-size:13px; }
+  .subx.slide form { flex-direction:column; align-items:stretch; gap:7px; }
+  .subx.slide input[type=email] { max-width:none; flex:1 1 auto; }
+  .subx.slide button { justify-content:center; }
+  .subx.slide .fine { margin-top:10px; font-size:10.5px; }
+  .subx.slide .subok { text-align:center; padding:16px 12px 14px; }
+  .subx.slide .okmark { width:44px; height:44px; }
+  .subx.slide .okt { font-size:16px; }
+  .subx.slide .okd { font-size:12.5px; }
+  .subclose { position:absolute; top:7px; right:8px; width:27px; height:27px; padding:0;
+    display:flex; align-items:center; justify-content:center; font-size:21px; line-height:1;
+    font-family:inherit; color:var(--muted); background:none; border:0; border-radius:7px;
+    cursor:pointer; }
+  .subclose:hover { color:var(--ink); background:var(--pillbg); }
+  @media (max-width:520px) {
+    .subx.slide { right:12px; left:12px; bottom:12px; width:auto; }
+  }
+
   /* Stavová stránka (potvrzeno / odhlášeno / vypršelo) */
   .statx { max-width:560px; margin:8px auto 0; text-align:center; }
   .statx .okmark { width:64px; height:64px; margin-bottom:16px; }
@@ -172,7 +200,7 @@
   .statx .cta { display:inline-block; margin-top:6px; padding:12px 22px; font-size:14px;
     font-weight:800; color:#fff; background:var(--accent); border-radius:9px; text-decoration:none; }
   .statx .cta:hover { opacity:.9; }
-  .statx .sub { font-size:13px; color:var(--muted); }
+  .statx .sub { margin-top:18px; font-size:13px; color:var(--muted); }
 
   @media (prefers-reduced-motion:reduce) {
     .subx form, .subok, .subok.play, .statx.play { animation:none !important; transition:none !important; }
@@ -242,7 +270,7 @@
 <div class="statx neutral"><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg>
 <h1>Odběr zrušen</h1>
 <p>Vaši adresu jsme z rozesílky odstranili. Žádný další e-mail už vám nepřijde.</p>
-<p class="sub">Kdybyste si to rozmysleli, přihlásit se můžete kdykoli znovu.</p><a class="cta" href="index.html">Přejít na web</a>
+<a class="cta" href="index.html">Přejít na web</a><p class="sub">Kdybyste si to rozmysleli, přihlásit se můžete kdykoli znovu.</p>
 </div>
 
 </main>
@@ -260,7 +288,7 @@ lab();tb.addEventListener('click',function(){var n=document.documentElement.getA
 document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}lab();});})();
 
 (function(){
- var t0=Date.now();
+ var t0=Date.now(), SKEY='mb_sub_hidden';
  document.querySelectorAll('.subform').forEach(function(f){
   var box=f.closest('.subx'),msg=box.querySelector('.msg'),ok=box.querySelector('.subok'),
       fine=box.querySelector('.fine'),btn=f.querySelector('button'),
@@ -276,6 +304,7 @@ document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('
    fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:email}).catch(function(){});
    // Spinner chvíli podržíme, ať odeslání není jen bliknutí; pak formulář
    // odplyne a nahradí ho panel „hotovo".
+   try{localStorage.setItem(SKEY,'1');}catch(err){}   // přihlášeným už lištu nenabízej
    setTimeout(function(){
     var m=ok.querySelector('.okmail'); if(m){m.textContent=email;}
     f.classList.add('gone');
@@ -295,6 +324,35 @@ document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('
    f.email.focus();
   });}
  });
+ // Vysunovací lišta: objeví se, až je přečtená většina stránky — tedy ve chvíli,
+ // kdy čtenář ví, jestli mu obsah sedí. Zavření i úspěšné přihlášení si pamatujeme
+ // natrvalo, takže nikoho neotravuje podruhé.
+ var slide=document.querySelector('.subx.slide');
+ if(slide){
+  var hid=false; try{hid=localStorage.getItem(SKEY)==='1';}catch(e){}
+  var close=slide.querySelector('.subclose');
+  function hideSlide(persist){
+   slide.classList.remove('show');
+   if(persist){try{localStorage.setItem(SKEY,'1');}catch(e){}}
+  }
+  if(close){close.addEventListener('click',function(){hideSlide(true);});}
+  document.addEventListener('keydown',function(e){
+   if(e.key==='Escape'&&slide.classList.contains('show')){hideSlide(true);}
+  });
+  if(!hid){
+   var onScroll=function(){
+    var d=document.documentElement,
+        h=(d.scrollHeight||0)-(d.clientHeight||0),
+        y=window.pageYOffset||d.scrollTop||0;
+    if(h<=0){return;}                     // krátká stránka: nemá se kam scrollovat
+    if(y/h>=0.6){
+     slide.classList.add('show');
+     window.removeEventListener('scroll',onScroll);
+    }
+   };
+   window.addEventListener('scroll',onScroll,{passive:true});
+  }
+ }
  // Stavové stránky (potvrzeno/odhlášeno) spustí kresbu odškrtnutí až tady,
  // aby se animace nepřehrála mimo obraz při načtení.
  var s=document.querySelector('.statx');
