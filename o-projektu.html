@@ -56,6 +56,23 @@
   html[data-theme="dark"] .th-sun { display:block; }
   html[data-theme="dark"] .th-moon { display:none; }
   html:not([data-theme="dark"]) .th-sun { display:none; }
+  /* Lišta musí zůstat na jednom řádku i na mobilu — nowrap zakáže zalomení
+     a prvky se místo toho zmenšují, počasí postupně odhazuje části. */
+  @media (max-width:620px) {
+    .masthead .wrap { flex-wrap:nowrap; padding:11px 16px; gap:10px; }
+    .brandwrap { min-width:0; gap:9px; }
+    .masthead .brand { font-size:22px; white-space:nowrap; }
+    .masthead .logo { width:30px; height:30px; }
+    .tools { flex:0 0 auto; gap:4px; }
+    .wx { font-size:11.5px; white-space:nowrap; }
+    .ic { padding:6px; }
+  }
+  @media (max-width:430px) { .wx-city { display:none; } }
+  @media (max-width:360px) {
+    .wx-min { display:none; }
+    .masthead .brand { font-size:20px; }
+    .masthead .logo { width:26px; height:26px; }
+  }
   .brandwrap { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); }
   .logo { width:42px; height:42px; object-fit:contain; margin-top:-5px; }
   .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em; font-size:clamp(28px,5.4vw,46px); line-height:.9; }
@@ -113,10 +130,16 @@
   .f-nav a, .f-nav button { padding:0; font:inherit; font-size:13px; font-weight:800;
     color:var(--sf); background:none; border:0; text-decoration:none; cursor:pointer; }
   .f-nav a:hover, .f-nav button:hover { color:var(--accent); }
+  /* „Odebírat" je jediná akce mezi odkazy — dostane pilulku v akcentové barvě. */
+  .f-nav .sub-cta { padding:7px 15px; margin:-7px 0; border-radius:999px;
+    background:var(--accent); color:#fff; transition:opacity .15s; }
+  .f-nav .sub-cta:hover { color:#fff; opacity:.88; }
   .f-inner { max-width:1080px; margin:0 auto; padding:26px 22px 42px; text-align:center; }
   .f-meta-wrap { padding-top:20px; border-top:1px solid var(--footline); }
   .f-brand { display:flex; align-items:center; justify-content:center; gap:11px;
-    font-family:Fraunces,serif; font-weight:900; font-size:26px; letter-spacing:-0.02em; }
+    font-family:Fraunces,serif; font-weight:900; font-size:26px; letter-spacing:-0.02em;
+    color:var(--ink); text-decoration:none; }
+  .f-brand:hover { color:var(--accent); }
   .f-logo { width:30px; height:30px; object-fit:contain; margin-top:-3px; }
   .f-slogan { display:flex; align-items:center; justify-content:center; gap:12px; max-width:360px; margin:10px auto 20px;
     font-size:10px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
@@ -124,10 +147,6 @@
   .f-meta { font-size:13px; color:var(--muted); }
   .f-meta a { color:var(--accent); font-weight:800; text-decoration:none; }
   .f-meta a:hover { text-decoration:underline; }
-  .f-tools { margin:16px 0 2px; font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
-  .flink { background:none; border:0; padding:0; margin:0; font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--muted); cursor:pointer; }
-  .flink:hover { color:var(--accent); }
-  .fsep { margin:0 10px; color:var(--muted); opacity:.5; }
   .f-note { font-size:11.5px; color:var(--muted); opacity:.8; margin-top:8px; }
 
   /* Přihlášení k odběru */
@@ -449,18 +468,17 @@
 </main>
 <div class="page-ending" aria-hidden="true"></div>
 <footer><div class="f-inner">
-  <div class="f-brand"><img class="f-logo" src="logo.png" alt="" onerror="this.style.display='none'">Ranní brief</div>
+  <a class="f-brand" href="index.html"><img class="f-logo" src="logo.png" alt="" onerror="this.style.display='none'">Ranní brief</a>
   <div class="f-slogan"><span class="ln"></span>Váš ranní přehled zpráv<span class="ln"></span></div>
   <nav class="f-nav" aria-label="Navigace v patičce">
     <a href="index.html">Archiv</a>
     <a href="o-projektu.html">O projektu</a>
     <a href="kontakt.html">Kontakt</a>
     <a href="ochrana-osobnich-udaju.html">Soukromí</a>
-    <button type="button" id="subOpen">Odebírat</button>
+    <button type="button" id="subOpen" class="sub-cta">Odebírat</button>
   </nav>
   <div class="f-meta-wrap">
     <div class="f-meta">© 2026 · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
-    
     <div class="f-note">Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
   </div>
 </div></footer>
