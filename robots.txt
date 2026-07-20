@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://morning-brief.zichmichal.cz/sitemap.xml
