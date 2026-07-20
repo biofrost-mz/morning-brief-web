@@ -109,6 +109,15 @@
   .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
 
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  /* Měsíc ukáže jen poslední 3 dny, zbytek čeká na „Zobrazit více". Karty
+     zůstávají v DOMu (ne úplně pryč), aby je hledání v archivu pořád našlo. */
+  .grid .card.extra { display:none; }
+  .grid.expanded .card.extra { display:flex; }
+  .showmore { display:block; margin:16px auto 4px; padding:10px 22px; font:inherit;
+    font-size:13px; font-weight:800; color:var(--ink); background:var(--card);
+    border:1px solid var(--cardbd); border-radius:999px; cursor:pointer; }
+  .showmore:hover { color:var(--accent); border-color:var(--accent); }
+  body.searching .showmore { display:none; }
   .card { position:relative; background:var(--card); border:1px solid var(--cardbd); border-radius:10px; padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column; min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
   .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
   .card:hover { background:var(--hover); border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.16); transform:translateY(-2px); }
@@ -126,12 +135,13 @@
     .page-ending { background:linear-gradient(to bottom, transparent, var(--footbg)); }
   }
   footer { background:var(--footbg); }
-  .f-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:11px 26px; margin:0 0 22px; }
+  .f-nav { display:flex; justify-content:center; align-items:center; flex-wrap:wrap;
+    gap:14px 34px; margin:0 0 22px; }
   .f-nav a, .f-nav button { padding:0; font:inherit; font-size:13px; font-weight:800;
     color:var(--sf); background:none; border:0; text-decoration:none; cursor:pointer; }
   .f-nav a:hover, .f-nav button:hover { color:var(--accent); }
   /* „Odebírat" je jediná akce mezi odkazy — dostane pilulku v akcentové barvě. */
-  .f-nav .sub-cta { padding:7px 15px; margin:-7px 0; border-radius:999px;
+  .f-nav .sub-cta { padding:7px 15px; margin:-7px 0 -7px 8px; border-radius:999px;
     background:var(--accent); color:#fff; transition:opacity .15s; }
   .f-nav .sub-cta:hover { color:#fff; opacity:.88; }
   .f-inner { max-width:1080px; margin:0 auto; padding:26px 22px 42px; text-align:center; }
@@ -336,13 +346,51 @@
     padding:13px 20px; border-radius:11px; background:var(--accent); color:#fff;
     font-size:15px; font-weight:800; text-decoration:none; }
   .mailbtn:hover { opacity:.9; }
-  .topics { display:grid; gap:15px; margin-top:26px; }
-  .topic { display:grid; grid-template-columns:32px 1fr; gap:12px; align-items:start; }
-  .tico { width:32px; height:32px; border-radius:50%; display:grid; place-items:center;
-    background:var(--pillbg); border:1px solid var(--pillbd); color:var(--accent);
-    font-weight:900; font-size:15px; }
-  .topic strong { display:block; margin-bottom:3px; font-size:14.5px; }
-  .topic p { margin:0; font-size:13.5px; line-height:1.55; color:var(--muted); }
+
+  /* Trojice karet s ikonou — sdílené mezi „Co brief nedělá" (O projektu)
+     a „S čím mi můžete napsat" (Kontakt), ať mají obě stránky stejnou gramatiku. */
+  .trio { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 4px; }
+  .trio-card { padding:20px 18px; border:1px solid var(--cardbd); border-radius:14px;
+    background:var(--card); }
+  .tico { width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+    margin-bottom:12px; background:var(--pillbg); border:1px solid var(--pillbd);
+    color:var(--accent); }
+  .trio-card strong { display:block; margin-bottom:6px; font-size:14.5px; }
+  .trio-card p { margin:0; font-size:13.5px; line-height:1.6; color:var(--muted); }
+
+  /* Ukázka reálné zprávy z briefu (O projektu, bod „Co Ranní brief je") */
+  .example-story { margin:18px 0 4px; padding:20px 22px; border:1px solid var(--cardbd);
+    border-radius:14px; background:var(--card); }
+  .example-story .exk { display:block; margin:0 0 10px; color:var(--accent); font-size:11px;
+    font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+  .example-story h4 { margin:0 0 8px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:18px; line-height:1.25; }
+  .example-story p { margin:0 0 12px; font-size:14.5px; line-height:1.6; color:var(--story); }
+  .example-story .exm { display:flex; align-items:center; justify-content:space-between;
+    gap:12px; font-size:12.5px; color:var(--muted); }
+  .example-story .exm a { color:var(--accent); font-weight:800; text-decoration:none; }
+  .example-story .exm a:hover { text-decoration:underline; }
+
+  /* Srovnání čísel (O projektu, bod „Kolik času vám to ušetří") */
+  .statcompare { display:flex; align-items:center; justify-content:center; gap:22px;
+    flex-wrap:wrap; margin:20px 0 4px; padding:22px; border:1px solid var(--cardbd);
+    border-radius:14px; background:var(--card); text-align:center; }
+  .statcompare .sc { min-width:120px; }
+  .statcompare .sc b { display:block; font-family:Fraunces,Georgia,serif; font-weight:900;
+    font-size:clamp(26px,4.6vw,38px); line-height:1; letter-spacing:-.02em; color:var(--ink); }
+  .statcompare .sc.hot b { color:var(--accent); }
+  .statcompare .sc span { display:block; margin-top:6px; font-size:11.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .statcompare .sc-arrow { color:var(--muted); opacity:.6; font-size:20px; }
+
+  /* Tři kroky výběru (O projektu, bod „Jak se vybírá") */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:18px 0 20px; }
+  .step { padding:18px 16px; border:1px solid var(--cardbd); border-radius:14px; background:var(--card); }
+  .step .sn { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .step .sicon { color:var(--accent); }
+  .step .snum { font-family:Fraunces,Georgia,serif; font-weight:700; font-size:13px; color:var(--muted); }
+  .step strong { display:block; margin-bottom:5px; font-size:14.5px; }
+  .step p { margin:0; font-size:13px; line-height:1.55; color:var(--muted); }
 
   @media (max-width:720px) {
     .tp { padding-bottom:70px; }
@@ -352,6 +400,8 @@
     .ctacard .btn { width:100%; text-align:center; }
     .flow b { min-width:0; width:100%; }
     .flow i { display:none; }
+    .trio, .steps { grid-template-columns:1fr; }
+    .example-story .exm { flex-direction:column; align-items:flex-start; gap:4px; }
   }
 
   /* Textová stránka (zpracování údajů) */
@@ -425,72 +475,81 @@
 <a class="card" href="brief-2026-07-19.html"><div class="d">neděle 19. července 2026</div><div class="t">USA zahájily osmou noc po sobě útoky na Írán po smrti dvou amerických vojáků v Jordánsku; Írán odvětil úderem na…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-07-18.html"><div class="d">sobota 18. července 2026</div><div class="t">USA zahájily sedmou noc po sobě letecké útoky na Írán, Teherán odvetou zasáhl americke základny v Kuvajtu, Jordánsku a…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-07-17.html"><div class="d">pátek 17. července 2026</div><div class="t">Trump v nočním projevu k národu obvinil Čínu z největšího úniku volebních dat v historii USA a zveřejnil dokumenty…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-16.html"><div class="d">čtvrtek 16. července 2026</div><div class="t">USA a Írán si již šestý den po sobě vyměňují letecké údery – americké síly napadly ropný tanker v Hormuzském průlivu a…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-15.html"><div class="d">středa 15. července 2026</div><div class="t">Conflict between the US and Iran escalates for the fifth straight day, with Trump threatening strikes on Iranian…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-13.html"><div class="d">pondělí 13. července 2026</div><div class="t">USA podnikly další vlnu úderů proti Íránu a Írán odpověděl útoky na americké základny v Bahrajnu, Kuvajtu a Jordánsku…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-12.html"><div class="d">neděle 12. července 2026</div><div class="t">Írán uzavřel Hormuzský průliv a zahájil raketové útoky na americké vojenské základny v Perském zálivu poté, co USA…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-11.html"><div class="d">sobota 11. července 2026</div><div class="t">Apple zažalovala OpenAI za údajnou krádež obchodních tajemství, zatímco Meta stáhla kontroverzní AI funkci na…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-10.html"><div class="d">pátek 10. července 2026</div><div class="t">Španělskem otřásla tragédie: lesní požár v Andalusii zabil nejméně 12 lidí, zatímco vlna veder v Německu si od poloviny…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-09.html"><div class="d">čtvrtek 9. července 2026</div><div class="t">USA a Írán pokračují v eskalaci: americká armáda zasáhla přibližně 90 íránských cílů, Íránci odvetou udeřili na…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-08.html"><div class="d">středa 8. července 2026</div><div class="t">Summit NATO v Ankaře ovládly napětí kolem Trumpa a zákulisní souboj českého prezidenta s premiérem. USA podnikly…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-07.html"><div class="d">úterý 7. července 2026</div><div class="t">Summit NATO v Ankaře dominuje dnešnímu dni: Česko čelí kritice za neplnění výdajových závazků, zatímco koalice se…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-06.html"><div class="d">pondělí 6. července 2026</div><div class="t">Na summitu NATO v Ankaře se chystá klíčové setkání Trumpa se Zelenským i syrským prezidentem, přičemž český spor Babiše…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-05.html"><div class="d">neděle 5. července 2026</div><div class="t">Ukrajina zasáhla dronový úder ropný terminál u Petrohradu, Zelenskyj označil cíl za klíčovou válečnou infrastrukturu…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-04.html"><div class="d">sobota 4. července 2026</div><div class="t">Rusko oznámilo dobytí Kosťantynivky, strategického města na Donbase, což Putin označil za zásadní úspěch. V Teheránu…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-03.html"><div class="d">pátek 3. července 2026</div><div class="t">Rusko zasáhlo Kyjev v dosud největším útoku, při kterém zahynulo nejméně 30 lidí. V Damašku vybuchla bomba v kavárně s…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-02.html"><div class="d">čtvrtek 2. července 2026</div><div class="t">Česká republika se dohodla na účasti prezidenta Pavla na summitu NATO v Ankaře, přičemž premiér Babiš ho nadále veřejně…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-07-01.html"><div class="d">středa 1. července 2026</div><div class="t">Nejvyšší soud USA potvrdil porodní občanství a odmítl Trumpův dekret, čímž zasadil prezidentovi citelnou ránu v…</div><div class="more">Otevřít →</div></a>
-</div></div>
+<a class="card extra" href="brief-2026-07-16.html"><div class="d">čtvrtek 16. července 2026</div><div class="t">USA a Írán si již šestý den po sobě vyměňují letecké údery – americké síly napadly ropný tanker v Hormuzském průlivu a…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-15.html"><div class="d">středa 15. července 2026</div><div class="t">Conflict between the US and Iran escalates for the fifth straight day, with Trump threatening strikes on Iranian…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-13.html"><div class="d">pondělí 13. července 2026</div><div class="t">USA podnikly další vlnu úderů proti Íránu a Írán odpověděl útoky na americké základny v Bahrajnu, Kuvajtu a Jordánsku…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-12.html"><div class="d">neděle 12. července 2026</div><div class="t">Írán uzavřel Hormuzský průliv a zahájil raketové útoky na americké vojenské základny v Perském zálivu poté, co USA…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-11.html"><div class="d">sobota 11. července 2026</div><div class="t">Apple zažalovala OpenAI za údajnou krádež obchodních tajemství, zatímco Meta stáhla kontroverzní AI funkci na…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-10.html"><div class="d">pátek 10. července 2026</div><div class="t">Španělskem otřásla tragédie: lesní požár v Andalusii zabil nejméně 12 lidí, zatímco vlna veder v Německu si od poloviny…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-09.html"><div class="d">čtvrtek 9. července 2026</div><div class="t">USA a Írán pokračují v eskalaci: americká armáda zasáhla přibližně 90 íránských cílů, Íránci odvetou udeřili na…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-08.html"><div class="d">středa 8. července 2026</div><div class="t">Summit NATO v Ankaře ovládly napětí kolem Trumpa a zákulisní souboj českého prezidenta s premiérem. USA podnikly…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-07.html"><div class="d">úterý 7. července 2026</div><div class="t">Summit NATO v Ankaře dominuje dnešnímu dni: Česko čelí kritice za neplnění výdajových závazků, zatímco koalice se…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-06.html"><div class="d">pondělí 6. července 2026</div><div class="t">Na summitu NATO v Ankaře se chystá klíčové setkání Trumpa se Zelenským i syrským prezidentem, přičemž český spor Babiše…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-05.html"><div class="d">neděle 5. července 2026</div><div class="t">Ukrajina zasáhla dronový úder ropný terminál u Petrohradu, Zelenskyj označil cíl za klíčovou válečnou infrastrukturu…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-04.html"><div class="d">sobota 4. července 2026</div><div class="t">Rusko oznámilo dobytí Kosťantynivky, strategického města na Donbase, což Putin označil za zásadní úspěch. V Teheránu…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-03.html"><div class="d">pátek 3. července 2026</div><div class="t">Rusko zasáhlo Kyjev v dosud největším útoku, při kterém zahynulo nejméně 30 lidí. V Damašku vybuchla bomba v kavárně s…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-02.html"><div class="d">čtvrtek 2. července 2026</div><div class="t">Česká republika se dohodla na účasti prezidenta Pavla na summitu NATO v Ankaře, přičemž premiér Babiš ho nadále veřejně…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-07-01.html"><div class="d">středa 1. července 2026</div><div class="t">Nejvyšší soud USA potvrdil porodní občanství a odmítl Trumpův dekret, čímž zasadil prezidentovi citelnou ránu v…</div><div class="more">Otevřít →</div></a>
+</div>
+<button type="button" class="showmore" data-more="Zobrazit dalších 15 dní ↓" data-less="Skrýt ↑">Zobrazit dalších 15 dní ↓</button>
+</div>
 <div class="monthblock">
 <div class="month">Červen 2026</div>
 <div class="grid">
 <a class="card" href="brief-2026-06-30.html"><div class="d">úterý 30. června 2026</div><div class="t">Americký Nejvyšší soud zablokoval Trumpův dekret omezující porodní občanství a zároveň potvrdil zákazy účasti…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-06-29.html"><div class="d">pondělí 29. června 2026</div><div class="t">Spojené státy a Írán si vyměnily další údery a obviňují se z porušení příměří; Teherán tvrdí, že zasáhl cíle v Kuvajtu…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-06-27.html"><div class="d">sobota 27. června 2026</div><div class="t">Spojené státy znovu udeřily na Írán a křehké příměří visí na vlásku poté, co Teherán napadl plavidlo v Hormuzském…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-06-26.html"><div class="d">pátek 26. června 2026</div><div class="t">Venezuelu po dvou zemětřeseních sčítá oběti – potvrzeno je 235 mrtvých a do zasažených oblastí dorazily mezinárodní…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-06-25.html"><div class="d">čtvrtek 25. června 2026</div><div class="t">Ústavní soud Babišovi nepomohl: Pavel pojede do Ankary · Po smrti Viktorky: ministr chce žalovat soudkyni, která dítě…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-06-16.html"><div class="d">úterý 16. června 2026</div><div class="t">Vláda zestátňuje ČT a ČRo: stovky zaměstnanců přijdou o práci · Kauza duchovního z arcibiskupství: dva roky…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-06-11.html"><div class="d">čtvrtek 11. června 2026</div><div class="t">Konec koncesionářských poplatků nemusí platit pro všechny · Smrt dvou novorozenců v Litoměřicích: vedení připouští…</div><div class="more">Otevřít →</div></a>
-</div></div>
+<a class="card extra" href="brief-2026-06-26.html"><div class="d">pátek 26. června 2026</div><div class="t">Venezuelu po dvou zemětřeseních sčítá oběti – potvrzeno je 235 mrtvých a do zasažených oblastí dorazily mezinárodní…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-06-25.html"><div class="d">čtvrtek 25. června 2026</div><div class="t">Ústavní soud Babišovi nepomohl: Pavel pojede do Ankary · Po smrti Viktorky: ministr chce žalovat soudkyni, která dítě…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-06-16.html"><div class="d">úterý 16. června 2026</div><div class="t">Vláda zestátňuje ČT a ČRo: stovky zaměstnanců přijdou o práci · Kauza duchovního z arcibiskupství: dva roky…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-06-11.html"><div class="d">čtvrtek 11. června 2026</div><div class="t">Konec koncesionářských poplatků nemusí platit pro všechny · Smrt dvou novorozenců v Litoměřicích: vedení připouští…</div><div class="more">Otevřít →</div></a>
+</div>
+<button type="button" class="showmore" data-more="Zobrazit dalších 4 dny ↓" data-less="Skrýt ↑">Zobrazit dalších 4 dny ↓</button>
+</div>
 <div class="monthblock">
 <div class="month">Květen 2026</div>
 <div class="grid">
 <a class="card" href="brief-2026-05-21.html"><div class="d">čtvrtek 21. května 2026</div><div class="t">Ebola v Praze jako Babišova diplomacie směrem k Trumpovi · Sudetoněmecký sjezd poprvé v Česku vyvolává vášně · USA…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-05-20.html"><div class="d">středa 20. května 2026</div><div class="t">Babišova vláda zrušila lidskoprávní agendu, experti varují před důsledky · Aktivisté v Brně natřeli soše Beneše ruce…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-05-19.html"><div class="d">úterý 19. května 2026</div><div class="t">Babiš zrušil agendu zmocněnkyně pro lidská práva, zaskočil i vlastní lidi · Čeští hokejisté porazili Švédy a vrátili se…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-05-04.html"><div class="d">pondělí 4. května 2026</div><div class="t">Babiš se setkal se Zelenským a mluví o novém prostředníkovi pro mír · Největší lesní požár v České Švýcarsku, hasiči…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-05-01.html"><div class="d">pátek 1. května 2026</div><div class="t">Babiš zatím přechází mlčením kauzy ministryně Mrázové, ale není s ní spokojen · Bývalý premiér Špidla: Svátek práce je…</div><div class="more">Otevřít →</div></a>
-</div></div>
+<a class="card extra" href="brief-2026-05-04.html"><div class="d">pondělí 4. května 2026</div><div class="t">Babiš se setkal se Zelenským a mluví o novém prostředníkovi pro mír · Největší lesní požár v České Švýcarsku, hasiči…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-05-01.html"><div class="d">pátek 1. května 2026</div><div class="t">Babiš zatím přechází mlčením kauzy ministryně Mrázové, ale není s ní spokojen · Bývalý premiér Špidla: Svátek práce je…</div><div class="more">Otevřít →</div></a>
+</div>
+<button type="button" class="showmore" data-more="Zobrazit dalších 2 dny ↓" data-less="Skrýt ↑">Zobrazit dalších 2 dny ↓</button>
+</div>
 <div class="monthblock">
 <div class="month">Duben 2026</div>
 <div class="grid">
 <a class="card" href="brief-2026-04-30.html"><div class="d">čtvrtek 30. dubna 2026</div><div class="t">Babiš je ve správný čas na správném místě. A nahněval Rusko · Extrémní sucho může brzy zasáhnout více než polovinu…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-04-29.html"><div class="d">středa 29. dubna 2026</div><div class="t">Rozpočet na rok 2027 je nesestavitelný, tvrdí ANO. Vláda navrhuje rozvolnění pravidel · Podezřelé sbírky na děti s…</div><div class="more">Otevřít →</div></a>
 <a class="card" href="brief-2026-04-28.html"><div class="d">úterý 28. dubna 2026</div><div class="t">Babiš mění plán supernemocnice: S Letňany je problém, do hry vstupují Vinohrady · Podezřelé sbírky na děti s rakovinou…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-27.html"><div class="d">pondělí 27. dubna 2026</div><div class="t">Nová pražská nemocnice bude vojenská s podzemními úkryty · Podvodníci zneužívají onkologicky nemocné děti…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-25.html"><div class="d">sobota 25. dubna 2026</div><div class="t">Grolich se stal novým předsedou KDU-ČSL, slibuje nové lidovce a čáru za minulostí · Premiér Babiš chce zákaz mobilů ve…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-24.html"><div class="d">pátek 24. dubna 2026</div><div class="t">Babiš bez střetu zájmů. Co stojí v posudcích, jež otevřely Agrofertu cestu k zemědělským dotacím? · Sokolové žalují…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-23.html"><div class="d">čtvrtek 23. dubna 2026</div><div class="t">Česká média v ohrožení: studenti protestují proti zrušení koncesionářských poplatků · Bývalý soudce Roman Kafka podvedl…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-22.html"><div class="d">středa 22. dubna 2026</div><div class="t">Senátor Vystrčil: Odmítnutí vládního letadla pro cestu na Tchaj-wan je podraz · Průzkum odhaluje nedostatky péče o lidi…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-21.html"><div class="d">úterý 21. dubna 2026</div><div class="t">Babišova vláda nechce dráždit Číňany. Trumpův velvyslanec přitom Česko chválil za podporu Tchaj-wanu · Případ otrávené…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-20.html"><div class="d">pondělí 20. dubna 2026</div><div class="t">Spor o summit NATO může řešit Ústavní soud. Babiš chce pragmatickou zahraniční politiku · Bývalý ředitel IZIP Pašek…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-13.html"><div class="d">pondělí 13. dubna 2026</div><div class="t">Cestu na summit NATO může řešit i Ústavní soud · Evropský žalobce zajistil dům exnáměstkovi ministra průmyslu v dotační…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-11.html"><div class="d">sobota 11. dubna 2026</div><div class="t">Střet zájmů, ropa i veřejnoprávní média. Mimořádnou schůzí chceme vládu donutit k odpovědím · Evropský žalobce zajistil…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-10.html"><div class="d">pátek 10. dubna 2026</div><div class="t">Prezident Pavel chce vést českou delegaci na summitu NATO v Ankaře · Exnáměstkyně ministra v korupční kauze za 40…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-09.html"><div class="d">čtvrtek 9. dubna 2026</div><div class="t">Prezident Pavel chce vést českou delegaci na summitu NATO v Ankaře · Národní kyberúřad postrádá lidi na ochranu české…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-08.html"><div class="d">středa 8. dubna 2026</div><div class="t">Trump chce z NATO pryč. Kritizuje spojence jako &#x27;zbabělce&#x27; a &#x27;papírové tygry&#x27; · Soud poslal do vězení trojici…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-07.html"><div class="d">úterý 7. dubna 2026</div><div class="t">Maďarsko před volbami: Orbán ztrácí moc, kterou měl 16 let · Brněnští policisté obvinění ze zneužití pravomocí a…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-06.html"><div class="d">pondělí 6. dubna 2026</div><div class="t">Maďarsko před volbami: nález výbušnin u plynovodu vzbudil podezření na sabotáž · 20 policistů brněnského dálničního…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-04.html"><div class="d">sobota 4. dubna 2026</div><div class="t">V Maďarsku se před volbami vyhrocuje nálada, Orbán čelí zvýšené konkurenci · Generální inspekce viní 20 policistů ze…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-03.html"><div class="d">pátek 3. dubna 2026</div><div class="t">Pavel očekává, že na summit NATO pojede. Chce se kvůli tomu sejít s Babišem · Jeden z největších případů v historii…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-02.html"><div class="d">čtvrtek 2. dubna 2026</div><div class="t">Poslanci vybrali 18 finalistů do Rady ČT, znovu má šanci Matocha · Nemocnicím Moravskoslezského kraje chybí stovky…</div><div class="more">Otevřít →</div></a>
-<a class="card" href="brief-2026-04-01.html"><div class="d">středa 1. dubna 2026</div><div class="t">STAN vzdal snahu o Rakušana do vedení Sněmovny, nominuje Urbanovou · Čekací doby na ortopedické zákroky překračují…</div><div class="more">Otevřít →</div></a>
-</div></div>
+<a class="card extra" href="brief-2026-04-27.html"><div class="d">pondělí 27. dubna 2026</div><div class="t">Nová pražská nemocnice bude vojenská s podzemními úkryty · Podvodníci zneužívají onkologicky nemocné děti…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-25.html"><div class="d">sobota 25. dubna 2026</div><div class="t">Grolich se stal novým předsedou KDU-ČSL, slibuje nové lidovce a čáru za minulostí · Premiér Babiš chce zákaz mobilů ve…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-24.html"><div class="d">pátek 24. dubna 2026</div><div class="t">Babiš bez střetu zájmů. Co stojí v posudcích, jež otevřely Agrofertu cestu k zemědělským dotacím? · Sokolové žalují…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-23.html"><div class="d">čtvrtek 23. dubna 2026</div><div class="t">Česká média v ohrožení: studenti protestují proti zrušení koncesionářských poplatků · Bývalý soudce Roman Kafka podvedl…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-22.html"><div class="d">středa 22. dubna 2026</div><div class="t">Senátor Vystrčil: Odmítnutí vládního letadla pro cestu na Tchaj-wan je podraz · Průzkum odhaluje nedostatky péče o lidi…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-21.html"><div class="d">úterý 21. dubna 2026</div><div class="t">Babišova vláda nechce dráždit Číňany. Trumpův velvyslanec přitom Česko chválil za podporu Tchaj-wanu · Případ otrávené…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-20.html"><div class="d">pondělí 20. dubna 2026</div><div class="t">Spor o summit NATO může řešit Ústavní soud. Babiš chce pragmatickou zahraniční politiku · Bývalý ředitel IZIP Pašek…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-13.html"><div class="d">pondělí 13. dubna 2026</div><div class="t">Cestu na summit NATO může řešit i Ústavní soud · Evropský žalobce zajistil dům exnáměstkovi ministra průmyslu v dotační…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-11.html"><div class="d">sobota 11. dubna 2026</div><div class="t">Střet zájmů, ropa i veřejnoprávní média. Mimořádnou schůzí chceme vládu donutit k odpovědím · Evropský žalobce zajistil…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-10.html"><div class="d">pátek 10. dubna 2026</div><div class="t">Prezident Pavel chce vést českou delegaci na summitu NATO v Ankaře · Exnáměstkyně ministra v korupční kauze za 40…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-09.html"><div class="d">čtvrtek 9. dubna 2026</div><div class="t">Prezident Pavel chce vést českou delegaci na summitu NATO v Ankaře · Národní kyberúřad postrádá lidi na ochranu české…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-08.html"><div class="d">středa 8. dubna 2026</div><div class="t">Trump chce z NATO pryč. Kritizuje spojence jako &#x27;zbabělce&#x27; a &#x27;papírové tygry&#x27; · Soud poslal do vězení trojici…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-07.html"><div class="d">úterý 7. dubna 2026</div><div class="t">Maďarsko před volbami: Orbán ztrácí moc, kterou měl 16 let · Brněnští policisté obvinění ze zneužití pravomocí a…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-06.html"><div class="d">pondělí 6. dubna 2026</div><div class="t">Maďarsko před volbami: nález výbušnin u plynovodu vzbudil podezření na sabotáž · 20 policistů brněnského dálničního…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-04.html"><div class="d">sobota 4. dubna 2026</div><div class="t">V Maďarsku se před volbami vyhrocuje nálada, Orbán čelí zvýšené konkurenci · Generální inspekce viní 20 policistů ze…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-03.html"><div class="d">pátek 3. dubna 2026</div><div class="t">Pavel očekává, že na summit NATO pojede. Chce se kvůli tomu sejít s Babišem · Jeden z největších případů v historii…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-02.html"><div class="d">čtvrtek 2. dubna 2026</div><div class="t">Poslanci vybrali 18 finalistů do Rady ČT, znovu má šanci Matocha · Nemocnicím Moravskoslezského kraje chybí stovky…</div><div class="more">Otevřít →</div></a>
+<a class="card extra" href="brief-2026-04-01.html"><div class="d">středa 1. dubna 2026</div><div class="t">STAN vzdal snahu o Rakušana do vedení Sněmovny, nominuje Urbanovou · Čekací doby na ortopedické zákroky překračují…</div><div class="more">Otevřít →</div></a>
+</div>
+<button type="button" class="showmore" data-more="Zobrazit dalších 18 dní ↓" data-less="Skrýt ↑">Zobrazit dalších 18 dní ↓</button>
+</div>
 <div class="monthblock">
 <div class="month">Březen 2026</div>
 <div class="grid">
 <a class="card" href="brief-2026-03-30.html"><div class="d">pondělí 30. března 2026</div><div class="t">STAN vzdal snahu udělat z Rakušana místopředsedu Sněmovny. Navrhne Urbanovou · Jaderná elektrárna Temelín provede ve…</div><div class="more">Otevřít →</div></a>
-</div></div>
+</div>
+</div>
 </div>
 <div class="page-ending" aria-hidden="true"></div>
 <footer><div class="f-inner">
@@ -525,15 +584,32 @@ if(!b||!bar||!si)return;
 b.addEventListener('click',function(){bar.classList.toggle('open');if(bar.classList.contains('open')){window.scrollTo({top:0,behavior:'smooth'});si.focus();}else{si.value='';flt('');}});
 si.addEventListener('keydown',function(e){if(e.key==='Escape'){bar.classList.remove('open');si.value='';flt('');}});
 si.addEventListener('input',function(){flt(si.value.toLowerCase());});
-function flt(q){document.querySelectorAll('.card').forEach(function(c){var t=c.textContent.toLowerCase();c.style.display=(!q||t.indexOf(q)>-1)?'':'none';});
+// Za normálních okolností skrývá .extra karty jen CSS (dokud čtenář neklikne
+// „Zobrazit více"). Během hledání to musí jít stranou, jinak by výsledky
+// schované v nerozbalených měsících nešly najít — proto se tu na zápasy
+// nastavuje inline display:flex, který CSS pravidlo přebije.
+function flt(q){document.body.classList.toggle('searching',!!q);
+document.querySelectorAll('.card').forEach(function(c){var t=c.textContent.toLowerCase(),show=!q||t.indexOf(q)>-1;
+c.style.display=q?(show?'flex':'none'):'';});
 document.querySelectorAll('.monthblock').forEach(function(m){var v=0;m.querySelectorAll('.card').forEach(function(c){if(c.style.display!=='none')v++;});m.style.display=v?'':'none';});
-var nr=document.getElementById('noresult');if(nr){var any=document.querySelector('.card:not([style*="none"])');nr.style.display=(q&&!any)?'':'none';}}
+var nr=document.getElementById('noresult');if(nr){var any=document.querySelector('.card[style*="flex"]');nr.style.display=(q&&!any)?'':'none';}}
 })();
 
 (function(){var bar=document.getElementById('searchbar'),si=document.getElementById('searchBox');
 document.addEventListener('keydown',function(e){
  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
  if(e.key==='/'){e.preventDefault();if(bar){bar.classList.add('open');window.scrollTo({top:0,behavior:'smooth'});si.focus();}}});})();
+
+(function(){
+document.querySelectorAll('.showmore').forEach(function(btn){
+ var grid=btn.previousElementSibling;
+ if(!grid||!grid.classList.contains('grid'))return;
+ btn.addEventListener('click',function(){
+  var open=grid.classList.toggle('expanded');
+  btn.textContent=open?btn.getAttribute('data-less'):btn.getAttribute('data-more');
+ });
+});
+})();
 
 (function(){
  var t0=Date.now(), SKEY='mb_sub_hidden';
