@@ -308,6 +308,23 @@
   .tp-sec p + p { margin-top:12px; }
   .tp a.inl { color:var(--accent); text-underline-offset:3px; }
 
+  /* Zdroje — abecední seznam */
+  .srcgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px 32px; margin-top:10px; }
+  .srcgroup h2 { margin:22px 0 8px; font-family:Fraunces,Georgia,serif; font-weight:700;
+    font-size:15px; color:var(--accent); }
+  .srcgroup:nth-child(-n+3) h2 { margin-top:0; }
+  .srcgroup ul { list-style:none; margin:0; padding:0; }
+  .srcgroup li { display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:7px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .srcgroup a { color:var(--ink); text-decoration:none; }
+  .srcgroup a:hover { color:var(--accent); text-decoration:underline; }
+  .srclang { flex:none; font-size:10px; font-weight:800; letter-spacing:.04em; color:var(--muted);
+    padding:1px 6px; border:1px solid var(--pillbd); border-radius:999px; }
+  @media (max-width:720px) { .srcgrid { grid-template-columns:repeat(2,1fr); }
+    .srcgroup:nth-child(-n+3) h2 { margin-top:22px; } .srcgroup:nth-child(-n+2) h2 { margin-top:0; } }
+  @media (max-width:460px) { .srcgrid { grid-template-columns:1fr; }
+    .srcgroup:nth-child(-n+2) h2 { margin-top:22px; } .srcgroup:first-child h2 { margin-top:0; } }
+
   /* Schéma cesty zprávy (O projektu, bod „Jak se vybírá") */
   .flowcard { margin:18px 0 2px; padding:20px; border:1px solid var(--cardbd);
     border-radius:16px; background:var(--card); }
@@ -347,16 +364,20 @@
     font-size:15px; font-weight:800; text-decoration:none; }
   .mailbtn:hover { opacity:.9; }
 
-  /* Trojice karet s ikonou — sdílené mezi „Co brief nedělá" (O projektu)
-     a „S čím mi můžete napsat" (Kontakt), ať mají obě stránky stejnou gramatiku. */
-  .trio { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 4px; }
-  .trio-card { padding:20px 18px; border:1px solid var(--cardbd); border-radius:14px;
-    background:var(--card); }
-  .tico { width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
-    margin-bottom:12px; background:var(--pillbg); border:1px solid var(--pillbd);
-    color:var(--accent); }
-  .trio-card strong { display:block; margin-bottom:6px; font-size:14.5px; }
+  /* Trojice řádků s ikonou — sdílené mezi „Co brief nedělá" (O projektu)
+     a „S čím mi můžete napsat" (Kontakt). Pod sebou, ne vedle sebe: tři úzké
+     sloupce v jednom řádku vypadaly na užších stránkách stlačeně. */
+  .trio { display:flex; flex-direction:column; gap:12px; margin:18px 0 4px; }
+  .trio-card { display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start;
+    padding:16px 18px; border:1px solid var(--cardbd); border-radius:14px; background:var(--card); }
+  .tico { width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+    background:var(--pillbg); border:1px solid var(--pillbd); color:var(--accent); }
+  .trio-card strong { display:block; margin-bottom:4px; font-size:14.5px; }
   .trio-card p { margin:0; font-size:13.5px; line-height:1.6; color:var(--muted); }
+  @media (max-width:400px) {
+    .trio-card { grid-template-columns:1fr; }
+    .tico { margin-bottom:6px; }
+  }
 
   /* Ukázka reálné zprávy z briefu (O projektu, bod „Co Ranní brief je") */
   .example-story { margin:18px 0 4px; padding:20px 22px; border:1px solid var(--cardbd);
@@ -400,7 +421,7 @@
     .ctacard .btn { width:100%; text-align:center; }
     .flow b { min-width:0; width:100%; }
     .flow i { display:none; }
-    .trio, .steps { grid-template-columns:1fr; }
+    .steps { grid-template-columns:1fr; }
     .example-story .exm { flex-direction:column; align-items:flex-start; gap:4px; }
   }
 
@@ -469,7 +490,7 @@
 <p>Potvrzovací odkaz platí 24 hodin a tenhle už je starší. Nic se neděje — stačí zadat adresu znovu a pošleme vám nový.</p>
 
 </div>
-<section class="subx hero" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><div class="subpitch"><h3>Ranní brief rovnou do schránky</h3><p class="lead">Každé ráno výběr zhruba 36 nejdůležitějších zpráv z 300+ českých i zahraničních zdrojů — stručně, přehledně a bez šumu.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section>
+<section class="subx hero" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><div class="subpitch"><h3>Ranní brief rovnou do schránky</h3><p class="lead">Každé ráno výběr zhruba 36 nejdůležitějších zpráv ze stovek článků z 37 českých i zahraničních zdrojů — stručně, přehledně a bez šumu.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section>
 </main>
 <div class="page-ending" aria-hidden="true"></div>
 <footer><div class="f-inner">
@@ -478,6 +499,7 @@
   <nav class="f-nav" aria-label="Navigace v patičce">
     <a href="index.html">Archiv</a>
     <a href="o-projektu.html">O projektu</a>
+    <a href="zdroje.html">Zdroje</a>
     <a href="kontakt.html">Kontakt</a>
     <a href="ochrana-osobnich-udaju.html">Soukromí</a>
     <button type="button" id="subOpen" class="sub-cta">Odebírat</button>
@@ -487,7 +509,7 @@
     <div class="f-note">Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
   </div>
 </div></footer>
-<div class="submodal" id="subModal" hidden><div class="submodal-bd" data-close="1"></div><section class="subx modal" role="dialog" aria-modal="true" aria-label="Ranní brief rovnou do schránky" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><button type="button" class="subclose" aria-label="Zavřít">&times;</button><div class="subpitch"><h3>Ranní brief rovnou do schránky</h3><p class="lead">Každé ráno jeden e-mail: zhruba 36 nejdůležitějších zpráv z 300+ českých i zahraničních zdrojů.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section></div>
+<div class="submodal" id="subModal" hidden><div class="submodal-bd" data-close="1"></div><section class="subx modal" role="dialog" aria-modal="true" aria-label="Ranní brief rovnou do schránky" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><button type="button" class="subclose" aria-label="Zavřít">&times;</button><div class="subpitch"><h3>Ranní brief rovnou do schránky</h3><p class="lead">Každé ráno jeden e-mail: zhruba 36 nejdůležitějších zpráv ze stovek článků z 37 českých i zahraničních zdrojů.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section></div>
 <script>
 (function(){
 var b=document.getElementById('themeBtn');
