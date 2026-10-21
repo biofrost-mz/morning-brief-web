@@ -1,6 +1,7 @@
 # Morning Brief – veřejný web
 
 Statický web **https://morning-brief.zichmichal.cz/** – veřejná edice „jen zprávy“ ranního briefu.
+Hosting: **Netlify** (projekt `morning-brief-web`, nasazuje se z `main`, PR dostávají deploy preview).
 
 > ⚠️ **Tento repozitář je generovaný.** Obsah (`*.html`, `sitemap.xml`, assety) každé ráno přepisuje workflow
 > v soukromém repu [`morning-brief`](https://github.com/biofrost-mz/morning-brief) skriptem
