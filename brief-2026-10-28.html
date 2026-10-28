@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranní brief — středa 28. října 2026</title>
+<meta name="description" content="Izraelské volby skončily patovou situací – exit polls ani průběžné výsledky nedávají jasnou většinu ani Netanjahuovu bloku, ani opoziční alianci Gadiho Eisenkota, rozhodující roli">
+
+<meta property="og:type" content="website"><meta property="og:site_name" content="Ranní brief"><meta property="og:title" content="Ranní brief — středa 28. října 2026"><meta property="og:description" content="Izraelské volby skončily patovou situací – exit polls ani průběžné výsledky nedávají jasnou většinu ani Netanjahuovu bloku, ani opoziční alianci Gadiho Eisenkota, rozhodující roli"><meta property="og:url" content="https://morning-brief.zichmichal.cz/brief-2026-10-28.html"><meta property="og:image" content="https://morning-brief.zichmichal.cz/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png" onerror="">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<style>
+  :root {
+    --paper:#faf7f1; --ink:#141210; --card:#f3eee3; --line:#e7e2d8; --muted:#6b655d; --accent:#b3271e;
+    --hover:#fffdf8; --sf:#37322b; --story:#39342c;
+    --factbg:#fff8e6; --factbd:#f2dfa6; --factink:#4a4438; --factk:#a76a00;
+    --pillbg:#efe9dd; --pillbd:#e2dccf; --cardbd:#e3dccd;
+    --ok:#1c7a4f; --okbg:#eaf5ee; --okbd:#c2e0cd;
+    --hairline:rgba(93,80,61,.14); --footbg:#e9e0d2; --footline:#cdc2b1;
+  }
+  html[data-theme="dark"] {
+    --paper:#131110; --ink:#ece5da; --card:#201c17; --line:#3d372f; --muted:#a99f90; --accent:#e5554b;
+    --hover:#1b1712; --sf:#cfc7bb; --story:#c9c0b4;
+    --factbg:#2a2213; --factbd:#4a3c1c; --factink:#d8cba6; --factk:#e5ad4f;
+    --pillbg:#2a251e; --pillbd:#4a4239; --cardbd:#423c33;
+    --ok:#5ed39b; --okbg:#15271e; --okbd:#2f5540;
+    --hairline:rgba(255,255,255,.09); --footbg:#1b1815; --footline:#3d372f;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6;
+    transition:background .2s, color .2s; }
+  a { color:inherit; }
+  @view-transition { navigation: auto; }
+  @media (prefers-reduced-motion:reduce) { ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*) { animation:none !important; } }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .art { max-width:760px; margin:0 auto; padding:0 22px; }
+
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--accent); z-index:30; }
+
+  /* Masthead — místo černé linky lepkavá lišta s rozostřením a měkkým stínem */
+  .masthead { position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
+    -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px);
+    box-shadow:0 1px 0 var(--hairline), 0 6px 18px -12px rgba(40,32,20,.4); }
+  @supports not (backdrop-filter:blur(2px)) { .masthead { background:var(--paper); } }
+  .masthead .wrap { display:flex; align-items:center; justify-content:space-between; padding:15px 22px; gap:16px; flex-wrap:wrap; }
+  .masthead .brand { font-size:clamp(25px,3.6vw,35px); }
+  .masthead .logo { width:38px; height:38px; margin-top:-2px; }
+  .th-sun, .th-moon { display:block; }
+  html[data-theme="dark"] .th-sun { display:block; }
+  html[data-theme="dark"] .th-moon { display:none; }
+  html:not([data-theme="dark"]) .th-sun { display:none; }
+  /* Lišta musí zůstat na jednom řádku i na mobilu — nowrap zakáže zalomení
+     a prvky se místo toho zmenšují, počasí postupně odhazuje části. */
+  @media (max-width:620px) {
+    .masthead .wrap { flex-wrap:nowrap; padding:11px 16px; gap:10px; }
+    .brandwrap { min-width:0; gap:9px; }
+    .masthead .brand { font-size:22px; white-space:nowrap; }
+    .masthead .logo { width:30px; height:30px; }
+    .tools { flex:0 0 auto; gap:4px; }
+    .wx { font-size:11.5px; white-space:nowrap; }
+    .ic { padding:6px; }
+  }
+  @media (max-width:430px) { .wx-city { display:none; } }
+  @media (max-width:360px) {
+    .wx-min { display:none; }
+    .masthead .brand { font-size:20px; }
+    .masthead .logo { width:26px; height:26px; }
+  }
+  .brandwrap { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); }
+  .logo { width:42px; height:42px; object-fit:contain; margin-top:-5px; }
+  .brand { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.03em; font-size:clamp(28px,5.4vw,46px); line-height:.9; }
+  .slogan { display:flex; align-items:center; gap:9px; margin-top:6px; font-size:9.5px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .slogan .ln { flex:1; height:1px; background:currentColor; opacity:.45; min-width:14px; }
+  .tools { display:flex; align-items:center; gap:6px; }
+  .wx { font-family:Fraunces,serif; font-weight:600; font-size:15px; margin-right:6px; }
+  .ic { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid var(--line);
+    border-radius:9px; background:transparent; color:var(--muted); cursor:pointer; transition:color .12s, border-color .12s, background .12s; }
+  .ic:hover { color:var(--accent); border-color:var(--accent); }
+
+  .searchbar { display:none; border-bottom:1px solid var(--line); background:var(--paper); }
+  .searchbar.open { display:block; }
+  .searchbar input { width:100%; max-width:1080px; margin:0 auto; display:block; border:0; background:transparent; color:var(--ink);
+    font-family:Fraunces,serif; font-size:clamp(18px,3vw,26px); padding:16px 22px; outline:none; }
+  .searchbar input::placeholder { color:var(--muted); }
+
+  .kicker { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; padding-bottom:2px; }
+
+  .hero { padding:34px 0 8px; }
+  .hero .eyebrow { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); }
+  .hero h1 { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em; font-size:clamp(30px,5.4vw,50px); line-height:1.03; margin:.28em 0 .35em; }
+  .hero h1 a { text-decoration:none; }
+  .hero .heads { margin-top:20px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .hero .hi { display:flex; gap:13px; align-items:baseline; padding:12px 2px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--story); }
+  .hero .hi:hover { background:var(--hover); }
+  .hero .hi:hover .ht { color:var(--accent); }
+  .hero .hi .n { font-family:Fraunces,serif; font-weight:900; font-size:15px; min-width:24px; color:var(--c,var(--accent)); }
+  .hero .ht { font-size:14.5px; font-weight:600; line-height:1.35; }
+  .hero .cat { font-weight:800; }
+  .hero .cta { display:inline-block; margin-top:18px; font-weight:800; font-size:14px; color:var(--accent); text-decoration:none; }
+
+  .sec-title { font-family:Fraunces,serif; font-weight:900; font-size:15px; letter-spacing:.02em; text-transform:uppercase; margin:42px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .month { font-family:Fraunces,serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:26px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  /* Měsíc ukáže jen poslední 3 dny, zbytek čeká na „Zobrazit více". Karty
+     zůstávají v DOMu (ne úplně pryč), aby je hledání v archivu pořád našlo. */
+  .grid .card.extra { display:none; }
+  .grid.expanded .card.extra { display:flex; }
+  .showmore { display:block; margin:16px auto 4px; padding:10px 22px; font:inherit;
+    font-size:13px; font-weight:800; color:var(--ink); background:var(--card);
+    border:1px solid var(--cardbd); border-radius:999px; cursor:pointer; }
+  .showmore:hover { color:var(--accent); border-color:var(--accent); }
+  body.searching .showmore { display:none; }
+  .card { position:relative; background:var(--card); border:1px solid var(--cardbd); border-radius:10px; padding:18px 18px 20px 22px; text-decoration:none; color:inherit; display:flex; flex-direction:column; min-height:152px; overflow:hidden; transition:transform .12s, box-shadow .12s, border-color .12s, background .12s; }
+  .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent); opacity:.5; transition:opacity .12s; }
+  .card:hover { background:var(--hover); border-color:var(--ink); box-shadow:0 10px 24px rgba(20,18,16,.16); transform:translateY(-2px); }
+  .card:hover::before { opacity:1; }
+  .card .d { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+  .card .t { font-family:Fraunces,serif; font-weight:600; font-size:16.5px; line-height:1.28; margin:8px 0 0; }
+  .card .more { margin-top:auto; padding-top:12px; font-size:12px; font-weight:800; color:var(--accent); }
+  .noresult { color:var(--muted); padding:20px 0; }
+
+  /* Footer — obsah „dozní" přechodem do tmavšího papíru místo tvrdé linky */
+  .page-ending { height:92px; margin-top:60px; pointer-events:none;
+    background:linear-gradient(to bottom, transparent 0%,
+      color-mix(in srgb, var(--footbg) 40%, transparent) 45%, var(--footbg) 100%); }
+  @supports not (color:color-mix(in srgb, red 50%, blue)) {
+    .page-ending { background:linear-gradient(to bottom, transparent, var(--footbg)); }
+  }
+  footer { background:var(--footbg); }
+  .f-nav { display:flex; justify-content:center; align-items:center; flex-wrap:wrap;
+    gap:14px 34px; margin:0 0 22px; }
+  .f-nav a { padding:0; font:inherit; font-size:13px; font-weight:800;
+    color:var(--sf); background:none; border:0; text-decoration:none; cursor:pointer; }
+  .f-nav a:hover { color:var(--accent); }
+  /* Vlastní řádek pod navigací, ne další odkaz mezi ostatními — jako CTA
+     akce má vypadat jinak než pouhá navigace. */
+  .sub-cta { display:block; margin:0 auto 28px; padding:11px 22px; font:inherit;
+    font-size:14px; font-weight:800; border-radius:999px; border:0; cursor:pointer;
+    background:var(--accent); color:#fff; transition:opacity .15s; }
+  .sub-cta:hover { opacity:.88; }
+  .f-inner { max-width:1080px; margin:0 auto; padding:26px 22px 42px; text-align:center; }
+  .f-meta-wrap { padding-top:20px; border-top:1px solid var(--footline); }
+  .f-brand { display:flex; align-items:center; justify-content:center; gap:11px;
+    font-family:Fraunces,serif; font-weight:900; font-size:26px; letter-spacing:-0.02em;
+    color:var(--ink); text-decoration:none; }
+  .f-brand:hover { color:var(--accent); }
+  .f-logo { width:30px; height:30px; object-fit:contain; margin-top:-3px; }
+  .f-slogan { display:flex; align-items:center; justify-content:center; gap:12px; max-width:360px; margin:10px auto 20px;
+    font-size:10px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+  .f-slogan .ln { flex:1; height:1px; background:currentColor; opacity:.45; }
+  .f-meta { font-size:13px; color:var(--muted); }
+  .f-meta a { color:var(--accent); font-weight:800; text-decoration:none; }
+  .f-meta a:hover { text-decoration:underline; }
+  .f-note { font-size:11.5px; color:var(--muted); opacity:.8; margin-top:8px; }
+
+  /* Přihlášení k odběru */
+  .subx { border:1px solid var(--cardbd); background:var(--card); border-radius:14px;
+    padding:22px; margin:26px auto; max-width:560px; text-align:center; }
+  .subx.hero { max-width:640px; padding:30px 26px; }
+  .subx.foot { margin:26px auto 0; padding:18px; }
+  .subx h3 { margin:0 0 6px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:22px; color:var(--ink); letter-spacing:-.01em; }
+  .subx.foot h3 { font-size:16px; }
+  .subx p.lead { margin:0 0 14px; font-size:14px; color:var(--muted); line-height:1.5; }
+  .subx form { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:0; }
+  .subx input[type=email] { flex:1 1 240px; min-width:0; max-width:340px; padding:11px 14px;
+    font-size:15px; font-family:inherit; color:var(--ink); background:var(--paper);
+    border:1px solid var(--line); border-radius:9px; }
+  .subx input[type=email]:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .subx button { display:inline-flex; align-items:center; gap:8px; padding:11px 18px;
+    font-size:14px; font-weight:800; font-family:inherit; color:#fff; background:var(--accent);
+    border:0; border-radius:9px; cursor:pointer; transition:opacity .15s, background .15s; }
+  .subx button:hover { opacity:.9; }
+  .subx button[disabled] { opacity:.6; cursor:default; }
+  .subx .hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .subx .fine { margin:12px 0 0; font-size:11.5px; color:var(--muted); opacity:.85; }
+  .subx .fine a { color:var(--muted); }
+  .subx .msg { margin:12px 0 0; font-size:13.5px; font-weight:700; color:var(--accent); min-height:1px; }
+
+  /* Odesílání: spinner v tlačítku */
+  .subx .spin { display:none; width:13px; height:13px; border:2px solid rgba(255,255,255,.35);
+    border-top-color:#fff; border-radius:50%; animation:subspin .6s linear infinite; }
+  .subx button.loading .spin { display:inline-block; }
+  @keyframes subspin { to { transform:rotate(360deg); } }
+  .subpitch { transition:opacity .2s ease, transform .2s ease; }
+  .subpitch.gone { opacity:0; transform:translateY(-6px); pointer-events:none; }
+
+  /* Hotovo: zelený panel s odškrtnutím */
+  .subok { border:1px solid var(--okbd); background:var(--okbg); border-radius:11px;
+    padding:20px 18px 18px; }
+  .subok.play { animation:subokin .3s ease both; }
+  @keyframes subokin { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  .okmark { display:block; width:54px; height:54px; margin:0 auto 10px; }
+  .okmark circle { fill:none; stroke:var(--ok); stroke-width:3; opacity:.45;
+    stroke-dasharray:151; stroke-dashoffset:151; }
+  .okmark path { fill:none; stroke:var(--ok); stroke-width:4.5; stroke-linecap:round;
+    stroke-linejoin:round; stroke-dasharray:36; stroke-dashoffset:36; }
+  .subok.play .okmark circle { animation:okdraw .45s cubic-bezier(.65,0,.45,1) forwards; }
+  .subok.play .okmark path { animation:okdraw .3s cubic-bezier(.65,0,.45,1) .38s forwards; }
+  @keyframes okdraw { to { stroke-dashoffset:0; } }
+  .subok .okt { margin:0 0 6px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:18px; color:var(--ok); letter-spacing:-.01em; }
+  .subok .okd { margin:0; font-size:13.5px; line-height:1.6; color:var(--story); }
+  .subok .okmail { color:var(--ink); }
+  .subok .okmore { margin-top:16px; padding:9px 16px; font:inherit; font-size:13px;
+    font-weight:800; color:var(--ok); background:transparent; border:1.5px solid var(--ok);
+    border-radius:9px; cursor:pointer; transition:background .15s, color .15s; }
+  .subok .okmore:hover { color:#fff; background:var(--ok); }
+
+  /* Modální přihlášení (odkaz „Odebírat" v patičce) */
+  .submodal { position:fixed; inset:0; z-index:60; display:flex; align-items:center;
+    justify-content:center; padding:20px; }
+  .submodal[hidden] { display:none; }
+  .submodal-bd { position:absolute; inset:0; background:rgba(24,19,12,.55);
+    -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); animation:bdin .2s ease both; }
+  @keyframes bdin { from { opacity:0; } to { opacity:1; } }
+  .subx.modal { position:relative; z-index:1; margin:0; width:460px; max-width:100%;
+    padding:30px 28px 24px; box-shadow:0 24px 60px rgba(0,0,0,.28);
+    animation:modin .26s cubic-bezier(.22,1,.36,1) both; max-height:calc(100vh - 40px);
+    overflow-y:auto; }
+  @keyframes modin { from { opacity:0; transform:translateY(14px) scale(.97); }
+    to { opacity:1; transform:none; } }
+  .subx.modal h3 { font-size:24px; }
+
+  /* Vysunovací lišta na stránce briefu. Vyjede až po dočtení, aby nepřerušovala
+     čtení; kdo ji zavře, už ji nikdy neuvidí (localStorage). */
+  .subx.slide { position:fixed; right:20px; bottom:20px; z-index:40; width:344px;
+    max-width:calc(100vw - 32px); margin:0; padding:18px 18px 15px; text-align:left;
+    box-shadow:0 12px 38px rgba(0,0,0,.20); visibility:hidden; opacity:0;
+    transform:translateY(130%);
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .3s ease, visibility .45s; }
+  html[data-theme="dark"] .subx.slide { box-shadow:0 12px 38px rgba(0,0,0,.55); }
+  .subx.slide.show { visibility:visible; opacity:1; transform:none; }
+  .subx.slide h3 { font-size:17px; padding-right:24px; }
+  .subx.slide p.lead { margin-bottom:12px; font-size:13px; }
+  .subx.slide form { flex-direction:column; align-items:stretch; gap:7px; }
+  .subx.slide input[type=email] { max-width:none; flex:1 1 auto; }
+  .subx.slide button { justify-content:center; }
+  .subx.slide .fine { margin-top:10px; font-size:10.5px; }
+  .subx.slide .subok { text-align:center; padding:16px 12px 14px; }
+  .subx.slide .okmark { width:44px; height:44px; }
+  .subx.slide .okt { font-size:16px; }
+  .subx.slide .okd { font-size:12.5px; }
+  .subclose { position:absolute; top:7px; right:8px; width:27px; height:27px; padding:0;
+    display:flex; align-items:center; justify-content:center; font-size:21px; line-height:1;
+    font-family:inherit; color:var(--muted); background:none; border:0; border-radius:7px;
+    cursor:pointer; }
+  .subclose:hover { color:var(--ink); background:var(--pillbg); }
+  @media (max-width:520px) {
+    .subx.slide { right:12px; left:12px; bottom:12px; width:auto; }
+  }
+
+  /* Stavová stránka (potvrzeno / odhlášeno / vypršelo) */
+  .statx { max-width:560px; margin:8px auto 0; text-align:center; }
+  .statx .okmark { width:64px; height:64px; margin-bottom:16px; }
+  .statx .okmark circle, .statx .okmark path { stroke-dashoffset:0; }
+  .statx.play .okmark circle { stroke-dashoffset:151; animation:okdraw .5s cubic-bezier(.65,0,.45,1) .1s forwards; }
+  .statx.play .okmark path { stroke-dashoffset:36; animation:okdraw .32s cubic-bezier(.65,0,.45,1) .5s forwards; }
+  .statx.neutral .okmark circle, .statx.neutral .okmark path { stroke:var(--muted); }
+  .statx h1 { margin:0 0 10px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:30px; line-height:1.2; letter-spacing:-.015em; color:var(--ink); }
+  .statx p { margin:0 auto 14px; max-width:460px; font-size:15.5px; line-height:1.65; color:var(--story); }
+  .statx .cta { display:inline-block; margin-top:6px; padding:12px 22px; font-size:14px;
+    font-weight:800; color:#fff; background:var(--accent); border-radius:9px; text-decoration:none; }
+  .statx .cta:hover { opacity:.9; }
+  .statx .sub { margin-top:18px; font-size:13px; color:var(--muted); }
+  @media (max-width:560px) {
+    .statx { margin-top:4px; }
+    .statx .okmark { width:54px; height:54px; margin-bottom:12px; }
+    .statx h1 { font-size:24px; }
+    .statx p { font-size:14.5px; }
+    .statx .cta { display:block; width:100%; padding:13px 18px; }
+    .subx.modal { padding:24px 20px 20px; }
+    .subx.modal h3 { font-size:20px; }
+    .f-nav { gap:10px 18px; }
+  }
+
+  @media (prefers-reduced-motion:reduce) {
+    .subpitch, .subok, .subok.play, .statx.play, .subx.modal, .submodal-bd { animation:none !important; transition:none !important; }
+    .okmark circle, .okmark path { animation:none !important; stroke-dashoffset:0 !important; }
+    .subx .spin { animation-duration:1.4s; }
+  }
+
+  /* Textové stránky (O projektu, Kontakt) */
+  .tp { max-width:760px; margin:0 auto; padding:0 22px 90px; }
+  .tp h1 { margin:0 0 14px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:clamp(40px,7vw,64px); line-height:1; letter-spacing:-.035em; }
+  .tp .intro { margin:0 0 44px; max-width:700px; font-family:Fraunces,Georgia,serif;
+    font-weight:500; font-size:clamp(21px,3.2vw,30px); line-height:1.28;
+    letter-spacing:-.015em; color:var(--ink); }
+  .tp .intro em { font-style:normal; color:var(--accent); }
+  .tp-secs { counter-reset:sec; }
+  .tp-sec { display:grid; grid-template-columns:46px 1fr; gap:20px;
+    padding:26px 0 28px; border-top:1px solid var(--line); }
+  .tp-sec:first-child { border-top:0; padding-top:0; }
+  .tp-sec::before { counter-increment:sec; content:counter(sec,decimal-leading-zero);
+    padding-top:6px; color:var(--accent); font-family:Fraunces,Georgia,serif;
+    font-weight:700; font-size:15px; }
+  .tp-sec h2 { margin:0 0 10px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:25px; line-height:1.15; }
+  .tp-sec p { margin:0; color:var(--story); font-size:16px; line-height:1.75; }
+  .tp-sec p + p { margin-top:12px; }
+  .tp a.inl { color:var(--accent); text-underline-offset:3px; }
+
+  /* Zdroje — podle tématu (pár skupin, ale nestejně dlouhých). Grid vedle
+     sebe by mezi krátkou a dlouhou skupinou nechal ošklivé mezery, proto
+     každé téma jede na celou šířku a jen jeho seznam se rozdělí do sloupců. */
+  .srcgrid { margin-top:10px; }
+  .srcgroup { padding-top:22px; border-top:1px solid var(--line); }
+  .srcgroup:first-child { padding-top:0; border-top:0; }
+  .srcgroup h2 { margin:0 0 10px; font-family:Fraunces,Georgia,serif; font-weight:700;
+    font-size:17px; color:var(--accent); }
+  .srcgroup ul { list-style:none; margin:0; padding:0; display:grid;
+    grid-template-columns:repeat(2,1fr); gap:0 32px; }
+  .srcgroup li { display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:7px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .srcgroup a { color:var(--ink); text-decoration:none; }
+  .srcgroup a:hover { color:var(--accent); text-decoration:underline; }
+  .srclang { flex:none; font-size:10px; font-weight:800; letter-spacing:.04em; color:var(--muted);
+    padding:1px 6px; border:1px solid var(--pillbd); border-radius:999px; }
+  @media (max-width:600px) { .srcgroup ul { grid-template-columns:1fr; } }
+
+  /* Výzva „chybí zdroj" — na stránce Zdroje jako rámovaný box */
+  .srcbox { display:flex; align-items:center; gap:16px; margin-top:30px; padding:18px 20px;
+    border:1px solid var(--cardbd); border-radius:14px; background:var(--card); }
+  .srcbox .tico { flex:none; }
+  .srcbox p { margin:0; font-size:14px; color:var(--story); }
+  @media (max-width:480px) { .srcbox { flex-direction:column; align-items:flex-start; gap:10px; } }
+
+  /* Tatáž výzva na O projektu — záměrně jiný styl (jantarová poznámka s pruhem
+     vlevo), ať nepůsobí jako duplicitní box zkopírovaný ze Zdrojů. */
+  .srcnote { margin-top:20px; padding:14px 18px; border-left:3px solid var(--factk);
+    background:var(--factbg); border-radius:0 10px 10px 0; font-size:14px;
+    line-height:1.6; color:var(--factink); }
+
+  /* Schéma cesty zprávy (O projektu, bod „Jak se vybírá") */
+  /* Svisle pod sebou, ne v řádku: 4 kroky se do jednoho řádku nevešly a
+     zalamování (3 + 1 osamocený) vypadalo jako chyba. Pod sebou se vejde
+     cokoli, na jakoukoli šířku. */
+  .flowcard { margin:18px 0 2px; padding:20px; border:1px solid var(--cardbd);
+    border-radius:16px; background:var(--card); }
+  .flow { display:flex; flex-direction:column; align-items:stretch; gap:6px;
+    font-size:13px; font-weight:700; }
+  .flow b { padding:12px 14px; border-radius:12px; background:var(--pillbg);
+    border:1px solid var(--pillbd); color:var(--ink); text-align:center; font-weight:800; }
+  .flow b.hot { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .flow i { font-style:normal; text-align:center; color:var(--muted); opacity:.55; }
+  .flownote { margin:14px 0 0; text-align:center; font-size:12.5px; color:var(--muted); }
+
+  /* Výzva k odběru na konci textové stránky — v barvách webu, ne černý blok */
+  .ctacard { display:flex; align-items:center; justify-content:space-between; gap:20px;
+    flex-wrap:wrap; margin-top:38px; padding:26px 28px; border:1px solid var(--cardbd);
+    border-radius:18px; background:var(--card); }
+  .ctacard h3 { margin:0 0 5px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:24px; letter-spacing:-.01em; }
+  .ctacard p { margin:0; font-size:14.5px; line-height:1.5; color:var(--muted); }
+  .ctacard .btn { flex:none; padding:13px 20px; border-radius:10px; background:var(--accent);
+    color:#fff; font:inherit; font-size:14px; font-weight:800; border:0; cursor:pointer;
+    text-decoration:none; }
+  .ctacard .btn:hover { opacity:.9; }
+
+  /* Kontakt */
+  .cgrid { display:grid; grid-template-columns:1.25fr .75fr; gap:24px; margin-top:34px; }
+  .ccard, .scard { border:1px solid var(--cardbd); border-radius:18px; background:var(--card); }
+  .ccard { padding:26px; }
+  .scard { padding:22px; }
+  .scard + .scard { margin-top:18px; }
+  .kicker { margin:0 0 8px; color:var(--accent); font-size:11.5px; font-weight:800;
+    letter-spacing:.13em; text-transform:uppercase; }
+  .ccard h2, .scard h2 { margin:0 0 12px; font-family:Fraunces,Georgia,serif;
+    font-weight:600; font-size:25px; }
+  .ccard p, .scard p { margin:0 0 10px; color:var(--story); font-size:15px; line-height:1.65; }
+  .mailbtn { display:inline-flex; align-items:center; gap:9px; margin-top:8px;
+    padding:13px 20px; border-radius:11px; background:var(--accent); color:#fff;
+    font-size:15px; font-weight:800; text-decoration:none; }
+  .mailbtn:hover { opacity:.9; }
+
+  /* Trojice s ikonou — dvě uspořádání sdílející stejnou kartu (.trio-card):
+     .trio  = řádky pod sebou (O projektu, „Co brief nedělá") — úzký sloupec
+              obsahu, ikona vlevo od textu.
+     .trio3 = tři karty vedle sebe na celou šířku stránky (Kontakt, Soukromí),
+              ikona nahoře nad textem — jinak by se na 1/3 šířky zase stlačilo. */
+  .trio { display:flex; flex-direction:column; gap:12px; margin:18px 0 4px; }
+  .trio-card { display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start;
+    padding:16px 18px; border:1px solid var(--cardbd); border-radius:14px; background:var(--card); }
+  .tico { width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+    background:var(--pillbg); border:1px solid var(--pillbd); color:var(--accent); }
+  .trio-card strong { display:block; margin-bottom:4px; font-size:14.5px; }
+  .trio-card p { margin:0; font-size:13.5px; line-height:1.6; color:var(--muted); }
+  @media (max-width:400px) {
+    .trio .trio-card { grid-template-columns:1fr; }
+    .trio .tico { margin-bottom:6px; }
+  }
+
+  .trio3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 4px; }
+  .trio3 .trio-card { display:block; padding:20px 18px; }
+  .trio3 .tico { margin-bottom:12px; }
+  @media (max-width:720px) { .trio3 { grid-template-columns:1fr; } }
+
+  /* Ukázka reálné zprávy z briefu (O projektu, bod „Co Ranní brief je") */
+  .example-story { margin:18px 0 4px; padding:20px 22px; border:1px solid var(--cardbd);
+    border-radius:14px; background:var(--card); }
+  .example-story .exk { display:block; margin:0 0 10px; color:var(--accent); font-size:11px;
+    font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+  .example-story h4 { margin:0 0 8px; font-family:Fraunces,Georgia,serif; font-weight:600;
+    font-size:18px; line-height:1.25; }
+  .example-story p { margin:0 0 12px; font-size:14.5px; line-height:1.6; color:var(--story); }
+  .example-story .exm { display:flex; align-items:center; justify-content:space-between;
+    gap:12px; font-size:12.5px; color:var(--muted); }
+  .example-story .exm a { color:var(--accent); font-weight:800; text-decoration:none; }
+  .example-story .exm a:hover { text-decoration:underline; }
+
+  /* Srovnání čísel (O projektu, bod „Kolik času vám to ušetří") */
+  .statcompare { display:flex; align-items:center; justify-content:center; gap:22px;
+    flex-wrap:wrap; margin:20px 0 4px; padding:22px; border:1px solid var(--cardbd);
+    border-radius:14px; background:var(--card); text-align:center; }
+  .statcompare .sc { min-width:120px; }
+  .statcompare .sc b { display:block; font-family:Fraunces,Georgia,serif; font-weight:900;
+    font-size:clamp(26px,4.6vw,38px); line-height:1; letter-spacing:-.02em; color:var(--ink); }
+  .statcompare .sc.hot b { color:var(--accent); }
+  .statcompare .sc span { display:block; margin-top:6px; font-size:11.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .statcompare .sc-arrow { color:var(--muted); opacity:.6; font-size:20px; }
+
+  /* Tři kroky výběru (O projektu, bod „Jak se vybírá") */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:18px 0 20px; }
+  .step { padding:18px 16px; border:1px solid var(--cardbd); border-radius:14px; background:var(--card); }
+  .step .sn { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .step .sicon { color:var(--accent); }
+  .step .snum { font-family:Fraunces,Georgia,serif; font-weight:700; font-size:13px; color:var(--muted); }
+  .step strong { display:block; margin-bottom:5px; font-size:14.5px; }
+  .step p { margin:0; font-size:13px; line-height:1.55; color:var(--muted); }
+
+  @media (max-width:720px) {
+    .tp { padding-bottom:70px; }
+    .tp-sec { grid-template-columns:34px 1fr; gap:12px; }
+    .cgrid { grid-template-columns:1fr; }
+    .ctacard { flex-direction:column; align-items:flex-start; padding:22px 20px; }
+    .ctacard .btn { width:100%; text-align:center; }
+    .steps { grid-template-columns:1fr; }
+    .example-story .exm { flex-direction:column; align-items:flex-start; gap:4px; }
+  }
+
+  /* Textová stránka (zpracování údajů) */
+  .prose { max-width:680px; margin:0 auto; font-size:15.5px; color:var(--story); line-height:1.7; }
+  .prose h3 { font-family:Fraunces,Georgia,serif; font-weight:600; font-size:19px;
+    color:var(--ink); margin:28px 0 6px; }
+  .prose p { margin:0 0 4px; }
+  .prose a { color:var(--accent); }
+
+  /* Denní článek */
+  .daymeta { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:4px 0 0; }
+  .toolsrow { display:flex; align-items:center; gap:10px; margin:22px 0 2px; }
+  .toolsrow .back { margin:0; }
+  .toast { position:fixed; left:50%; bottom:26px; transform:translateX(-50%); background:var(--ink); color:var(--paper); font-size:13px; font-weight:700; padding:9px 16px; border-radius:999px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:40; }
+  .toast.show { opacity:1; }
+  .back { display:inline-block; margin:22px 0 6px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); text-decoration:none; }
+  .headline { font-family:Fraunces,Georgia,serif; font-weight:900; letter-spacing:-0.025em; font-size:clamp(30px,6vw,48px); line-height:1.02; margin:.1em 0 .2em; }
+  .standfirst { font-size:clamp(15.5px,2vw,18px); color:var(--sf); line-height:1.55; border-left:3px solid var(--accent); padding-left:16px; margin:16px 0 4px; }
+  .fact { background:var(--factbg); border:1px solid var(--factbd); border-radius:6px; padding:15px 17px; margin:22px 0; }
+  .fact .k { color:var(--factk); }
+  .fact h3 { font-family:Fraunces,serif; font-weight:900; font-size:18px; margin:6px 0 6px; }
+  .fact p { margin:0; color:var(--factink); font-size:14.5px; }
+
+  .tabs { position:sticky; top:0; z-index:10; background:var(--paper); margin:20px -22px 6px; padding:9px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tabs a { flex:0 0 auto; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; text-decoration:none; color:var(--muted); padding:5px 12px; border:1px solid var(--line); border-radius:999px; white-space:nowrap; transition:background .12s, color .12s, border-color .12s; }
+  .tabs a:hover { border-color:var(--c); color:var(--c); }
+  .tabs a.active { color:#fff; background:var(--c); border-color:var(--c); }
+
+  section.rubr { margin:30px 0 0; scroll-margin-top:64px; }
+  section.rubr > .lbl { border-bottom:2px solid; padding-bottom:6px; margin-bottom:14px; }
+  .story { border-left:4px solid var(--c,var(--line)); padding:13px 0 15px 16px; border-bottom:1px solid var(--line); }
+  .story.lead h2 { font-size:clamp(21px,3.4vw,27px); }
+  .story h2 { font-family:Fraunces,Georgia,serif; font-weight:700; line-height:1.2; font-size:19px; margin:0 0 8px; }
+  .story p { margin:0 0 10px; color:var(--story); font-size:15px; }
+  .srcs a { display:inline-block; font-size:11.5px; font-weight:700; color:var(--factink); background:var(--pillbg); border:1px solid var(--pillbd); border-radius:999px; padding:4px 11px; margin:0 6px 6px 0; text-decoration:none; }
+  .srcs a:hover { border-color:var(--accent); color:var(--accent); }
+
+  .daynav { display:flex; justify-content:space-between; gap:14px; margin:40px 0 10px; padding-top:20px; border-top:2px solid var(--ink); }
+  .daynav a { font-family:Fraunces,serif; font-weight:700; font-size:14px; text-decoration:none; color:var(--ink); max-width:46%; }
+  .daynav a:hover { color:var(--accent); }
+  .daynav .lab { display:block; font-family:Inter,sans-serif; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:3px; }
+  .daynav .next { text-align:right; margin-left:auto; }
+
+  .rev { opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease; }
+  .rev.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .rev { opacity:1; transform:none; } }
+
+  @media (max-width:820px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) { .hero .heads { grid-template-columns:1fr; } }
+  @media (max-width:520px) { .grid { grid-template-columns:1fr; } }
+</style></head><body>
+<div id="progress"></div>
+<header class="masthead"><div class="wrap">
+  <a class="brandwrap" href="index.html">
+    <img class="logo" src="logo.png" alt="" onerror="this.style.display='none'">
+    <span class="brand">Ranní brief</span>
+  </a>
+  <div class="tools"><span class="wx"><span class="wx-city">Brno&nbsp;·&nbsp;</span>🌧️&nbsp;10°<span class="wx-min">&nbsp;/&nbsp;-2°</span></span><button class="ic" id="themeBtn" type="button"
+    aria-label="Přepnout světlý/tmavý režim" title="Světlý/tmavý režim"><svg class="th-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.5 6.5 4.9 4.9M19.1 19.1l-1.6-1.6M17.5 6.5l1.6-1.6M4.9 19.1l1.6-1.6"/></svg><svg class="th-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.4A8.4 8.4 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9z"/></svg></button></div>
+</div></header>
+<main class="art">
+<div class="toolsrow"><a class="back" href="index.html">← Přehled</a><button class="ic" id="shareBtn" title="Sdílet / zkopírovat odkaz" aria-label="Sdílet"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></button></div>
+<h1 class="headline">středa 28. října 2026</h1>
+<div class="daymeta">40 zpráv · 6 rubrik</div>
+<p class="standfirst">Izraelské volby skončily patovou situací – exit polls ani průběžné výsledky nedávají jasnou většinu ani Netanjahuovu bloku, ani opoziční alianci Gadiho Eisenkota, rozhodující roli tak mohou sehrát arabské strany. V Česku otřásá politikou hned několik kauz najednou: poslanec David Pražák opouští ANO kvůli nesouhlasu s postupem koalice v mediální novele, Národní divadlo vyhlásilo stávkovou pohotovost a žádá odvolání ministra kultury Klempíře. Apple uvedl nový iMac a MacBook Pro s čipem M6, přičemž ceny opět vzrostly. Celosvětové akciové trhy rostou na vlně optimismu kolem AI, zatímco americké midtermy jsou za týden a Trumpova oblíbenost dál klesá.</p>
+<div class="fact"><span class="kicker k">Zajímavost dne</span><h3>Polární vortex a stratosférické oteplení</h3><p>Stratosférický polární vortex je prstenec silných větrů ve výšce kolem 30 km, který v zimě drží arktický vzduch na severu. Pokud náhle oslabí nebo se rozpadne – tzv. sudden stratospheric warming – může v řádu týdnů způsobit vlnu mrazivého počasí daleko na jihu Evropy i Severní Ameriky.</p></div>
+<nav class="tabs"><a href="#sec-politika" style="--c:#DC2626">Politika</a><a href="#sec-spolecnost" style="--c:#2563EB">Společnost</a><a href="#sec-svet" style="--c:#7C3AED">Svět</a><a href="#sec-ekonomika" style="--c:#EA580C">Ekonomika</a><a href="#sec-tech" style="--c:#0D9488">Tech</a><a href="#sec-marketing" style="--c:#65A30D">Marketing</a></nav>
+<section class="rubr" id="sec-politika"><div class="lbl" style="border-color:#DC2626"><span class="kicker" style="color:#DC2626">Politika</span></div>
+<div class="story lead" style="--c:#DC2626"><h2>Poslanec Pražák opouští ANO: nesouhlas s mediální novelou i koaliční politikou</h2><p>Poslanec David Pražák oznámil ukončení členství v ANO a přechod do nezařazených poslanců ve sněmovně. Důvodem je mimo jiné způsob prosazování změn financování veřejnoprávních médií, ale i celková cena za vládnutí s SPD a Motoristy.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-politika-ano-prislo-o-jednoho-poslance-prazak-ukoncil-clenstvi-ve-strane-318960" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://ct24.ceskatelevize.cz/clanek/domaci/poslanec-prazak-se-rozhodl-ukoncit-clenstvi-v-hnuti-ano-379077" target="_blank" rel="noopener">ČT24</a><a href="https://denikn.cz/2235703/odchazejici-poslanec-ano-poplatky-bych-projednaval-jinak-dan-za-vladnuti-s-spd-a-motoristy-je-prilis-vysoka/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Okamura by souhlasil se zrušením ČT a ČRo</h2><p>Předseda SPD a sněmovny Tomio Okamura prohlásil, že by podpořil případný návrh na zrušení České televize a Českého rozhlasu, přičemž odmítl, že by koalice chtěla tato média ovlivňovat. Výrok přišel v době vrcholící debaty o mediálních poplatcích.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-politika-nelpim-na-jejich-existenci-okamura-by-souhlasil-se-zrusenim-ct-a-rozhlasu-318957" target="_blank" rel="noopener">Seznam Zprávy</a><a href="https://ct24.ceskatelevize.cz/clanek/domaci/okamura-by-souhlasil-pokud-nekdo-navrhne-zruseni-ct-a-cro-379076" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Ministr Klempíř odvolá bývalého šéfa ČT Dvořáka ze Státního fondu audiovize</h2><p>Ministr kultury Oto Klempíř (za Motoristy) oznámil odvolání Petra Dvořáka z čela představenstva Státního fondu audiovize s odůvodněním rozdílných pohledů na hospodaření fondu. Krok vyvolal kritiku jako součást širšího tlaku na kulturní instituce.</p><div class="srcs"><a href="https://domaci.hn.cz/c1-67951240-ministr-klempir-odvola-byvaleho-sefa-ct-petra-dvoraka-z-cela-statniho-fondu-audiovize-pry-kvuli-ruznym-pohledum-na-hospodareni" target="_blank" rel="noopener">Hospodářské noviny</a><a href="https://ct24.ceskatelevize.cz/clanek/kultura/ministr-klempir-odvola-dvoraka-z-cela-predstavenstva-fondu-audiovize-379055" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Odbory Národního divadla vyhlásily stávkovou pohotovost, žádají odvolání Klempíře</h2><p>Odbory činohry Národního divadla vyhlásily stávkovou pohotovost na protest proti krokům vlády a ministerstva kultury, které podle nich ohrožují svobodu slova, tisku i kultury. Požadují odstoupení ministra kultury Klempíře a stažení připravované novely.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/kultura/odbory-cinohry-narodniho-divadla-vyhlasily-stavkovou-pohotovost-379078" target="_blank" rel="noopener">ČT24</a><a href="https://www.respekt.cz/informacni-servis/at-klempir-odstoupi-odbory-cinohry-narodniho-divadla-vyhlasily-stavkovou-pohotovost-2026-10-27-22-29" target="_blank" rel="noopener">Respekt</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Okamura přijal zástupce AfD a přednesl vizi Evropy bez „diktátu Bruselu</h2><p>Předseda sněmovny Tomio Okamura přijal delegaci německé Alternativy pro Německo včetně saského předsedy Jörga Urbana. Na schůzce zazněla vize Evropy osvobozené od bruselského diktátu, jednání se zúčastnil i ministr dopravy za SPD Ivan Bednárik.</p><div class="srcs"><a href="https://domaci.hn.cz/c1-67951460-bdquo-konecne-bychom-se-mohli-zbavovat-diktatu-bruselu-ldquo-okamura-prijal-zastupce-afd-a-prednesl-svoji-vizi-evropy" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Zákaz natáčení ve Sněmovně nemá odbornou oporu, přiznali úředníci</h2><p>Sněmovní aparát omezoval natáčení novinářů s odvoláním na bezpečnost, ale bez jakékoli odborné analýzy, zjistil Seznam Zprávy. Praxe zakazovat novinářům vstup se rozjela teprve za předsedy Tomia Okamury.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-kauzy-zakaz-nataceni-ve-snemovne-bez-analyzy-priznali-urednici-318768" target="_blank" rel="noopener">Seznam Zprávy</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Česko si připomíná 108. výročí vzniku Československa, prezident udělí státní vyznamenání</h2><p>V den 28. října si Česká republika připomíná vznik samostatné Československé republiky. Prezident Petr Pavel udělí státní vyznamenání 51 osobnostem, o tři více než loni.</p><div class="srcs"><a href="http://www.ceskenoviny.cz/zpravy/zive-cesko-si-dnes-pripomene-vyroci-vzniku-ceskoslovenska/2894032?utm_source=rss&amp;utm_medium=feed" target="_blank" rel="noopener">ČTK (České noviny)</a><a href="https://zpravy.aktualne.cz/domaci/od-havla-po-pavla-ktere-osobnosti-ziskaly-od-prezidentu-statni-vyznamenani/r~aaa29f83e2f241b0748fb725b951041e/" target="_blank" rel="noopener">Aktuálně.cz</a></div></div>
+<div class="story" style="--c:#DC2626"><h2>Tejcova novela trestního řádu: státní zástupci varují před „imunizací konkrétních osob</h2><p>Unie státních zástupců napsala, že cílem novely ministra spravedlnosti Jeronýma Tejce je imunizovat konkrétní osoby, ministr to odmítá a popírá jakoukoli spojitost s kauzou Čapí hnízdo.</p><div class="srcs"><a href="https://denikn.cz/2234953/cilem-je-imunizovat-konkretni-osoby-napsala-unie-statnich-zastupcu-k-tejcove-novele/" target="_blank" rel="noopener">Deník N</a></div></div>
+</section>
+<section class="rubr" id="sec-spolecnost"><div class="lbl" style="border-color:#2563EB"><span class="kicker" style="color:#2563EB">Společnost</span></div>
+<div class="story lead" style="--c:#2563EB"><h2>Čínské technologie v autech sledují řidiče i okolí a odesílají data do Číny</h2><p>Reportéři České televize prakticky ověřili, že vozy vybavené čínskými technologiemi jsou schopné natáčet a odesílat záznamy z interiéru i exteriéru přímo čínským úřadům, jak varoval NÚKIB. Někteří politici přitom tato rizika stále bagatelizují.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/reporteri-ct-zkouseli-co-vsechno-zaznamenavaji-auta-s-cinskymi-technologiemi-379064" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Australský zákon chce zakázat AI chatbotům navazovat emocionální intimitu s uživateli</h2><p>Australská labouristická vláda prosazuje zákon o digitální péči, jehož součástí je zákaz AI chatbotů záměrně vytvářejících emocionální pouto s uživateli. Zákon také tlačí na vznik sociálního mediálního regulátora.</p><div class="srcs"><a href="https://www.theguardian.com/australia-news/2026/oct/28/emotional-intimacy-ai-chatbots-ban-digital-duty-of-care-laws-australian-politics" target="_blank" rel="noopener">The Guardian</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Rodina zažalovala OpenAI: ChatGPT prý přiměl jejich dceru vysadit léky na epilepsii</h2><p>Rodiče dívky, která zemřela v únoru, tvrdí, že ji ChatGPT poradil, aby bez vědomí lékařů postupně přestala brát léky na epileptické záchvaty. Žaloba je jednou z prvních svého druhu namířených přímo proti OpenAI kvůli fatálním důsledkům AI doporučení.</p><div class="srcs"><a href="https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/" target="_blank" rel="noopener">TechCrunch</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Třetina mladých Američanů se ptá chatbotů na drogy – dávkování i účinky</h2><p>Průzkum ukázal, že přibližně třetina mladých lidí ve Spojených státech používá AI chatboty k dotazům na drogy, přičemž informace mohou být nepřesné a vést k rizikovému chování.</p><div class="srcs"><a href="https://www.irozhlas.cz/zivotni-styl/zdravi/tretina-mladych-v-usa-se-pta-chatbotu-na-drogy-zajima-je-davkovani-i-ucinky_2610280010_jar" target="_blank" rel="noopener">iRozhlas</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Letní vedra si v Evropě vyžádala přes 50 tisíc životů, v Česku stovky nadměrných úmrtí</h2><p>Nová analýza ukazuje, že letní vlny veder způsobené klimatickými změnami stojí v evropských městech za smrtí více než 50 tisíc lidí ročně. V tuzemských městech bylo zaznamenáno přes 700 nadměrných úmrtí.</p><div class="srcs"><a href="https://vtm.zive.cz/clanky/letni-vedra-si-v-evrope-vyzadala-pres-50-tisic-zivotu-ceska-mesta-zaznamenala-stovky-nadmernych-umrti/sc-870-a-244125/default.aspx" target="_blank" rel="noopener">Živě</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Policie prověřuje nelegální domov pro seniory na Svitavsku</h2><p>Policisté prověřují zařízení v bývalém hotelu na Svitavsku, kde bydlí přes dvacet seniorů, kvůli podezření z neoprávněného podnikání v oblasti sociálních služeb. Pardubický kraj označuje provoz za nelegální, provozovatel ho hájí jako pouhou ubytovací službu.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/domaci/policie-proveruje-domov-pro-seniory-na-svitavsku-podobnych-je-cela-rada-379035" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#2563EB"><h2>Hackerský útok na české studio Warhorse – tvůrce Kingdom Come</h2><p>České herní studio Warhorse Studios se stalo terčem závažného kybernetického útoku, firma prověřuje rozsah škod a spolupracuje s experty. Incident potvrdil ředitel studia Martin Frývaldský.</p><div class="srcs"><a href="https://cc.cz/utok-na-warhorse-studios-ceske-tvurce-hitu-kingdom-come-zasahli-hackeri-je-to-vazny-incident-rika-reditel/" target="_blank" rel="noopener">CzechCrunch</a><a href="https://forbes.cz/tvurci-videoherni-serie-kingdom-come-celi-hackerskemu-utoku-podle-sefa-firmy-jde-o-zavazny-incident/" target="_blank" rel="noopener">Forbes CZ</a></div></div>
+</section>
+<section class="rubr" id="sec-svet"><div class="lbl" style="border-color:#7C3AED"><span class="kicker" style="color:#7C3AED">Svět</span></div>
+<div class="story lead" style="--c:#7C3AED"><h2>Izraelské volby: patová situace, ani Netanjahu ani opozice nemají většinu</h2><p>Po uzavření volebních místností v Izraeli naznačují exit polls i průběžné výsledky těsný souboj mezi blokem premiéra Benjamina Netanjahua a opoziční aliancí vedenou generálem Gadim Eisenkotem, přičemž ani jedna strana nedosáhla 61 mandátů potřebných k sestavení vlády. Klíčovou roli mohou sehrát arabské strany, které zaznamenaly rekordní volební účast a historicky silný výsledek.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/cq1kdgxw302zo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://www.theguardian.com/world/live/2026/oct/28/israel-election-results-live-updates-exit-polls-netanyahu-likud-eisenkot-latest-news" target="_blank" rel="noopener">The Guardian</a><a href="https://www.aljazeera.com/news/2026/10/28/five-key-takeaways-from-israels-parliamentary-elections?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.novinky.cz/clanek/volby-po-secteni-42-procent-hlasu-vede-v-izraelskych-volbach-vladni-blok-40605327" target="_blank" rel="noopener">Novinky.cz</a><a href="https://www.respekt.cz/zahranici/izraelske-volby-podle-odhadu-vyhrala-opozice-ale-bez-arabskych-stran-vladu-nikdo-nesestavi" target="_blank" rel="noopener">Respekt</a><a href="https://denikn.cz/2235646/o-budoucnosti-izraele-rozhodlo-historicky-nejvic-volicu-exit-polls-jasneho-viteze-nenabizeji/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Flávio Bolsonaro uprchl z Brazílie do USA po prohraných volbách</h2><p>Poražený brazilský prezidentský kandidát Flávio Bolsonaro opustil zemi poté, co brazilský Nejvyšší soud nařídil odevzdat pasy, které odmítl vydat. USA avizovaly udělení víza, Bolsonarovo okolí jeho přítomnost v USA potvrdilo.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/ckly0xpxp243o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC Top News</a><a href="https://zahranicni.hn.cz/c1-67951530-bolsonaro-opustil-po-prohranych-volbach-brazilii-tvrdi-zdroje-z-jeho-okoli" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Příměří na Ukrajině rozšířeno na celý Chersonský kraj, Olešky získávají humanitární pomoc</h2><p>Lokální příměří zprostředkované Melanií Trumpovou, původně určené pro obsazené Olešky, bylo rozšířeno na celý Chersonský kraj a podle obou stran nebylo porušeno. Obyvatelé města čekající na pomoc po třech letech bez elektřiny, plynu a vody začínají dostávat potraviny.</p><div class="srcs"><a href="https://www.bbc.co.uk/news/articles/c6lye1w9p2l8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a><a href="https://denikn.cz/2234689/konecne-brambory-zbrane-v-primeri-ztichly-a-lide-zacinaji-opoustet-frontove-ukrajinske-olesky/" target="_blank" rel="noopener">Deník N</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Finský prezident Stubb zavolal Putinovi, v EU to vyvolalo spory</h2><p>Finský prezident Alexander Stubb a norský premiér Jonas Gahr Støre uskutečnili 90minutový telefonický rozhovor s Vladimirem Putinem, aniž to předem koordinovali se spojenci – dánská premiérka Frederiksen to otevřeně zkritizovala. Akce odkryla hlubší rozkol uvnitř EU ohledně přímého dialogu s Kremlem.</p><div class="srcs"><a href="https://euobserver.com/245311/finnish-president-stubb-joins-list-of-eu-leaders-seeking-to-tame-putin-in-a-90-minute-kremlin-phone-call-that-caused-a-rift-with-denmark/" target="_blank" rel="noopener">EUobserver</a><a href="https://www.euronews.com/2026/10/28/after-months-dithering-europe-shows-its-ready-for-talks-with-russia" target="_blank" rel="noopener">Euronews</a><a href="https://zahranicni.hn.cz/c1-67951210-tym-evropa-zacal-mluvit-s-putinem-jakou-roli-ma-cesky-prezident" target="_blank" rel="noopener">Hospodářské noviny</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Státy Zálivu jednají o komplexní mírové dohodě kvůli Íránu a Húsíům</h2><p>Státy Perského zálivu pracují na víceúrovňové mírové dohodě, která by zahrnovala znovuotevření Hormuzského průlivu do čtyř dnů od zrušení sankcí a stažení húsíjských sil z Jemenu. Cílem je předejít obnovení americko-íránského konfliktu po midtermových volbách.</p><div class="srcs"><a href="https://www.theguardian.com/world/2026/oct/28/gulf-states-multipart-peace-deal-avert-renewal-us-iran-war" target="_blank" rel="noopener">The Guardian</a><a href="https://www.wsj.com/world/middle-east/u-s-warns-gulf-of-possible-short-intense-renewal-of-iran-war-after-midterms-cd1a55e1?mod=rss_worldnews" target="_blank" rel="noopener">WSJ World News</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Srbsko: EU čelí důsledkům sázky na Vučiće po vítězství opozice</h2><p>Po drtivém vítězství studentského opozičního hnutí v srbských volbách EU řeší, jak navázat vztahy s novou vládou, která je vůči Bruselu skeptická. Více než deset let Unie stavěla na Vučićovi jako nepostradatelném partnerovi, nyní musí přehodnotit svůj přístup.</p><div class="srcs"><a href="https://www.politico.eu/article/serbian-opposition-landslide-exposes-eu-bet-cost-aleksandar-vucic-outsted-belgrade/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Politico Europe</a></div></div>
+<div class="story" style="--c:#7C3AED"><h2>Hútíové zaútočili na saúdskoarabskou rafinérii a ministerstvo obrany</h2><p>Jemenské hútíjské hnutí přiznalo útoky na saúdskoarabskou rafinérii a tamní ministerstvo obrany. Dříve téhož dne hútíjský představitel prohlásil, že egyptský parlament autorizoval vojenskou podporu Saúdské Arábii, což označil za vyhlášení války.</p><div class="srcs"><a href="https://www.lemonde.fr/en/international/article/2026/10/27/yemen-s-houthis-claim-attacks-on-saudi-oil-refinery-and-defense-ministry_6765418_4.html" target="_blank" rel="noopener">Le Monde EN</a></div></div>
+</section>
+<section class="rubr" id="sec-ekonomika"><div class="lbl" style="border-color:#EA580C"><span class="kicker" style="color:#EA580C">Ekonomika</span></div>
+<div class="story lead" style="--c:#EA580C"><h2>Nákupy na Temu a Sheinu znovu zdraží: EU přidává manipulační poplatek za balíčky z Číny</h2><p>Evropská unie zavádí nový manipulační poplatek (přibližně 2 eura) na zásilky z čínských e-shopů, který se přidá k červencovému clu. Dopravci varují, že zdražení v konečném důsledku zaplatí zákazníci.</p><div class="srcs"><a href="https://www.e15.cz/byznys/obchod-a-sluzby/nakupy-na-temu-a-sheinu-znovu-podrazi-k-dosavadnimu-clu-pribude-dalsi-poplatek-za-balicky-z-ciny-1436903" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Ceny rýže vzrostly o 80 procent, Česko zatím chrání zásoby</h2><p>Světové ceny rýže dramaticky rostou kvůli nepříznivému počasí, rostoucím nákladům a obavám z budoucích sklizní. Čeští zákazníci jsou zatím částečně chráněni existujícími zásobami, zdražení ale může brzy dorazit i k nim.</p><div class="srcs"><a href="https://www.e15.cz/byznys/burzy-a-trhy/ceny-ryze-vystrelily-o-80-procent-cesti-zakaznici-zatim-maji-jednu-vyhodu-1436900" target="_blank" rel="noopener">E15</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Akciové trhy rostou globálně, investoři sázejí na AI</h2><p>Asijské i evropské burzy přidávají v návaznosti na zisky Wall Street, hlavním tahounem je nadšení investorů z umělé inteligence a silné výsledky výrobce čipů SK Hynix. Investoři sledují i výsledky izraelských voleb a čekají na rozhodnutí amerického Fedu o úrokových sazbách.</p><div class="srcs"><a href="https://www.aljazeera.com/news/2026/10/28/global-stock-markets-rise-as-investors-continue-to-bet-on-ai?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.euronews.com/2026/10/28/tech-stocks-soar-as-sk-hynix-adds-to-rising-ai-confidence" target="_blank" rel="noopener">Euronews</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Sněmovní výbory začaly projednávat návrh státního rozpočtu na rok 2027</h2><p>Rozpočtový výbor Poslanecké sněmovny zahájil druhé čtení návrhu státního rozpočtu. Vládní strany zvažují přesuny v řádu několika miliard, více peněz by mohla získat například Národní sportovní agentura.</p><div class="srcs"><a href="https://ct24.ceskatelevize.cz/clanek/ekonomika/snemovni-vybory-zacaly-projednavat-navrh-rozpoctu-pridano-muze-dostat-sport-379073" target="_blank" rel="noopener">ČT24</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Spor o Alzu a léky na předpis: lékárníci i ministr zdravotnictví mluví o porušení zákona</h2><p>Alza testuje výdej léků na předpis prostřednictvím svých zásilkových boxů, čemuž se ostře brání lékárníci i ministr zdravotnictví, kteří službu považují za nezákonnou. Ministerstvo připravuje novelu, jež by výdej léků tímto způsobem teprve umožnila.</p><div class="srcs"><a href="https://www.zive.cz/clanky/alza-a-jeji-dorucovani-leku-na-predpis-budi-vasne-lekarnici-se-hadaji-o-tom-jestli-obchod-neobchazi-zakon/sc-3-a-244122/default.aspx" target="_blank" rel="noopener">Živě</a><a href="https://forbes.cz/alza-versus-stat-co-musite-vedet-o-sporu-kolem-dodavek-leku-na-predpis-do-boxu/" target="_blank" rel="noopener">Forbes CZ</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>Dodávka bojových vozidel CV90 pro českou armádu se zpožďuje na příští rok</h2><p>Prvních deset bojových vozidel pěchoty CV90 z celkové objednávky 246 kusů mělo být české armádě dodáno letos, termín se ale posunul na příští rok. Česko celkově investovalo do tohoto programu miliardy korun.</p><div class="srcs"><a href="https://www.seznamzpravy.cz/clanek/domaci-politika-dodavka-vozidel-cv90-se-zpozdi-prvni-cesko-dostane-az-v-pristim-roce-318951" target="_blank" rel="noopener">Seznam Zprávy</a><a href="http://www.ceskenoviny.cz/zpravy/zuna-dodavku-prvnich-vozidel-cv90-obdrzi-cesko-az-v-pristim-roce/2893872?utm_source=rss&amp;utm_medium=feed" target="_blank" rel="noopener">ČTK (České noviny)</a></div></div>
+<div class="story" style="--c:#EA580C"><h2>EU plánuje masivní investice do australských kritických surovin, chce snížit závislost na Číně</h2><p>Evropská unie a Austrálie ohlásily záměr masivně investovat do těžby a zpracování kritických surovin jako alternativy k čínské dominanci. Austrálie připravuje novou strategii pro kritické suroviny.</p><div class="srcs"><a href="https://euobserver.com/245274/eu-plans-massive-investment-in-australias-critical-minerals-to-cut-dependence-on-china/" target="_blank" rel="noopener">EUobserver</a></div></div>
+</section>
+<section class="rubr" id="sec-tech"><div class="lbl" style="border-color:#0D9488"><span class="kicker" style="color:#0D9488">Tech</span></div>
+<div class="story lead" style="--c:#0D9488"><h2>Apple uvedl nový iMac a MacBook Pro s čipem M6 – výrazně rychlejší, ale také dražší</h2><p>Apple představil aktualizovaný iMac a základní 14palcový MacBook Pro osazené novým čipem M6, který přináší více jader, rychlejší paměť a výkonnější Neural Engine. Ceny oproti předchůdcům opět vzrostly.</p><div class="srcs"><a href="https://arstechnica.com/apple/2026/10/apple-refreshes-the-imac-entry-level-macbook-pro-with-the-m6-chip/" target="_blank" rel="noopener">Ars Technica</a><a href="https://www.zive.cz/clanky/macbook-pro-a-imac-jsou-diky-cipu-m6-o-dost-rychlejsi-ale-take-vyrazne-drazsi/sc-3-a-244129/default.aspx" target="_blank" rel="noopener">Živě</a><a href="https://www.apple.com/imac/" target="_blank" rel="noopener">Hacker News</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Anthropic míří na burzu: dramatický růst, obří ztráty a varování před existenčním rizikem AI</h2><p>Anthropic zveřejnil prospekt k IPO – firma rychle roste, ale stále prodělává, a v dokumentu sama upozorňuje na riziko, že její AI by mohla vydírat lidi, stát se vědomou nebo ohrozit lidstvo. Amazon drží v Anthropicu dosud největší podíl ze všech investorů.</p><div class="srcs"><a href="https://arstechnica.com/ai/2026/10/anthropic-ipo-warns-its-ai-could-blackmail-people-become-sentient-end-humanity/" target="_blank" rel="noopener">Ars Technica</a><a href="https://cc.cz/dramaticky-roste-extremne-prodelava-tohle-je-5-veci-ktere-musite-vedet-o-vstupu-anthropicu-na-burzu/" target="_blank" rel="noopener">CzechCrunch</a><a href="https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Google DeepMind představil Genie 4: nová generace simulace světa</h2><p>Google DeepMind publikoval Genie 4, označovaný za novou generaci systémů simulace světa. Projekt na Hacker News zaujal přes 800 bodů a vyvolal rozsáhlou diskusi o budoucnosti generativních simulátorů.</p><div class="srcs"><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Hacker News</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>iPhone Duo má problém s praskáním displeje v místě závěsu</h2><p>Krátce po uvedení skládacího iPhonu Duo se na sociálních sítích objevily zprávy o praskání vnitřního displeje v oblasti závěsu. Problém se opakoval u více kusů a The Verge přináší technické vysvětlení možné příčiny.</p><div class="srcs"><a href="https://www.theverge.com/tech/1020145/iphone-duo-crackgate-broken-screen-hinge" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Elon Musk tvrdí, že Ukrajina porušila podmínky Starlinku při ofenzivních dronových útocích</h2><p>Elon Musk prohlásil, že ukrajinská armáda využívala Starlink k ofenzivním dronovým útokům v rozporu s podmínkami služby, načež bylo toto využití zablokováno. Vyjádření přichází uprostřed debaty o omezování přístupu Kyjiva ke Starlinku.</p><div class="srcs"><a href="https://www.theverge.com/science/1019879/elon-musk-starlink-ukraine-terms-of-service" target="_blank" rel="noopener">The Verge</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>AI hacker našel čtyři závažné bezpečnostní chyby v průmyslovém řídicím softwaru za méně než čtyři hodiny</h2><p>Systém umělé inteligence odhalil v průmyslovém řídicím softwaru EPICS jednu kritickou a tři závažné zranitelnosti za necelé čtyři hodiny – výsledek, který by manuálním testováním trval podstatně déle. Chyby mohly umožnit narušení vědeckých experimentů.</p><div class="srcs"><a href="https://www.theregister.com/security/2026/10/27/ai-hacker-finds-4-severe-bugs-in-popular-industrial-control-software-in-under-4-hours/5305811" target="_blank" rel="noopener">The Register</a></div></div>
+<div class="story" style="--c:#0D9488"><h2>Česká firma Warhorse napadena hackery: Kingdom Come studio prověřuje škody</h2><p>České herní studio Warhorse Studios, tvůrce série Kingdom Come, potvrdilo kybernetický útok a spolupracuje s experty na zjištění rozsahu škod. Ředitel Martin Frývaldský označil incident za vážný.</p><div class="srcs"><a href="https://cc.cz/utok-na-warhorse-studios-ceske-tvurce-hitu-kingdom-come-zasahli-hackeri-je-to-vazny-incident-rika-reditel/" target="_blank" rel="noopener">CzechCrunch</a></div></div>
+</section>
+<section class="rubr" id="sec-marketing"><div class="lbl" style="border-color:#65A30D"><span class="kicker" style="color:#65A30D">Marketing</span></div>
+<div class="story lead" style="--c:#65A30D"><h2>Mbappé přišel o čínské sponzory po vtipu s Mao Ce-tungem</h2><p>Tři velké čínské značky ukončily spolupráci s Kylianem Mbappém poté, co se fotbalová hvězda veřejně zasmála memu se svou tváří na těle Mao Ce-tunga a označila ho za „diktátora.</p><div class="srcs"><a href="https://www.aljazeera.com/video/newsfeed/2026/10/28/mbappe-faces-backlash-in-china-for-meme-fiasco?traffic_source=rss" target="_blank" rel="noopener">Al Jazeera</a><a href="https://www.wsj.com/sports/soccer/kylian-mbappe-china-42d90e95?mod=rss_worldnews" target="_blank" rel="noopener">WSJ World News</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>McDonald&#x27;s ukončuje sponzoring FIFA: co to znamená pro sportovní marketing</h2><p>Rychlostravební gigant mění svůj marketingový model a opouští dlouholeté partnerství s fotbalovou federací FIFA. Analytici upozorňují, že krok může ovlivnit strategie dalších QSR konkurentů v oblasti sportovního sponzoringu.</p><div class="srcs"><a href="https://www.marketingdive.com/news/what-mcdonalds-dropping-its-fifa-sponsorship-means-for-sports-marketing/872775/" target="_blank" rel="noopener">Marketing Dive</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>Google aktualizuje ochranu soukromí: data z Gmailu a Fotek mohou ovlivňovat reklamy v AI Mode</h2><p>Google testuje nový způsob personalizace reklam v AI Mode, kdy mohou být zohledňovány data z propojených aplikací jako Gmail nebo Fotky. Zároveň aktualizoval zásady ochrany soukromí, aby výjimku pro personalizaci reklam zahrnul explicitně.</p><div class="srcs"><a href="https://www.searchenginejournal.com/google-privacy-policy-connected-apps-ai-mode-ads/594546/" target="_blank" rel="noopener">Search Engine Journal</a></div></div>
+<div class="story" style="--c:#65A30D"><h2>AI ohrožuje modelingový průmysl: značkám může snížit náklady na focení o 90 procent</h2><p>Módní firmy stále častěji využívají digitální modely vytvořené pomocí AI nebo upravují fotografie skutečných lidí, čímž dramaticky snižují náklady na fotografování. Tento trend přímo ohrožuje pracovní příležitosti modelek a modelů.</p><div class="srcs"><a href="https://forbes.cz/ai-ohrozuje-praci-modelek-znackam-muze-snizit-naklady-na-foceni-o-90-procent/" target="_blank" rel="noopener">Forbes CZ</a></div></div>
+</section>
+<nav class="daynav"><a class="prev" href="brief-2026-10-27.html"><span class="lab">← Předchozí</span>úterý 27. října 2026</a><span></span></nav>
+</main>
+<div class="page-ending" aria-hidden="true"></div>
+<footer><div class="f-inner">
+  <a class="f-brand" href="index.html"><img class="f-logo" src="logo.png" alt="" onerror="this.style.display='none'">Ranní brief</a>
+  <div class="f-slogan"><span class="ln"></span>Váš ranní přehled zpráv<span class="ln"></span></div>
+  <nav class="f-nav" aria-label="Navigace v patičce">
+    <a href="index.html">Archiv</a>
+    <a href="o-projektu.html">O projektu</a>
+    <a href="zdroje.html">Zdroje</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="ochrana-osobnich-udaju.html">Soukromí</a>
+  </nav>
+  <button type="button" id="subOpen" class="sub-cta">Odebírat ranní brief</button>
+  <div class="f-meta-wrap">
+    <div class="f-meta">© 2026 · Připravuje <a href="https://zichmichal.cz" target="_blank" rel="noopener">Michal Zich</a></div>
+    <div class="f-note">Automaticky generovaný přehled zpráv z veřejných RSS zdrojů.</div>
+  </div>
+</div></footer>
+<div class="submodal" id="subModal" hidden><div class="submodal-bd" data-close="1"></div><section class="subx modal" role="dialog" aria-modal="true" aria-label="Ranní brief rovnou do schránky" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><button type="button" class="subclose" aria-label="Zavřít">&times;</button><div class="subpitch"><h3>Ranní brief rovnou do schránky</h3><p class="lead">Každé ráno jeden e-mail: zhruba 36 nejdůležitějších zpráv ze stovek článků z 49 českých i zahraničních zdrojů.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section></div>
+<section class="subx slide" data-endpoint="https://script.google.com/macros/s/AKfycbxKJsfPz4gc_7wQuQHi1Y-Riug1WTAyhZF-QDWR0jyVrzeHeutdYrxgizXqWpQSI2pp/exec"><button type="button" class="subclose" aria-label="Zavřít">&times;</button><div class="subpitch"><h3>Chcete tohle každé ráno?</h3><p class="lead">Zítřejší brief vám můžeme poslat rovnou do schránky.</p><form class="subform" novalidate><input type="email" name="email" required placeholder="vas@email.cz" autocomplete="email" aria-label="E-mailová adresa"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit"><span class="lbl">Chci ranní brief</span><span class="spin" aria-hidden="true"></span></button></form><p class="msg" role="status" aria-live="polite"></p><p class="fine">Každé ráno jeden e-mail. Odběr zrušíte jedním kliknutím. <a href="ochrana-osobnich-udaju.html">Jak nakládám s e-mailem</a></p></div><div class="subok" hidden><svg class="okmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg><p class="okt">Hotovo — mrkněte do schránky</p><p class="okd">Na <strong class="okmail"></strong> jsme poslali potvrzovací e-mail. Odběr se spustí, jakmile v něm kliknete na tlačítko. Nedorazil do pár minut? Podívejte se prosím i do spamu.</p><button type="button" class="okmore">Přihlásit další adresu</button></div></section>
+<script>
+(function(){
+var b=document.getElementById('themeBtn');
+if(!b)return;
+b.addEventListener('click',function(){
+ var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+ document.documentElement.setAttribute('data-theme',n);
+ try{localStorage.setItem('theme',n);}catch(e){}
+});
+})();
+
+(function(){var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var p=document.getElementById('progress');
+function os(){if(!p)return;var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;p.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}
+document.addEventListener('scroll',os,{passive:true});os();
+var tabs={};document.querySelectorAll('.tabs a').forEach(function(a){tabs[a.getAttribute('href').slice(1)]=a;});
+var secs=document.querySelectorAll('section.rubr');
+if('IntersectionObserver' in window && secs.length){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(tabs).forEach(function(k){tabs[k].classList.remove('active');});if(tabs[e.target.id])tabs[e.target.id].classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
+secs.forEach(function(s){io.observe(s);});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.08});
+if(!rm)document.querySelectorAll('.story').forEach(function(s){s.classList.add('rev');ro.observe(s);});}
+})();
+
+(function(){
+  function go(sel){var a=document.querySelector(sel);if(a&&a.href)location.href=a.href;}
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.key==='ArrowLeft')go('.daynav .prev');
+    else if(e.key==='ArrowRight')go('.daynav .next');
+    else if(e.key==='g'||e.key==='Escape')location.href='index.html';
+  });
+  function toast(m){var t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);
+    requestAnimationFrame(function(){t.classList.add('show');});
+    setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},260);},1400);}
+  var sb=document.getElementById('shareBtn');
+  if(sb)sb.addEventListener('click',function(){var u=location.href;
+    if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){});}
+    else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){toast('Odkaz zkopírován');},function(){toast(u);});}
+    else toast(u);});
+})();
+
+(function(){
+ var t0=Date.now(), SKEY='mb_sub_hidden';
+ document.querySelectorAll('.subform').forEach(function(f){
+  var box=f.closest('.subx'),msg=box.querySelector('.msg'),ok=box.querySelector('.subok'),
+      pitch=box.querySelector('.subpitch'),btn=f.querySelector('button'),
+      ep=box.getAttribute('data-endpoint');
+  f.addEventListener('submit',function(e){
+   e.preventDefault();
+   if(f.website.value){return;}                         // honeypot
+   msg.textContent='';
+   if(Date.now()-t0<2000){msg.textContent='Chviličku počkejte a zkuste to znovu.';return;}
+   var email=(f.email.value||'').trim();
+   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent='Zadejte prosím platnou e-mailovou adresu.';return;}
+   btn.disabled=true;btn.classList.add('loading');
+   fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:email}).catch(function(){});
+   // Spinner chvíli podržíme, ať odeslání není jen bliknutí; pak formulář
+   // odplyne a nahradí ho panel „hotovo".
+   try{localStorage.setItem(SKEY,'1');}catch(err){}   // přihlášeným už lištu nenabízej
+   setTimeout(function(){
+    var m=ok.querySelector('.okmail'); if(m){m.textContent=email;}
+    pitch.classList.add('gone');
+    setTimeout(function(){
+     pitch.hidden=true;pitch.classList.remove('gone');f.reset();
+     btn.disabled=false;btn.classList.remove('loading');
+     ok.hidden=false;
+     ok.classList.remove('play');void ok.offsetWidth;ok.classList.add('play'); // restart animace
+    },200);
+   },650);
+  });
+  var more=box.querySelector('.okmore');
+  if(more){more.addEventListener('click',function(){
+   ok.hidden=true;ok.classList.remove('play');
+   pitch.hidden=false;
+   f.email.focus();
+  });}
+ });
+ // Vysunovací lišta: objeví se, až je přečtená většina stránky — tedy ve chvíli,
+ // kdy čtenář ví, jestli mu obsah sedí. Zavření i úspěšné přihlášení si pamatujeme
+ // natrvalo, takže nikoho neotravuje podruhé.
+ var slide=document.querySelector('.subx.slide');
+ if(slide){
+  var hid=false; try{hid=localStorage.getItem(SKEY)==='1';}catch(e){}
+  var close=slide.querySelector('.subclose');
+  function hideSlide(persist){
+   slide.classList.remove('show');
+   if(persist){try{localStorage.setItem(SKEY,'1');}catch(e){}}
+  }
+  if(close){close.addEventListener('click',function(){hideSlide(true);});}
+  document.addEventListener('keydown',function(e){
+   if(e.key==='Escape'&&slide.classList.contains('show')){hideSlide(true);}
+  });
+  if(!hid){
+   var onScroll=function(){
+    var d=document.documentElement,
+        h=(d.scrollHeight||0)-(d.clientHeight||0),
+        y=window.pageYOffset||d.scrollTop||0;
+    if(h<=0){return;}                     // krátká stránka: nemá se kam scrollovat
+    if(y/h>=0.6){
+     slide.classList.add('show');
+     window.removeEventListener('scroll',onScroll);
+    }
+   };
+   window.addEventListener('scroll',onScroll,{passive:true});
+  }
+ }
+ // Modální přihlášení z patičky. Otevřít umí i lišta („Odebírat" kdekoli jinde),
+ // proto se posluchač věší na všechny prvky s id/tříd subOpen.
+ var mod=document.getElementById('subModal');
+ if(mod){
+  var lastFocus=null;
+  function openMod(){
+   lastFocus=document.activeElement;
+   mod.hidden=false;
+   document.body.style.overflow='hidden';
+   var inp=mod.querySelector('input[type=email]');
+   if(inp&&!mod.querySelector('.subpitch[hidden]')){inp.focus();}
+  }
+  function closeMod(){
+   mod.hidden=true;
+   document.body.style.overflow='';
+   if(lastFocus&&lastFocus.focus){lastFocus.focus();}
+  }
+  document.querySelectorAll('#subOpen,.subOpen').forEach(function(b){
+   b.addEventListener('click',function(e){e.preventDefault();openMod();});
+  });
+  mod.addEventListener('click',function(e){
+   if(e.target.getAttribute('data-close')||e.target.classList.contains('subclose')){closeMod();}
+  });
+  document.addEventListener('keydown',function(e){
+   if(e.key==='Escape'&&!mod.hidden){closeMod();}
+  });
+ }
+ // Stavové stránky (potvrzeno/odhlášeno) spustí kresbu odškrtnutí až tady,
+ // aby se animace nepřehrála mimo obraz při načtení.
+ var s=document.querySelector('.statx');
+ if(s){requestAnimationFrame(function(){s.classList.add('play');});}
+})();
+</script></body></html>
