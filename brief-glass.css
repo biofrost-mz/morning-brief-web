@@ -324,3 +324,5 @@ html[data-theme="dark"] .glass-brief { color-scheme:dark; }
 .glass-brief .bin-icon { line-height:32px!important; }
 .glass-brief .day-icon>img, .glass-brief .bin-icon>img { display:inline-block!important;vertical-align:middle!important;margin:0!important; }
 .glass-brief .waste .waste-name { color:light-dark(#1c2a40,#edf3ff)!important; }
+/* Optical adjustment requested for waste pictograms: 1px left, 2px down. */
+.glass-brief .bin-icon { padding:4px 2px 0 0!important;line-height:28px!important; }
