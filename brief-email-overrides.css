@@ -1,0 +1,53 @@
+/* Real presentation tables preserve geometry in clients without grid/flex. */
+.glass-brief .hero, .glass-brief .pair, .glass-brief .waste, .glass-brief .podcast { display:table!important;width:100%!important;gap:0!important; }
+.glass-brief .hero tr, .glass-brief .pair tr, .glass-brief .waste tr, .glass-brief .podcast tr { display:table-row!important; }
+.glass-brief .hero tr>td, .glass-brief .pair tr>td, .glass-brief .waste tr>td, .glass-brief .podcast tr>td { display:table-cell!important; }
+.glass-brief .pair { border-collapse:separate!important;border-spacing:6px 0!important;table-layout:fixed!important; }
+.glass-brief .pair tr>td { vertical-align:top!important; }
+.glass-brief .pair .day-tile { min-height:164px!important; }
+.glass-brief .hero { border-spacing:0!important; }
+.glass-brief .hero tr>td:first-child { padding-right:18px!important; }
+.glass-brief .hero tr>td:last-child { width:142px!important; }
+.glass-brief .forecast { width:100%!important; }
+.glass-brief .temp { white-space:nowrap!important; }
+.glass-brief .waste { border-collapse:separate!important;border-spacing:5px 0!important;table-layout:fixed!important; }
+.glass-brief .waste .waste-item { display:flex!important;align-items:center!important;gap:10px!important; }
+.glass-brief .waste .bin-icon { display:inline-flex!important;flex-shrink:0!important; }
+.glass-brief .waste .waste-copy { display:block!important;min-width:0!important; }
+.glass-brief .waste .waste-date, .glass-brief .waste .waste-name { white-space:normal!important; }
+.glass-brief .mast { display:flex!important;align-items:center!important;justify-content:space-between!important; }
+.glass-brief .updated { float:none!important; }
+.glass-brief .story-status { float:right!important; }
+.glass-brief .story-meta { display:block!important; }
+.glass-brief .story-meta:after { content:"";display:block;clear:both; }
+.glass-brief .story-label { display:inline-block!important; }
+.glass-brief .podcast { table-layout:auto!important;border-spacing:0!important; }
+.glass-brief .podcast tr>td { vertical-align:middle!important;padding:0!important; }
+.glass-brief .podcast tr>td:first-child { width:34px!important; }
+.glass-brief .podcast tr>td:last-child { width:85px!important;text-align:right!important; }
+.glass-brief .podcast strong { display:inline!important;white-space:nowrap!important; }
+.glass-brief .podcast-icon { display:inline-flex!important;align-items:center!important;justify-content:center!important;vertical-align:middle!important; }
+.glass-brief .podcast .podcast-action { display:inline-block!important;float:none!important;margin:0!important;white-space:nowrap!important; }
+.glass-brief .calendar .event { display:block!important; }
+@media(max-width:470px) {
+ .glass-brief .waste tr>td { display:block!important;width:100%!important;padding:3px 0!important; }
+ .glass-brief .top, .glass-brief .body { padding-left:17px!important;padding-right:17px!important; }
+ .glass-brief .hero tr>td:first-child { padding-right:10px!important; }
+ .glass-brief .hero tr>td:last-child { width:122px!important; }
+ .glass-brief .hero h1 { font-size:30px!important; }
+ .glass-brief .story.lead h3 { font-size:19px!important; }
+ .glass-brief .forecast { padding:13px 12px!important; }
+ .glass-brief .temp { font-size:35px!important; }
+ .glass-brief .temp span { font-size:17px!important; }
+ .glass-brief .letter { border-radius:22px!important; }
+ .glass-brief .pair .day-tile { padding:15px 12px 0!important; }
+}
+/* Keep a true 12px inner gutter without inset outer edges. */
+.glass-brief .pair { border-spacing:0!important; }
+.glass-brief .pair tr>td:first-child:not(:last-child) { padding-right:6px!important; }
+.glass-brief .pair tr>td+td { padding-left:6px!important; }
+/* Email glass uses gradients; nested backdrop layers are unstable in WebKit. */
+.glass-brief .advice, .glass-brief .day-tile, .glass-brief .waste-item, .glass-brief .fact, .glass-brief .podcast { backdrop-filter:none!important;-webkit-backdrop-filter:none!important; }
+.glass-brief .tile-foot { display:block!important;padding:12px 0!important;line-height:18px!important;min-height:42px!important; }
+.glass-brief .podcast strong { white-space:normal!important; }
+.glass-brief .waste .bin-icon { display:inline-block!important; }
