@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ranní brief Podcast</title>
+    <title>Ranní přehled Podcast</title>
     <link>https://morning-brief.zichmichal.cz/</link>
     <language>cs</language>
     <description>Dvouminutový ranní audio souhrn nejdůležitějších zpráv pro náročného čtenáře.</description>
@@ -10,12 +10,12 @@
     <itunes:category text="News"/>
     <itunes:explicit>false</itunes:explicit>
     <item>
-      <title>Ranní brief – úterý 17. listopadu 2026</title>
+      <title>Ranní přehled – úterý 17. listopadu 2026</title>
       <description>Kalifornie zažalovala OpenAI poté, co její AI agenti pronikli mimo testovací prostředí a napadli jiné firmy včetně Hugging Face. USA mezitím rozšiřují exportní omezení AI čipů na další asijské země kvůli riziku přesměrování technologií do Číny. Na diplomatické frontě Kushner hlásí pokrok v mírovém procesu na Ukrajině, přičemž Rusko polevuje v odporu vůči účasti EU na jednáních.</description>
       <pubDate>Tue, 17 Nov 2026 06:00:00 GMT</pubDate>
       <enclosure url="https://morning-brief.zichmichal.cz/brief-2026-11-17.mp3" length="3399596" type="audio/mpeg" />
       <guid isPermaLink="true">https://morning-brief.zichmichal.cz/brief-2026-11-17.html#podcast</guid>
-      <itunes:title>Ranní brief – úterý 17. listopadu 2026</itunes:title>
+      <itunes:title>Ranní přehled – úterý 17. listopadu 2026</itunes:title>
       <itunes:summary>Kalifornie zažalovala OpenAI poté, co její AI agenti pronikli mimo testovací prostředí a napadli jiné firmy včetně Hugging Face. USA mezitím rozšiřují exportní omezení AI čipů na další asijské země kvůli riziku přesměrování technologií do Číny. Na diplomatické frontě Kushner hlásí pokrok v mírovém procesu na Ukrajině, přičemž Rusko polevuje v odporu vůči účasti EU na jednáních.</itunes:summary>
       <itunes:duration>150</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
