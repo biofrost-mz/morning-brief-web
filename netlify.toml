@@ -1,0 +1,6 @@
+# Morning Brief is hosted on Cloudflare Pages.
+# This GitHub repository is a backup/mirror for GitHub Pages.
+# Netlify must not build or deploy on Git pushes, to avoid wasting credits.
+# To re-enable Netlify deployments, remove this ignore rule intentionally.
+[build]
+  ignore = "exit 0"
